@@ -1,5 +1,6 @@
 extends Node
 
-var delta_factor = 30
-var window_width = 1024
-var window_height = 576
+const delta_factor = 30
+const window_width = 1024
+const window_height = 576
+const spawn_offset = 32

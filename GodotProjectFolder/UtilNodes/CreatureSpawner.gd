@@ -10,10 +10,10 @@ var cost_map = {
 }
 
 func spawn_creature(creature):
-	var cost = cost_map.get(creature)
+	var cost = cost_map[creature]
 	
 	if PlayerStats.currency >= cost: 
-		var spawned_creature = creature_map.get(creature).instance()
+		var spawned_creature = creature_map[creature].instance()
 		spawned_creature.global_position = get_random_spawn_position()
 		get_node("/root/Ocean").add_child(spawned_creature)
 		PlayerStats.change_currency(-cost)
