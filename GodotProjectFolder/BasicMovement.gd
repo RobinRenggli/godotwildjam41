@@ -5,7 +5,6 @@ onready var timer = $Timer
 onready var creatureSprite = creature.get_node("Sprite")
 onready var directionIndicator = Vector2(rand_range(0, Constants.window_width), Constants.window_height/2)
 
-
 var velocity = Vector2(1,0)
 var directionIndicatorVelocity = Vector2(1,0)
 
@@ -25,7 +24,6 @@ func move(speed):
 		directionIndicator = creature.global_position + collision.normal * 100 
 		directionIndicatorVelocity = collision.normal
 		
-	
 func _on_Timer_timeout():
 	directionIndicatorVelocity = Vector2(rand_range(-1,1), rand_range(-1,1)).normalized()
 	
