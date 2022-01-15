@@ -12,10 +12,7 @@ func _physics_process(delta):
 
 func _on_Body_area_entered(area):
 	var collider = area.get_parent()
-	if collider.is_in_group("Currency"):
-		PlayerStats.change_currency(1)
-
-	if collider.is_in_group("Enemies"):
+	if collider.is_in_group("Creatures"):
 		Stats.change_health(-collider.Stats.strength)
 
 func _on_stats_no_health():

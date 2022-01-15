@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 42.19
 
-[node name="Currency" type="Node2D"]
+[node name="Currency" type="Node2D" groups=["Currency"]]
 script = ExtResource( 2 )
 
 [node name="PickupArea" type="Area2D" parent="."]
