@@ -21,3 +21,7 @@ speed = 3
 
 [node name="Movement" type="Node" parent="."]
 script = ExtResource( 3 )
+
+[node name="Body" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 11
