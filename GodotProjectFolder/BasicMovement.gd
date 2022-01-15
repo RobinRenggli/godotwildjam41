@@ -1,25 +1,27 @@
 extends Node
 
 onready var creature = self.get_parent()
-onready var directionIndicator = creature.global_position
+onready var directionIndicator = Vector2(Constants.window_width/2, Constants.window_height/2)
 
 var velocity = Vector2(1,0)
 var directionIndicatorVelocity = Vector2(1,0)
 
-func move(speed):
+func move(speed, Sprite):
 	directionIndicator = directionIndicator + directionIndicatorVelocity * speed * 2
 	if (out_of_bounds()):
-		directionIndicator = Vector2(rand_range(0,1024), rand_range(0,576))
+		directionIndicator = Vector2(rand_range(0, Constants.window_width), rand_range(0, Constants.window_height))
 		
 	velocity = (directionIndicator - creature.global_position).normalized()
+	Sprite.rotation = velocity.angle()
+	
 	creature.move_and_collide(velocity * speed)
 	
 func _on_Timer_timeout():
 	directionIndicatorVelocity = Vector2(rand_range(-1,1), rand_range(-1,1)).normalized()
 	
 func out_of_bounds():
-	if (directionIndicator.x > 1024 || directionIndicator.x < 0):
+	if (directionIndicator.x > Constants.window_width || directionIndicator.x < 0):
 		return true
-	if (directionIndicator.y > 576 || directionIndicator.y < 0):
+	if (directionIndicator.y > Constants.window_height || directionIndicator.y < 0):
 		return true
 	return false
