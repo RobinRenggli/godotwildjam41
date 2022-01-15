@@ -3,7 +3,7 @@ extends Node
 const spawn_height = 32
 
 var creature_map = {
-	"basic": preload("res://Creatures/Creature.tscn") 
+	"basic": preload("res://Creatures/BasicCreature.tscn") 
 }
 var cost_map = {
 	"basic": 1

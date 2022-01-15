@@ -1,15 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Modules/Stats.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemies/Enemy.gd" type="Script" id=2]
 [ext_resource path="res://Modules/Movement.tscn" type="PackedScene" id=3]
-[ext_resource path="res://icon.png" type="Texture" id=4]
 [ext_resource path="res://BasicMovement.gd" type="Script" id=5]
 
-[node name="Enemy" type="KinematicBody2D"]
+[node name="Enemy" type="KinematicBody2D" groups=["Enemies"]]
 script = ExtResource( 2 )
 
-[node name="Body" type="Area2D" parent="." groups=["Enemies"]]
+[node name="Body" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 7
 
@@ -22,7 +21,5 @@ speed = 2
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
-modulate = Color( 0.811765, 0.12549, 0.12549, 1 )
-texture = ExtResource( 4 )
 
 [connection signal="area_entered" from="Body" to="." method="_on_Body_area_entered"]
