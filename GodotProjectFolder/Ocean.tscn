@@ -11,6 +11,7 @@ extents = Vector2( 31, 30 )
 [node name="Ocean" type="Node2D"]
 
 [node name="Creature" type="KinematicBody2D" parent="."]
+position = Vector2( 491, 270 )
 collision_layer = 4
 collision_mask = 11
 script = ExtResource( 2 )
@@ -29,3 +30,8 @@ speed = 3
 
 [node name="Movement" type="Node" parent="Creature"]
 script = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="Creature/Movement"]
+autostart = true
+
+[connection signal="timeout" from="Creature/Movement/Timer" to="Creature/Movement" method="_on_Timer_timeout"]
