@@ -28,10 +28,18 @@ func _on_Timer_timeout():
 	directionIndicatorVelocity = Vector2(rand_range(-1,1), rand_range(-1,1)).normalized()
 	
 func handle_out_of_bounds():
-	if  directionIndicator.x > Constants.window_width || directionIndicator.x < 0:
-		directionIndicatorVelocity = (Vector2(Constants.window_width/2, Constants.window_height/2)- directionIndicator).normalized()
-	if directionIndicator.y > Constants.window_height || directionIndicator.y < 0:
-		directionIndicatorVelocity = (Vector2(Constants.window_width/2, Constants.window_height/2) - directionIndicator).normalized()
+	if  directionIndicator.x > Constants.window_width:
+		if directionIndicatorVelocity.x > 0:
+			directionIndicatorVelocity.x *= -1
+	if directionIndicator.x < 0:
+		if directionIndicatorVelocity.x < 0:
+			directionIndicatorVelocity.x *= -1
+	if directionIndicator.y > Constants.window_height:
+		if directionIndicatorVelocity.y > 0:
+			directionIndicatorVelocity.y *= -1
+	if directionIndicator.y < 0:
+		if directionIndicatorVelocity.y < 0:
+			directionIndicatorVelocity.y *= -1
 
 func rotate_sprite():
 	if velocity.x > 0:
