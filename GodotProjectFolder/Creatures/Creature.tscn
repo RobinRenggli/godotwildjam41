@@ -3,7 +3,7 @@
 [ext_resource path="res://Modules/Stats.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Creatures/Creature.gd" type="Script" id=2]
 [ext_resource path="res://BasicMovement.gd" type="Script" id=3]
-[ext_resource path="res://Bacis creature draft.png" type="Texture" id=4]
+[ext_resource path="res://Creatures/Bacis creature draft.png" type="Texture" id=4]
 
 [node name="Creature" type="KinematicBody2D" groups=["Creatures"]]
 collision_layer = 4
