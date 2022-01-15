@@ -3,11 +3,14 @@ extends Node
 onready var creature = self.get_parent()
 onready var timer = $Timer
 onready var creatureSprite = creature.get_node("Sprite")
-onready var directionIndicator = Vector2(Constants.window_width/2, Constants.window_height/2)
+onready var directionIndicator = Vector2(rand_range(0, Constants.window_width), Constants.window_height/2)
 
 
 var velocity = Vector2(1,0)
 var directionIndicatorVelocity = Vector2(1,0)
+
+func _ready():
+	randomize()
 
 func move(speed):
 	directionIndicator = directionIndicator + directionIndicatorVelocity * speed * 2
