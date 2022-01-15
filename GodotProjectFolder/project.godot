@@ -14,11 +14,22 @@ config/name="RevengeOfTheFish"
 run/main_scene="res://Ocean.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Constants="*res://Constants.gd"
+
 [display]
 
 window/size/height=576
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Currency"
+2d_physics/layer_3="Creature"
+2d_physics/layer_4="Enemy"
 
 [physics]
 
