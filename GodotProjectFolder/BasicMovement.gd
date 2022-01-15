@@ -29,12 +29,10 @@ func _on_Timer_timeout():
 	
 func handle_out_of_bounds():
 	if  directionIndicator.x > Constants.window_width || directionIndicator.x < 0:
-		directionIndicatorVelocity.x *= -1
-		timer.start()
+		directionIndicatorVelocity = (Vector2(Constants.window_width/2, Constants.window_height/2)- directionIndicator).normalized()
 	if directionIndicator.y > Constants.window_height || directionIndicator.y < 0:
-		directionIndicatorVelocity.y *= -1
-		timer.start()
-	
+		directionIndicatorVelocity = (Vector2(Constants.window_width/2, Constants.window_height/2) - directionIndicator).normalized()
+
 func rotate_sprite():
 	if velocity.x > 0:
 		creatureSprite.set_flip_h(false)
