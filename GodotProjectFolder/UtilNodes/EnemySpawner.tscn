@@ -4,9 +4,6 @@
 
 [node name="EnemySpawner" type="Node"]
 script = ExtResource( 1 )
-waves = [ {
-"basic": 1
-} ]
 
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 30.0
