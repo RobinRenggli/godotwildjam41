@@ -21,8 +21,15 @@ speed = 3
 [node name="Movement" type="Node" parent="."]
 script = ExtResource( 3 )
 
+[node name="Timer" type="Timer" parent="Movement"]
+wait_time = 3.0
+autostart = true
+
 [node name="Body" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 11
 
+[connection signal="timeout" from="Movement/Timer" to="Movement" method="_on_Timer_timeout"]
+
 [connection signal="area_entered" from="Body" to="." method="_on_Body_area_entered"]
+
