@@ -1,6 +1,6 @@
 extends Node
 
-const height = 32
+const spawn_height = 32
 
 var creature_map = {
 	"basic": preload("res://Creatures/Creature.tscn") 
@@ -25,6 +25,7 @@ func _input(event):
 		spawn_creature("basic")
 
 func get_random_spawn_position():
-	var viewport = OS.window_size
-	return Vector2(rand_range(0, viewport.x),rand_range(viewport.y, viewport.y + height))
+	var x = rand_range(0, Constants.window_width)
+	var y = rand_range(Constants.window_height, Constants.window_height + spawn_height)
+	return Vector2(x, y)
 	
