@@ -1,6 +1,7 @@
 extends Node
 
 onready var creature = self.get_parent()
+onready var timer = $Timer
 onready var creatureSprite = creature.get_node("Sprite")
 onready var directionIndicator = Vector2(Constants.window_width/2, Constants.window_height/2)
 
@@ -28,8 +29,10 @@ func _on_Timer_timeout():
 func handle_out_of_bounds():
 	if  directionIndicator.x > Constants.window_width || directionIndicator.x < 0:
 		directionIndicatorVelocity.x *= -1
+		timer.start()
 	if directionIndicator.y > Constants.window_height || directionIndicator.y < 0:
 		directionIndicatorVelocity.y *= -1
+		timer.start()
 	
 func rotate_sprite():
 	if velocity.x > 0:

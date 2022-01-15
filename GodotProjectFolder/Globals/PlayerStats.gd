@@ -1,6 +1,6 @@
 extends Node
 
-var currency = 5
+var currency = 100
 
 func change_currency(amount):
 	currency += amount
