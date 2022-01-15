@@ -8,3 +8,6 @@ func _ready():
 	
 func _physics_process(delta):
 	Movement.move(self, Stats.speed * delta * Constants.delta_factor)
+
+func _on_Body_area_entered(area):
+	PlayerStats.change_currency(1)
