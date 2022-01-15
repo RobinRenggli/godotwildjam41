@@ -18,4 +18,5 @@ func _on_Body_area_entered(area):
 		Stats.change_health(-collider.Stats.strength)
 
 func _on_stats_no_health():
+	Overviewer.check_defeat()
 	self.queue_free()
