@@ -6,6 +6,8 @@
 [ext_resource path="res://BasicMovement.gd" type="Script" id=5]
 
 [node name="Enemy" type="KinematicBody2D" groups=["Enemies"]]
+collision_layer = 8
+collision_mask = 5
 script = ExtResource( 2 )
 
 [node name="Body" type="Area2D" parent="."]

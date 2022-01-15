@@ -18,6 +18,7 @@ config/icon="res://icon.png"
 
 Constants="*res://Globals/Constants.gd"
 PlayerStats="*res://Globals/PlayerStats.gd"
+Overviewer="*res://Globals/Overviewer.gd"
 
 [display]
 
