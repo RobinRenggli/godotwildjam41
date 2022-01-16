@@ -6,8 +6,13 @@ signal evolve_creature(creature)
 var creature_map = {
 	"basic": preload("res://Creatures/BasicCreature.tscn") 
 }
-var cost_map = {
-	"basic": 1
+var stats_map = {
+	"basic": {
+		"cost": 1,
+		"health": 4,
+		"strength": 1,
+		"speed": 3
+	}
 }
 var xp_map = {
 	"basic": 0

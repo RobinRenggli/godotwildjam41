@@ -10,9 +10,8 @@ func check_defeat():
 		get_tree().reload_current_scene()
 		PlayerStats.reset_currency()
 
-func _input(event):
-	if Input.is_action_just_pressed("pause"):
-		get_tree().paused = not get_tree().paused
-
 func pause_game():
 	get_tree().paused = true
+
+func resume_game():
+	get_tree().paused = false

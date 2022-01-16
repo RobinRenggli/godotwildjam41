@@ -3,7 +3,7 @@ extends Node
 const spawn_height = 32
 
 func spawn_creature(creature):
-	var cost = CreatureInfo.cost_map[creature]
+	var cost = CreatureInfo.stats_map[creature]["cost"]
 	
 	if PlayerStats.currency >= cost: 
 		var spawned_creature = CreatureInfo.creature_map[creature].instance()
