@@ -2,7 +2,7 @@ extends Node
 
 var waves = [
 	{
-		"basic": 2
+		"basic": 1
 	},
 ]
 
