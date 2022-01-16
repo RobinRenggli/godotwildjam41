@@ -2,24 +2,33 @@ extends Node
 
 export var xp_increase_per_lvl = 5
 signal evolve_creature(creature)
+var creature_map
+var stats_map
+var xp_map
+var needed_xp_map
 
-var creature_map = {
+func _ready():
+	reset()
+
+func reset():
+	creature_map = {
 	"basic": preload("res://Creatures/BasicCreature.tscn") 
-}
-var stats_map = {
-	"basic": {
-		"cost": 1,
-		"health": 4,
-		"strength": 1,
-		"speed": 3
 	}
-}
-var xp_map = {
-	"basic": 0
-}
-var needed_xp_map = {
-	"basic": 5
-}
+	stats_map = {
+		"basic": {
+			"cost": 1,
+			"health": 4,
+			"strength": 1,
+			"speed": 3
+		}
+	}
+	xp_map = {
+		"basic": 0
+	}
+	needed_xp_map = {
+		"basic": 5
+	}
+	
 
 func increase_experience(creature, amount):
 	var xp = xp_map[creature]

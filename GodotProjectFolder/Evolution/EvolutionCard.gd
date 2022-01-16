@@ -2,8 +2,7 @@ extends PanelContainer
 
 export (Dictionary) var stat_changes
 export (String) var description
-export (Array, Resource) var effects
-var creature
+var type
 
 signal evolution_selected()
 
@@ -21,13 +20,13 @@ func _on_EvolutionCard_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if stat_changes != null:
 			evolve_stats()
-		for effect in effects:
-			effect.execute(creature)
+		for effect in $Effects.get_children():
+			effect.execute(type)
 		emit_signal("evolution_selected")
 
 func evolve_stats():
 	for key in stat_changes.keys():
-		CreatureInfo.stats_map[creature][key] += stat_changes[key]
+		CreatureInfo.stats_map[type][key] += stat_changes[key]
 
 func format_number(number):
 	if (number >= 0):
