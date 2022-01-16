@@ -103,7 +103,6 @@ position = Vector2( 2, 0 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -1.52834 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
 
@@ -115,14 +114,12 @@ anims/float = SubResource( 3 )
 [node name="Flare" type="Sprite" parent="."]
 modulate = Color( 1, 0.913725, 0, 1 )
 material = SubResource( 4 )
-position = Vector2( 0, -1.52834 )
 scale = Vector2( 0.0390625, 0.0351562 )
 texture = ExtResource( 4 )
 script = ExtResource( 3 )
 
 [node name="Particles2D" type="CPUParticles2D" parent="."]
 material = SubResource( 5 )
-position = Vector2( 0, -1.52834 )
 amount = 2
 texture = ExtResource( 5 )
 emission_shape = 2
