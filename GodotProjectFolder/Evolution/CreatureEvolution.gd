@@ -5,6 +5,7 @@ export (Array, Resource) var cards = []
 var Random = RandomNumberGenerator.new()
 
 func _ready():
+	randomize()
 	visible = false
 	CreatureInfo.connect("evolve_creature", self, "_on_evolve_creature")
 
