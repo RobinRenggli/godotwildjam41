@@ -18,6 +18,7 @@ var needed_xp_map = {
 
 func increase_experience(creature, amount):
 	var xp = xp_map[creature]
+	print(creature + "gained experience")
 	var needed_xp = needed_xp_map[creature]
 	xp += amount
 	if xp >= needed_xp:
