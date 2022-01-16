@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/floaty_32.png-eeee3dfdfdc4e3c8d1bf92c98d37b8f5.stex"
+path="res://.import/Background.png-d346e9ce37c7294bb8a0c89de5d380cd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Currency/floaty_32.png"
-dest_files=[ "res://.import/floaty_32.png-eeee3dfdfdc4e3c8d1bf92c98d37b8f5.stex" ]
+source_file="res://Background.png"
+dest_files=[ "res://.import/Background.png-d346e9ce37c7294bb8a0c89de5d380cd.stex" ]
 
 [params]
 

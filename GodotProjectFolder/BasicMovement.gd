@@ -3,6 +3,8 @@ extends Node
 onready var creature = self.get_parent()
 onready var timer = $Timer
 onready var creatureSprite = creature.get_node("Sprite")
+onready var creatureCollisionBox = creature.get_node("CollisionPolygon2D")
+onready var creatureHitBox = creature.get_node("Body/CollisionPolygon2D")
 onready var directionIndicator = Vector2(rand_range(0, Constants.window_width), Constants.window_height/2)
 
 var velocity = Vector2(1,0)
@@ -17,6 +19,7 @@ func move(speed):
 	
 	velocity = (directionIndicator - creature.global_position).normalized()
 	rotate_sprite()
+	rotate_collision_boxes()
 	
 	var collision = creature.move_and_collide(velocity * speed)
 	
@@ -48,3 +51,15 @@ func rotate_sprite():
 	else:
 		creatureSprite.set_flip_h(true)
 		creatureSprite.rotation = (velocity * -1).angle()
+		
+func rotate_collision_boxes():
+	if velocity.x > 0:
+		creatureCollisionBox.scale = Vector2(1,1)
+		creatureHitBox.scale = Vector2(1,1)
+		creatureCollisionBox.rotation = velocity.angle()
+		creatureHitBox.rotation = velocity.angle()
+	else:
+		creatureCollisionBox.scale = Vector2(-1,1)
+		creatureHitBox.scale = Vector2(-1,1)
+		creatureCollisionBox.rotation = (velocity * -1).angle()
+		creatureHitBox.rotation = (velocity * -1).angle()

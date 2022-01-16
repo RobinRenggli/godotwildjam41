@@ -13,9 +13,6 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="."]
 
 [node name="Stats" parent="." instance=ExtResource( 1 )]
-max_health = 4
-strength = 1
-speed = 3
 
 [node name="Movement" parent="." instance=ExtResource( 3 )]
 script = ExtResource( 5 )

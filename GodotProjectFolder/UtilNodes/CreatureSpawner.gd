@@ -2,18 +2,11 @@ extends Node
 
 const spawn_height = 32
 
-var creature_map = {
-	"basic": preload("res://Creatures/BasicCreature.tscn") 
-}
-var cost_map = {
-	"basic": 1
-}
-
 func spawn_creature(creature):
-	var cost = cost_map[creature]
+	var cost = CreatureInfo.stats_map[creature]["cost"]
 	
 	if PlayerStats.currency >= cost: 
-		var spawned_creature = creature_map[creature].instance()
+		var spawned_creature = CreatureInfo.creature_map[creature].instance()
 		spawned_creature.global_position = get_random_spawn_position()
 		get_node("/root/Ocean").add_child(spawned_creature)
 		PlayerStats.change_currency(-cost)
@@ -21,7 +14,6 @@ func spawn_creature(creature):
 # TODO: Silvan: remove once Spawn UI is implemented
 func _input(event):
 	if Input.is_action_just_pressed("spawn"):
-		print("pressed")
 		spawn_creature("basic")
 
 func get_random_spawn_position():
