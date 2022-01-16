@@ -14,10 +14,11 @@ func _physics_process(delta):
 func _on_Body_area_entered(area):
 	var collider = area.get_parent()
 	if collider.is_in_group("Creatures"):
-		last_collider = collider  
+		last_collider = collider.type
 		Stats.change_health(-collider.Stats.strength)
 
 func _on_stats_no_health():
 	Overviewer.check_defeat()
-	CreatureInfo.increase_experience(last_collider.type, 1)
-	get_node("/root/Ocean").remove_child(self)
+	CreatureInfo.increase_experience(last_collider, 1)
+	#get_node("/root/Ocean").remove_child(self)
+	self.queue_free()

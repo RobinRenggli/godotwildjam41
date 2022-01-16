@@ -25,5 +25,6 @@ func _on_Body_area_entered(area):
 func _on_stats_no_health():
 	Overviewer.check_defeat()
 	#CreatureInfo.increase_experience(last_collider.type, 1)
-	get_node("/root/Ocean").remove_child(self)
+	#get_node("/root/Ocean").remove_child(self)
+	self.queue_free()
 

@@ -1,7 +1,8 @@
 extends PanelContainer
 
 export (Dictionary) var stat_changes
-export (String) var description 
+export (String) var description
+export (Array, Resource) var effects
 var creature
 
 signal evolution_selected()
@@ -20,6 +21,8 @@ func _on_EvolutionCard_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if stat_changes != null:
 			evolve_stats()
+		for effect in effects:
+			effect.execute(creature)
 		emit_signal("evolution_selected")
 
 func evolve_stats():

@@ -2,8 +2,8 @@ extends Node
 
 var waves = [
 	{
-		"basic": 1
-	}
+		"basic": 2
+	},
 ]
 
 var wave_number = 0
