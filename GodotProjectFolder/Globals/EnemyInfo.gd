@@ -8,12 +8,14 @@ var stats_map = {
 	"basic": {
 		"health": 4,
 		"strength": 1,
-		"speed": 3
+		"speed": 3,
+		"movepattern": "basic"
 	},
 	"barrel": {
 		"health": 10,
 		"strength": 2,
-		"speed": 1
+		"speed": 1,
+		"movepattern": "basic"
 	},
 }
 var multiplier_map = {

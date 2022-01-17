@@ -19,7 +19,7 @@ func reset():
 			"cost": 1,
 			"health": 4,
 			"strength": 1,
-			"speed": 3
+			"speed": 3,
 			"movepattern": "basic"
 		}
 	}
