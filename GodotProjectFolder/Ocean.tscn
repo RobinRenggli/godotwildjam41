@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://UtilNodes/CreatureSpawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UtilNodes/CurrencySpawner.tscn" type="PackedScene" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://Evolution/CreatureEvolution.tscn" type="PackedScene" id=6]
 [ext_resource path="res://—Pngtree—glowing light effect with white_6271113.png" type="Texture" id=7]
 [ext_resource path="res://Light2D.gd" type="Script" id=8]
-[ext_resource path="res://Creatures/BasicCreature.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Evolution/Cards/SpeedIncrease.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Evolution/Cards/AllStatsAndCost.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Evolution/Cards/HaiGroundMovement.tscn" type="PackedScene" id=12]
@@ -68,6 +67,3 @@ texture = ExtResource( 7 )
 color = Color( 0, 0.6, 1, 1 )
 energy = 2.0
 script = ExtResource( 8 )
-
-[node name="Creature" parent="." instance=ExtResource( 9 )]
-position = Vector2( 488, 291 )
