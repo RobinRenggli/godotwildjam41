@@ -5,6 +5,7 @@ export (Array, Resource) var cards = []
 var Random = RandomNumberGenerator.new()
 
 func _ready():
+	randomize()
 	visible = false
 	CreatureInfo.connect("evolve_creature", self, "_on_evolve_creature")
 
@@ -14,7 +15,7 @@ func _on_evolve_creature(creature):
 	for i in range(cards_shown):
 		var card = cards[Random.randi_range(0, cards.size() - 1)].instance()
 		card.connect("evolution_selected", self, "_on_evolution_selected")
-		card.creature = creature
+		card.type = creature
 		$CardContainer.add_child(card)
 
 func _on_evolution_selected():

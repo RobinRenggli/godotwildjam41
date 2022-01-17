@@ -9,6 +9,7 @@ var last_collider
 
 func _ready():
 	Stats.connect("no_health", self, "_on_stats_no_health")
+	Stats.initialize(EnemyInfo.stats_map[type])
 	
 func _physics_process(delta):
 	Movement.move(Stats.speed * delta * Constants.delta_factor)
