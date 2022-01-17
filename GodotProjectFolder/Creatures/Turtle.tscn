@@ -15,5 +15,3 @@ polygon = PoolVector2Array( 28, -21, 31, -17, 16, 18, -8, 23, -25, 14, -29, -4, 
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="4"]
 polygon = PoolVector2Array( 28, -21, 31, -17, 16, 18, -8, 23, -25, 14, -29, -4, -23, -3, -5, -16, 14, -16, 23, -22 )
-
-[node name="PickupEffects" type="Node" parent="." index="6"]

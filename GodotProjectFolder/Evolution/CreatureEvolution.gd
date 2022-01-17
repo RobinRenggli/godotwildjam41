@@ -11,7 +11,7 @@ func _ready():
 
 func _on_evolve_creature(type):
 	visible = true
-	$CreatureRect.texture = CreatureInfo.texture_map(type)
+	$CreatureRect.texture = CreatureInfo.texture_map[type]
 	Overviewer.pause_game()
 	var prev_indexes = []
 	for i in range(cards_shown):

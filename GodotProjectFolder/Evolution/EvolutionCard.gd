@@ -12,6 +12,8 @@ func _ready():
 func create_description():
 	
 	if stat_changes != null:
+		if not description.empty():
+			description += "\n\n"
 		for key in stat_changes.keys():
 			description += str(key) + ": " + format_number(stat_changes[key]) + "\n"
 	$MarginContainer/EvolutionText.text = description

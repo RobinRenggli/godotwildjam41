@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Evolution/Effects/PickupEffects/IncreaseCurrency.gd" type="Script" id=1]
+[ext_resource path="res://Evolution/Effects/IncreaseCurrency.gd" type="Script" id=1]
 
 [node name="IncreaseCurrency" type="Node"]
 script = ExtResource( 1 )

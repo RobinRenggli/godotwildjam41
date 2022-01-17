@@ -7,6 +7,7 @@ var stats_map
 var xp_map
 var needed_xp_map
 var pickup_effects
+var death_effects
 var creature_map = {
 	"swordfish": preload("res://Creatures/Swordfish.tscn"),
 	"turtle": preload("res://Creatures/Turtle.tscn"),
@@ -37,6 +38,10 @@ func reset():
 		},
 	}
 	pickup_effects = {
+		"swordfish": [],
+		"turtle": [],
+	}
+	death_effects = {
 		"swordfish": [],
 		"turtle": [],
 	}

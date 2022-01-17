@@ -13,7 +13,7 @@ var stats_map = {
 	},
 	"barrel": {
 		"health": 12,
-		"strength": 3,
+		"strength": 2,
 		"speed": 1,
 		"movepattern": "basic"
 	},

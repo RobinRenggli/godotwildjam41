@@ -7,5 +7,11 @@
 type = "swordfish"
 
 [node name="Sprite" parent="." index="0"]
-scale = Vector2( 0.1, 0.1 )
+scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Body" index="0"]
+polygon = PoolVector2Array( 61, -9, 35, -3, 18, -7, 8, -19, 6, -11, -25, -6, -24, -3, -42, -1, -58, -23, -49, 0, -59, 16, -43, 2, -23, 11, -18, 15, -20, 22, -11, 13, 19, 12, 42, 4, 33, 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="5"]
+polygon = PoolVector2Array( 61, -9, 35, -3, 18, -7, 8, -19, 6, -11, -25, -6, -24, -3, -42, -1, -58, -23, -49, 0, -59, 16, -43, 2, -23, 11, -18, 15, -20, 22, -11, 13, 19, 12, 42, 4, 33, 2 )
