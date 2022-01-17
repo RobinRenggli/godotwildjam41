@@ -1,14 +1,16 @@
 extends Node
 
 onready var creature = self.get_parent()
-onready var timer = $Timer
+onready var CollisionTimer = $CollisionTimer
 onready var creatureSprite = creature.get_node("Sprite")
 onready var creatureCollisionBox = creature.get_node("CollisionPolygon2D")
 onready var creatureHitBox = creature.get_node("Body/CollisionPolygon2D")
 onready var directionIndicator = Vector2(rand_range(0, Constants.window_width), Constants.window_height/2)
 
+
 var velocity = Vector2(1,0)
 var directionIndicatorVelocity = Vector2(1,0)
+var recent_collision = false
 
 func _ready():
 	randomize()
@@ -22,6 +24,7 @@ func move(speed):
 	var collision = creature.move_and_collide(velocity * speed)
 	
 	if collision:
+		recent_collision = true
 		collision_map(collision, movepattern)
 
 func movement_map(speed, movepattern):
@@ -33,6 +36,8 @@ func movement_map(speed, movepattern):
 func collision_map(collision, movepattern):
 	if movepattern == "basic":
 		basic_collision(collision)
+	if movepattern == "hai_ground":
+		hai_ground_collision(collision)
 
 func _on_Timer_timeout():
 	directionIndicatorVelocity = Vector2(rand_range(-1,1), rand_range(-1,1)).normalized()
@@ -80,10 +85,34 @@ func basic_collision(collision):
 	directionIndicatorVelocity = collision.normal
 	
 func hai_ground_movement(speed):
-	if creature.global_position.y != 24:
-		velocity = Vector2(0,1)
-	else:
-		if creature.global_position.x < 24:
-			velocity = Vector2(1,0)
-		if creature.global_position.x > 1000:
-			velocity = Vector2(-1,0)
+	if  creature.global_position.x > Constants.window_width:
+		if velocity.x > 0:
+			velocity *= -1
+	if creature.global_position.x < 0:
+		if velocity.x < 0:
+			velocity.x *= -1
+	if creature.global_position.y > Constants.window_height:
+		if velocity.y > 0:
+			velocity.y *= -1
+	if creature.global_position.y < 0:
+		if velocity.y < 0:
+			velocity.y *= -1
+	elif not recent_collision:
+		if creature.global_position.y > 64:
+			velocity = Vector2(0,-1)
+		elif creature.global_position.y < 32:
+			velocity = Vector2(0,1)
+		else:
+			if creature.global_position.x < 64:
+				velocity = Vector2(1, 0)
+			elif creature.global_position.x > 960:
+				velocity = Vector2(-1, 0)
+			elif velocity.y != 0:
+				velocity = Vector2(1, 0)
+			
+func hai_ground_collision(collision):
+	velocity = collision.normal
+	CollisionTimer.start(0.5)
+
+func _on_CollisionTimer_timeout():
+	recent_collision = false

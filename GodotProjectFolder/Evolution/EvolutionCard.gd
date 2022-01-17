@@ -26,11 +26,17 @@ func _on_EvolutionCard_gui_input(event):
 
 func evolve_stats():
 	for key in stat_changes.keys():
-		CreatureInfo.stats_map[type][key] += stat_changes[key]
+		if typeof(stat_changes[key]) == TYPE_STRING:
+			CreatureInfo.stats_map[type][key] = stat_changes[key]
+		elif typeof(stat_changes[key]) == TYPE_INT:
+			CreatureInfo.stats_map[type][key] += stat_changes[key]
 
 func format_number(number):
-	if (number >= 0):
-		return "+" + str(number)
+	if typeof(number) == typeof(1):
+		if (number >= 0):
+			return "+" + str(number)
+		else:
+			return "-" + str(number)
 	else:
-		return "-" + str(number)
+		return number
 	

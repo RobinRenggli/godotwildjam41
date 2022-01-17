@@ -16,3 +16,4 @@ func pause_game():
 
 func resume_game():
 	get_tree().paused = false
+ 
