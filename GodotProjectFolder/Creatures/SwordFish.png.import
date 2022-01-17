@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BasicCreature.png-cb3eb4dd62d976f74d68c16191375d9c.stex"
+path="res://.import/SwordFish.png-c7a6f1ea56189e9a8eeb16d7c73ba1e9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Creatures/BasicCreature.png"
-dest_files=[ "res://.import/BasicCreature.png-cb3eb4dd62d976f74d68c16191375d9c.stex" ]
+source_file="res://Creatures/SwordFish.png"
+dest_files=[ "res://.import/SwordFish.png-c7a6f1ea56189e9a8eeb16d7c73ba1e9.stex" ]
 
 [params]
 

@@ -9,8 +9,9 @@ func _ready():
 	visible = false
 	CreatureInfo.connect("evolve_creature", self, "_on_evolve_creature")
 
-func _on_evolve_creature(creature):
+func _on_evolve_creature(type):
 	visible = true
+	$CreatureRect.texture = CreatureInfo.texture_map(type)
 	Overviewer.pause_game()
 	var prev_indexes = []
 	for i in range(cards_shown):
@@ -20,7 +21,7 @@ func _on_evolve_creature(creature):
 		prev_indexes.append(index)
 		var card = cards[index].instance()
 		card.connect("evolution_selected", self, "_on_evolution_selected")
-		card.type = creature
+		card.type = type
 		$CardContainer.add_child(card)
 
 func _on_evolution_selected():

@@ -7,18 +7,18 @@ var enemy_map = {
 var stats_map = {
 	"basic": {
 		"health": 4,
-		"strength": 1,
+		"strength": 2,
 		"speed": 3,
 		"movepattern": "basic"
 	},
 	"barrel": {
-		"health": 10,
-		"strength": 2,
+		"health": 12,
+		"strength": 3,
 		"speed": 1,
 		"movepattern": "basic"
 	},
 }
 var multiplier_map = {
-	"basic": 1.5,
+	"basic": 1,
 	"barrel": 0.5,
 }

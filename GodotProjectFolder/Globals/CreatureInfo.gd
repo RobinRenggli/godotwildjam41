@@ -2,19 +2,24 @@ extends Node
 
 export var xp_increase_per_lvl = 5
 signal evolve_creature(creature)
-var creature_map
+
 var stats_map
 var xp_map
 var needed_xp_map
 var pickup_effects
+var creature_map = {
+	"swordfish": preload("res://Creatures/Swordfish.tscn"),
+	"turtle": preload("res://Creatures/Turtle.tscn"),
+	}
+var texture_map = {
+	"swordfish": preload("res://Creatures/SwordFish.png"),
+	"turtle": preload("res://Creatures/Turtle.png"),
+	}
 
 func _ready():
 	reset()
 
 func reset():
-	creature_map = {
-	"swordfish": preload("res://Creatures/BasicCreature.tscn") 
-	}
 	stats_map = {
 		"swordfish": {
 			"cost": 1,
@@ -25,7 +30,7 @@ func reset():
 		},
 		"turtle": {
 			"cost": 1,
-			"health": 5,
+			"health": 6,
 			"strength": 1,
 			"speed": 2,
 			"movepattern": "basic"
