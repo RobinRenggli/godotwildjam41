@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Evolution/EvolutionCard.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Evolution/Effects/AddPickupEffect.tscn" type="PackedScene" id=2]
+
+[node name="EvolutionCard" instance=ExtResource( 1 )]
+description = "Gain an additional fishy, whenever this creature collects one."
+
+[node name="AddPickupEffect" parent="Effects" index="0" instance=ExtResource( 2 )]

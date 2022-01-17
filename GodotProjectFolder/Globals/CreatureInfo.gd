@@ -6,28 +6,42 @@ var creature_map
 var stats_map
 var xp_map
 var needed_xp_map
+var pickup_effects
 
 func _ready():
 	reset()
 
 func reset():
 	creature_map = {
-	"basic": preload("res://Creatures/BasicCreature.tscn") 
+	"swordfish": preload("res://Creatures/BasicCreature.tscn") 
 	}
 	stats_map = {
-		"basic": {
+		"swordfish": {
 			"cost": 1,
-			"health": 4,
-			"strength": 1,
+			"health": 3,
+			"strength": 2,
 			"speed": 3,
 			"movepattern": "basic"
-		}
+		},
+		"turtle": {
+			"cost": 1,
+			"health": 5,
+			"strength": 1,
+			"speed": 2,
+			"movepattern": "basic"
+		},
+	}
+	pickup_effects = {
+		"swordfish": [],
+		"turtle": [],
 	}
 	xp_map = {
-		"basic": 0
+		"swordfish": 0,
+		"turtle": 0,
 	}
 	needed_xp_map = {
-		"basic": 5
+		"swordfish": 5,
+		"turtle": 5,
 	}
 
 

@@ -10,6 +10,8 @@ var last_collider
 func _ready():
 	Stats.connect("no_health", self, "_on_stats_no_health")
 	Stats.initialize(CreatureInfo.stats_map[type])
+	for pickupEffect in CreatureInfo.pickup_effects[type]:
+		$PickupEffects.add_child(pickupEffect.instance())
 	
 func _physics_process(delta):
 	Movement.move(Stats.speed * delta * Constants.delta_factor)
@@ -17,6 +19,8 @@ func _physics_process(delta):
 func _on_Body_area_entered(area):
 	var collider = area.get_parent()
 	if collider.is_in_group("Currency"):
+		for pickupEffect in $PickupEffects.get_children():
+			pickupEffect.execute()
 		PlayerStats.change_currency(1)
 		CreatureInfo.increase_experience(type, 1)
 

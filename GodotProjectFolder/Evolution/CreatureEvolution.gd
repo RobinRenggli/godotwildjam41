@@ -12,8 +12,13 @@ func _ready():
 func _on_evolve_creature(creature):
 	visible = true
 	Overviewer.pause_game()
+	var prev_indexes = []
 	for i in range(cards_shown):
-		var card = cards[Random.randi_range(0, cards.size() - 1)].instance()
+		var index = -1
+		while(index in prev_indexes or index == -1):
+			index = Random.randi_range(0, cards.size() - 1)
+		prev_indexes.append(index)
+		var card = cards[index].instance()
 		card.connect("evolution_selected", self, "_on_evolution_selected")
 		card.type = creature
 		$CardContainer.add_child(card)

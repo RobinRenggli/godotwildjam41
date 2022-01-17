@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/revenge_of_the_fish_with_intro_and_outro.mp3-1f56a0d974aeca476dd232736ed35e4b.mp3str"
+
+[deps]
+
+source_file="res://Sound/revenge_of_the_fish_with_intro_and_outro.mp3"
+dest_files=[ "res://.import/revenge_of_the_fish_with_intro_and_outro.mp3-1f56a0d974aeca476dd232736ed35e4b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
