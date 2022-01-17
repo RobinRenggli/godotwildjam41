@@ -32,12 +32,16 @@ func movement_map(speed, movepattern):
 		basic_movement(speed)
 	if movepattern == "hai_ground":
 		hai_ground_movement(speed)
+	if movepattern == "stay_together":
+		stay_together_movement(speed)
 	
 func collision_map(collision, movepattern):
 	if movepattern == "basic":
 		basic_collision(collision)
 	if movepattern == "hai_ground":
 		hai_ground_collision(collision)
+	if movepattern == "stay_together":
+		basic_collision(collision)
 
 func _on_Timer_timeout():
 	directionIndicatorVelocity = Vector2(rand_range(-1,1), rand_range(-1,1)).normalized()
@@ -113,6 +117,24 @@ func hai_ground_movement(speed):
 func hai_ground_collision(collision):
 	velocity = collision.normal
 	CollisionTimer.start(0.5)
+
+func stay_together_movement(speed):
+	directionIndicator = directionIndicator + directionIndicatorVelocity * speed * 2
+	
+	if  directionIndicator.x > Constants.window_width * 3/4:
+		if directionIndicatorVelocity.x > 0:
+			directionIndicatorVelocity.x *= -1
+	if directionIndicator.x < 0 + Constants.window_width/4:
+		if directionIndicatorVelocity.x < 0:
+			directionIndicatorVelocity.x *= -1
+	if directionIndicator.y > Constants.window_height * 3/4:
+		if directionIndicatorVelocity.y > 0:
+			directionIndicatorVelocity.y *= -1
+	if directionIndicator.y < 0 + Constants.window_height/4:
+		if directionIndicatorVelocity.y < 0:
+			directionIndicatorVelocity.y *= -1
+	
+	velocity = (directionIndicator - creature.global_position).normalized()
 
 func _on_CollisionTimer_timeout():
 	recent_collision = false

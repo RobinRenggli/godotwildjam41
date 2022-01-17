@@ -45,6 +45,7 @@ func reset():
 		"swordfish": [],
 		"turtle": [],
 	}
+
 	xp_map = {
 		"swordfish": 0,
 		"turtle": 0,
