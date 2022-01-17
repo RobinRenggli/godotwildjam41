@@ -6,14 +6,17 @@ signal evolve_creature(creature)
 var creature_map = {
 	"basic": preload("res://Creatures/BasicCreature.tscn") 
 }
+
 var stats_map = {
 	"basic": {
 		"cost": 1,
 		"health": 4,
 		"strength": 1,
-		"speed": 3
+		"speed": 3,
+		"movepattern": "basic"
 	}
 }
+
 var xp_map = {
 	"basic": 0
 }
@@ -23,7 +26,6 @@ var needed_xp_map = {
 
 func increase_experience(creature, amount):
 	var xp = xp_map[creature]
-	print(creature + "gained experience")
 	var needed_xp = needed_xp_map[creature]
 	xp += amount
 	if xp >= needed_xp:

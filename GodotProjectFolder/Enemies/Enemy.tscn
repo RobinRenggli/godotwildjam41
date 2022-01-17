@@ -24,4 +24,7 @@ script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
 
+[node name="CollisionTimer" type="Timer" parent="."]
+
 [connection signal="area_entered" from="Body" to="." method="_on_Body_area_entered"]
+[connection signal="timeout" from="CollisionTimer" to="." method="_on_CollisionTimer_timeout"]

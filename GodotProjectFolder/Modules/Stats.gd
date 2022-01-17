@@ -4,6 +4,8 @@ export (int) var max_health
 var health = max_health
 export (int) var strength
 export (int) var speed
+export (String) var movepattern
+
 signal no_health
 
 func initialize(stats):
@@ -11,8 +13,8 @@ func initialize(stats):
 	set_health(max_health)
 	set_strength(stats["strength"])
 	set_speed(stats["speed"])
+	set_movepattern(stats["movepattern"])
 	
-
 func set_health(value):
 	health = value
 	if health <= 0:
@@ -29,3 +31,5 @@ func set_strength(value):
 func set_speed(value):
 	speed = value
 
+func set_movepattern(value):
+	movepattern = value
