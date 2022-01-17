@@ -4,11 +4,17 @@ var waves = [
 	{
 		"basic": 2
 	},
+	{
+		"barrel": 1
+	},
 ]
 
 var wave_number = 0
 
 var Random = RandomNumberGenerator.new()
+
+func _ready():
+	randomize()
 
 func spawn_wave():
 	var index = Random.randi_range(0, min(wave_number, waves.size() - 1)) # 0

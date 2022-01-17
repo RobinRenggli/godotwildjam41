@@ -8,6 +8,7 @@ func check_defeat():
 	if get_tree().get_nodes_in_group("Creatures").size() <= 1:
 		# TODO: got to game over screen
 		get_tree().reload_current_scene()
+		CreatureInfo.reset()
 		PlayerStats.reset_currency()
 
 func pause_game():
@@ -15,3 +16,4 @@ func pause_game():
 
 func resume_game():
 	get_tree().paused = false
+ 
