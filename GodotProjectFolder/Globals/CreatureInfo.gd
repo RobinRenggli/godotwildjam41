@@ -23,6 +23,7 @@ func reset():
 			"movepattern": "basic"
 		}
 	}
+
 	xp_map = {
 		"basic": 0
 	}

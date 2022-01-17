@@ -9,4 +9,4 @@ func _on_Timer_timeout():
 	get_node("/root/Ocean").add_child(spawned_currency)
 
 func get_random_spawn_position():
-	return Vector2(rand_range(0, Constants.window_width),rand_range(0, Constants.window_height))
+	return Vector2(rand_range(0, Constants.window_width-64),rand_range(0, Constants.window_height-64))
