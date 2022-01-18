@@ -65,4 +65,5 @@ func increase_experience(creature, amount):
 		xp -= needed_xp
 		needed_xp_map[creature] = needed_xp + xp_increase_per_lvl
 		emit_signal("evolve_creature", creature)
+		AudioController.get_node("LevelUpSound").play()
 	xp_map[creature] = xp

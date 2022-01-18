@@ -39,6 +39,7 @@ func _on_stats_no_health():
 	Overviewer.check_defeat()
 	#CreatureInfo.increase_experience(last_collider_type, 1)
 	self.queue_free()
+	AudioController.get_node("CreatureDeathSound").play()
 
 func _on_CollisionTimer_timeout():
 	last_collider = null

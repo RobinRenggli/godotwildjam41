@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/fishy steal.wav-50b08f54fec1b80b075d79c821c346da.sample"
+
+[deps]
+
+source_file="res://Sound/fishy steal.wav"
+dest_files=[ "res://.import/fishy steal.wav-50b08f54fec1b80b075d79c821c346da.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

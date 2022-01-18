@@ -29,3 +29,4 @@ func _on_evolution_selected():
 	for card in $CardContainer.get_children():
 		card.queue_free()
 	Overviewer.resume_game()
+	AudioController.get_node("SelectEvolutionSound").play()

@@ -10,6 +10,7 @@ func spawn_creature(creature):
 		spawned_creature.global_position = get_random_spawn_position()
 		get_node("/root/Ocean").add_child(spawned_creature)
 		PlayerStats.change_currency(-cost)
+		AudioController.get_node("CreatureSpawnSound").play()
 
 # TODO: Silvan: remove once Spawn UI is implemented
 func _input(event):

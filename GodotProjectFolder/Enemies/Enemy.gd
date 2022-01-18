@@ -22,11 +22,15 @@ func _on_Body_area_entered(area):
 			CollisionTimer.start(0.25)
 			last_collider_type = collider.type
 			Stats.change_health(-collider.Stats.strength)
+			AudioController.get_node("CollisionSound").play()
+	if collider.is_in_group("Currency"):
+		AudioController.get_node("FishyStealSound").play()
 
 func _on_stats_no_health():
 	Overviewer.check_defeat()
 	CreatureInfo.increase_experience(last_collider_type, 1)
 	self.queue_free()
+	AudioController.get_node("EnemyDeathSound").play()
 
 
 func _on_CollisionTimer_timeout():
