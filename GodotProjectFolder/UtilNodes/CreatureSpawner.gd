@@ -24,3 +24,7 @@ func get_random_spawn_position():
 	var y = rand_range(Constants.window_height, Constants.window_height + spawn_height)
 	return Vector2(x, y)
 	
+
+
+func _on_Intro_finished():
+	pass # Replace with function body.

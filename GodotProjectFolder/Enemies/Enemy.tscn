@@ -3,7 +3,7 @@
 [ext_resource path="res://Modules/Stats.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemies/Enemy.gd" type="Script" id=2]
 [ext_resource path="res://Modules/Movement.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Movement.gd" type="Script" id=5]
+[ext_resource path="res://Modules/Movement.gd" type="Script" id=5]
 
 [node name="Enemy" type="KinematicBody2D" groups=["Enemies"]]
 collision_layer = 8
