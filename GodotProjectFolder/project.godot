@@ -53,6 +53,8 @@ pause={
 2d_physics/layer_2="Currency"
 2d_physics/layer_3="Creature"
 2d_physics/layer_4="Enemy"
+2d_physics/layer_5="CreatureAttacks"
+2d_physics/layer_6="EnemyAttacks"
 
 [physics]
 

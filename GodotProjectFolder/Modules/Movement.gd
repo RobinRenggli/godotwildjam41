@@ -110,7 +110,7 @@ func hai_ground_movement(speed):
 	if creature.global_position.y < 0:
 		if velocity.y < 0:
 			velocity.y *= -1
-	elif not recent_collision:
+	if not recent_collision:
 		if creature.global_position.y > 64:
 			velocity = Vector2(0,-1)
 		elif creature.global_position.y < 32:
@@ -155,7 +155,7 @@ func harvest_movement(speed):
 			if fishy.global_position.distance_to(creature.global_position) < nearest_currency.global_position.distance_to(creature.global_position):
 				nearest_currency = fishy
 
-		velocity = (nearest_currency.global_position - creature.global_position + rand_vec2()).normalized()
+		velocity = (nearest_currency.global_position - creature.global_position).normalized()
 		
 func hunt_movement(speed):
 	var enemies = get_tree().get_nodes_in_group("Enemies")
@@ -187,9 +187,6 @@ func pinball_movement(speed):
 			directionIndicatorVelocity.y *= -1
 	
 	velocity = (directionIndicator - creature.global_position).normalized()
-
-func rand_vec2():
-	return Vector2(rand_range(-1,1), rand_range(-1,1))
 
 func _on_CollisionTimer_timeout():
 	recent_collision = false
