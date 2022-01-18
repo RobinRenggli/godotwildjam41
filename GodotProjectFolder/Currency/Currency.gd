@@ -5,3 +5,4 @@ func _ready():
 
 func _on_PickupArea_area_entered(area):
 	self.queue_free()
+	AudioController.get_node("CollectFishySound").play()

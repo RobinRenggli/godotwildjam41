@@ -29,6 +29,7 @@ func spawn_wave():
 	t.queue_free()
 	wave_number += 1
 	emit_signal("wave_spawned")
+	AudioController.get_node("WaveSpawnSound").play()
 
 func spawn_enemy(enemy):
 	var spawned_enemy = EnemyInfo.enemy_map[enemy].instance()
