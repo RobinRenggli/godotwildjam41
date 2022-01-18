@@ -21,7 +21,7 @@ PlayerStats="*res://Globals/PlayerStats.gd"
 Overviewer="*res://Globals/Overviewer.gd"
 EnemyInfo="*res://Globals/EnemyInfo.gd"
 CreatureInfo="*res://Globals/CreatureInfo.gd"
-AudioController="*res://AudioController.tscn"
+AudioController="*res://UtilNodes/AudioController.tscn"
 
 [display]
 

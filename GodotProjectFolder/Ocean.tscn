@@ -9,7 +9,7 @@
 [ext_resource path="res://—Pngtree—glowing light effect with white_6271113.png" type="Texture" id=7]
 [ext_resource path="res://Light2D.gd" type="Script" id=8]
 [ext_resource path="res://WaveLabel.gd" type="Script" id=9]
-[ext_resource path="res://AudioController.tscn" type="PackedScene" id=10]
+[ext_resource path="res://UtilNodes/AudioController.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Sound/intro whooshless.wav" type="AudioStream" id=11]
 [ext_resource path="res://Sound/loop whooshless.wav" type="AudioStream" id=12]
 
