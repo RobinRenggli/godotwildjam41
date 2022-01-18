@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Creatures/Creature.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Creatures/Clownfish.png" type="Texture" id=2]
+
+[node name="Creature" instance=ExtResource( 1 )]
+type = "clownfish"
+
+[node name="Sprite" parent="." index="0"]
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Body" index="0"]
+polygon = PoolVector2Array( 18, 0, 6, -10, -20, -4, -20, 2, 2, 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="8"]
+polygon = PoolVector2Array( 18, 0, 6, -10, -20, -4, -20, 2, 2, 10 )

@@ -5,6 +5,7 @@ var health
 var strength
 var speed
 var movepattern
+onready var timer = get_parent().get_node("TimedEffects/Timer")
 
 signal no_health
 
@@ -14,6 +15,7 @@ func initialize(stats):
 	set_strength(stats["strength"])
 	set_speed(stats["speed"])
 	set_movepattern(stats["movepattern"])
+	set_timer(stats["cooldown"])
 	
 func set_health(value):
 	health = value
@@ -39,3 +41,6 @@ func set_speed(value):
 
 func set_movepattern(value):
 	movepattern = value
+
+func set_timer(value):
+	timer.start(value)

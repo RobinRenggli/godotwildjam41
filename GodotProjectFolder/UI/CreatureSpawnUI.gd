@@ -3,14 +3,12 @@ extends TextureButton
 var start_pos
 export var type = "turtle" 
 var spawner
-var creature_evolution
 var open = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	start_pos = rect_position
 	spawner = get_node("../../CreatureSpawner")
-	creature_evolution = get_node("../CreatureEvolution")
 
 
 func update_stats():

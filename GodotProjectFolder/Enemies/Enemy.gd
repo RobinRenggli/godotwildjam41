@@ -16,6 +16,9 @@ func _physics_process(delta):
 
 func _on_Body_area_entered(area):
 	var collider = area.get_parent()
+	if collider.is_in_group("Projectiles"):
+		last_collider_type = collider.type
+		Stats.change_health(-collider.damage)
 	if collider.is_in_group("Creatures"):
 		if not(last_collider == collider):
 			last_collider = collider

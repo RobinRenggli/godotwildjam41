@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://UtilNodes/CreatureSpawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UtilNodes/CurrencySpawner.tscn" type="PackedScene" id=2]
@@ -10,16 +10,18 @@
 [ext_resource path="res://Light2D.gd" type="Script" id=8]
 [ext_resource path="res://WaveLabel.gd" type="Script" id=9]
 [ext_resource path="res://UtilNodes/AudioController.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Sound/intro whooshless.wav" type="AudioStream" id=11]
+[ext_resource path="res://Sound/intro whooshless with fadeout.wav" type="AudioStream" id=11]
 [ext_resource path="res://Sound/loop whooshless.wav" type="AudioStream" id=12]
 [ext_resource path="res://fishbowl.png" type="Texture" id=13]
 [ext_resource path="res://UI/CreatureSpawnUI.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Creatures/SwordFish.png" type="Texture" id=15]
+[ext_resource path="res://Creatures/Clownfish.png" type="Texture" id=16]
 
 [sub_resource type="GDScript" id=2]
 script/source = "extends AudioStreamPlayer
 
-func _on_Intro_finished():
+
+func _on_Timer_timeout():
 	play()
 "
 
@@ -94,6 +96,11 @@ margin_left = 256.0
 margin_top = 536.0
 margin_right = 445.0
 margin_bottom = 678.0
+type = "clownfish"
+
+[node name="CreatureSprite" parent="UiElements/ClownfishSpawnUI" index="0"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 16 )
 
 [node name="TurtleSpawnUI" parent="UiElements" instance=ExtResource( 14 )]
 margin_left = 422.0
@@ -121,11 +128,17 @@ color = Color( 0, 0.6, 1, 1 )
 energy = 2.0
 script = ExtResource( 8 )
 
+[node name="AudioController" parent="." instance=ExtResource( 10 )]
+
 [node name="Intro" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 11 )
 volume_db = -10.0
 autoplay = true
+
+[node name="Timer" type="Timer" parent="Intro"]
+wait_time = 47.933
+autostart = true
 
 [node name="Loop" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
@@ -135,7 +148,8 @@ script = SubResource( 2 )
 
 [node name="AudioController" parent="." instance=ExtResource( 10 )]
 
-[connection signal="pressed" from="UiElements/TurtleSpawnUI" to="CreatureSpawner" method="_on_CreatureSpawnUI_pressed"]
 [connection signal="finished" from="Intro" to="Loop" method="_on_Intro_finished"]
+[connection signal="timeout" from="Intro/Timer" to="Loop" method="_on_Timer_timeout"]
 
+[editable path="UiElements/ClownfishSpawnUI"]
 [editable path="UiElements/SwordfishSpawnUI"]

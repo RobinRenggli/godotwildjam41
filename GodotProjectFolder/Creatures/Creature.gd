@@ -14,7 +14,9 @@ func _ready():
 		$PickupEffects.add_child(effect.instance())
 	for effect in CreatureInfo.death_effects[type]:
 		$DeathEffects.add_child(effect.instance())
-	
+	for effect in CreatureInfo.timed_effects[type]:
+		$TimedEffects.add_child(effect.instance())
+		
 func _physics_process(delta):
 	Movement.move(Stats.speed * delta * Constants.delta_factor)
 

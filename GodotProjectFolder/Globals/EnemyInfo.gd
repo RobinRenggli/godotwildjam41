@@ -9,13 +9,15 @@ var stats_map = {
 		"health": 4,
 		"strength": 2,
 		"speed": 3,
-		"movepattern": "basic"
+		"movepattern": "basic",
+		"cooldown": 5
 	},
 	"barrel": {
 		"health": 12,
 		"strength": 2,
 		"speed": 1,
-		"movepattern": "basic"
+		"movepattern": "basic",
+		"cooldown": 5
 	},
 }
 var multiplier_map = {

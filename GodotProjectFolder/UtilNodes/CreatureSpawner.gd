@@ -19,17 +19,7 @@ func _input(event):
 	if Input.is_action_just_pressed("spawn_turtle"):
 		spawn_creature("turtle")
 
-
 func get_random_spawn_position():
 	var x = rand_range(0, Constants.window_width)
 	var y = rand_range(Constants.window_height, Constants.window_height + spawn_height)
 	return Vector2(x, y)
-	
-
-
-func _on_Intro_finished():
-	pass # Replace with function body.
-
-
-func _on_CreatureSpawnUI_pressed():
-	pass # Replace with function body.
