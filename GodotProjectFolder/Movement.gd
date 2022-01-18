@@ -121,16 +121,16 @@ func hai_ground_collision(collision):
 func stay_together_movement(speed):
 	directionIndicator = directionIndicator + directionIndicatorVelocity * speed * 2
 	
-	if  directionIndicator.x > Constants.window_width * 3/4:
+	if  directionIndicator.x > Constants.window_width * 2/3:
 		if directionIndicatorVelocity.x > 0:
 			directionIndicatorVelocity.x *= -1
-	if directionIndicator.x < 0 + Constants.window_width/4:
+	if directionIndicator.x < 0 + Constants.window_width/3:
 		if directionIndicatorVelocity.x < 0:
 			directionIndicatorVelocity.x *= -1
-	if directionIndicator.y > Constants.window_height * 3/4:
+	if directionIndicator.y > Constants.window_height * 2/3:
 		if directionIndicatorVelocity.y > 0:
 			directionIndicatorVelocity.y *= -1
-	if directionIndicator.y < 0 + Constants.window_height/4:
+	if directionIndicator.y < 0 + Constants.window_height/3:
 		if directionIndicatorVelocity.y < 0:
 			directionIndicatorVelocity.y *= -1
 	
