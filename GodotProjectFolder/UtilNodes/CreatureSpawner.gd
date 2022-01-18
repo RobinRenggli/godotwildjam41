@@ -13,8 +13,11 @@ func spawn_creature(creature):
 
 # TODO: Silvan: remove once Spawn UI is implemented
 func _input(event):
-	if Input.is_action_just_pressed("spawn"):
-		spawn_creature("basic")
+	if Input.is_action_just_pressed("spawn_swordfish"):
+		spawn_creature("swordfish")
+	if Input.is_action_just_pressed("spawn_turtle"):
+		spawn_creature("turtle")
+
 
 func get_random_spawn_position():
 	var x = rand_range(0, Constants.window_width)

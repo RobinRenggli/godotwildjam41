@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://UtilNodes/CreatureSpawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UtilNodes/CurrencySpawner.tscn" type="PackedScene" id=2]
@@ -8,12 +8,8 @@
 [ext_resource path="res://Evolution/CreatureEvolution.tscn" type="PackedScene" id=6]
 [ext_resource path="res://—Pngtree—glowing light effect with white_6271113.png" type="Texture" id=7]
 [ext_resource path="res://Light2D.gd" type="Script" id=8]
-[ext_resource path="res://Evolution/Cards/SpeedIncrease.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Evolution/Cards/AllStatsAndCost.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Evolution/Cards/HaiGroundMovement.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Evolution/Cards/StrengthIncrease.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Evolution/Cards/InstantStrengthIncrease.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Evolution/Cards/HealthIncrease.tscn" type="PackedScene" id=15]
+[ext_resource path="res://WaveLabel.gd" type="Script" id=9]
+[ext_resource path="res://Sound/revenge_of_the_fish_with_intro_and_outro.mp3" type="AudioStream" id=16]
 
 [node name="Ocean" type="Node2D"]
 
@@ -37,7 +33,6 @@ __meta__ = {
 
 [node name="CreatureEvolution" parent="UiElements" instance=ExtResource( 6 )]
 visible = false
-cards = [ ExtResource( 15 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 12 ) ]
 
 [node name="UiControl" type="Control" parent="UiElements"]
 anchor_right = 1028.0
@@ -45,6 +40,16 @@ anchor_bottom = 576.0
 margin_right = -1.05164e+06
 margin_bottom = -331200.0
 mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WaveLabel" type="Label" parent="UiElements/UiControl"]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 64.0
+margin_bottom = 46.0
+script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -67,3 +72,9 @@ texture = ExtResource( 7 )
 color = Color( 0, 0.6, 1, 1 )
 energy = 2.0
 script = ExtResource( 8 )
+
+[node name="BGMusicPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 16 )
+volume_db = -10.0
+autoplay = true
