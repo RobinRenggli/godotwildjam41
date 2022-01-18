@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://UtilNodes/CreatureSpawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UtilNodes/CurrencySpawner.tscn" type="PackedScene" id=2]
@@ -10,44 +10,18 @@
 [ext_resource path="res://Light2D.gd" type="Script" id=8]
 [ext_resource path="res://WaveLabel.gd" type="Script" id=9]
 [ext_resource path="res://UtilNodes/AudioController.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Sound/intro whooshless.wav" type="AudioStream" id=11]
+[ext_resource path="res://Sound/intro whooshless with fadeout.wav" type="AudioStream" id=11]
 [ext_resource path="res://Sound/loop whooshless.wav" type="AudioStream" id=12]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends Node
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if !$Intro.playing:
-		if !$Loop.playing:
-			$Loop.play()
-	pass
-
-
-func _on_Intro_finished():
-	
-	pass # Replace with function body.
-"
 
 [sub_resource type="GDScript" id=2]
 script/source = "extends AudioStreamPlayer
 
-func _on_Intro_finished():
+
+func _on_Timer_timeout():
 	play()
 "
 
 [node name="Ocean" type="Node2D"]
-script = SubResource( 1 )
 
 [node name="CreatureSpawner" parent="." instance=ExtResource( 1 )]
 
@@ -109,11 +83,17 @@ color = Color( 0, 0.6, 1, 1 )
 energy = 2.0
 script = ExtResource( 8 )
 
+[node name="AudioController" parent="." instance=ExtResource( 10 )]
+
 [node name="Intro" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 11 )
 volume_db = -10.0
 autoplay = true
+
+[node name="Timer" type="Timer" parent="Intro"]
+wait_time = 47.933
+autostart = true
 
 [node name="Loop" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
@@ -121,6 +101,4 @@ stream = ExtResource( 12 )
 volume_db = -10.0
 script = SubResource( 2 )
 
-[node name="AudioController" parent="." instance=ExtResource( 10 )]
-
-[connection signal="finished" from="Intro" to="Loop" method="_on_Intro_finished"]
+[connection signal="timeout" from="Intro/Timer" to="Loop" method="_on_Timer_timeout"]

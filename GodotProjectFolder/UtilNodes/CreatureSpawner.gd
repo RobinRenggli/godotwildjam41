@@ -29,3 +29,7 @@ func get_random_spawn_position():
 
 func _on_Intro_finished():
 	pass # Replace with function body.
+
+
+func _on_AnimationPlayer_animation_changed(old_name, new_name):
+	pass # Replace with function body.
