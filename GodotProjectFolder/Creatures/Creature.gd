@@ -22,7 +22,7 @@ func _on_Body_area_entered(area):
 	var collider = area.get_parent()
 	if collider.is_in_group("Currency"):
 		for pickupEffect in $PickupEffects.get_children():
-			pickupEffect.execute()
+			pickupEffect.execute(type)
 		PlayerStats.change_currency(1)
 		CreatureInfo.increase_experience(type, 1)
 
@@ -34,8 +34,8 @@ func _on_Body_area_entered(area):
 			Stats.change_health(-collider.Stats.strength)
 
 func _on_stats_no_health():
-	for pickupEffect in $PickupEffects.get_children():
-		pickupEffect.execute()
+	for deathEffect in $DeathEffects.get_children():
+		deathEffect.execute(type)
 	Overviewer.check_defeat()
 	#CreatureInfo.increase_experience(last_collider_type, 1)
 	self.queue_free()

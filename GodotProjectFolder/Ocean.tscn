@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://UtilNodes/CreatureSpawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UtilNodes/CurrencySpawner.tscn" type="PackedScene" id=2]
@@ -12,32 +12,9 @@
 [ext_resource path="res://UtilNodes/AudioController.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Sound/intro whooshless.wav" type="AudioStream" id=11]
 [ext_resource path="res://Sound/loop whooshless.wav" type="AudioStream" id=12]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends Node
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if !$Intro.playing:
-		if !$Loop.playing:
-			$Loop.play()
-	pass
-
-
-func _on_Intro_finished():
-	
-	pass # Replace with function body.
-"
+[ext_resource path="res://fishbowl.png" type="Texture" id=13]
+[ext_resource path="res://UI/CreatureSpawnUI.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Creatures/SwordFish.png" type="Texture" id=15]
 
 [sub_resource type="GDScript" id=2]
 script/source = "extends AudioStreamPlayer
@@ -47,7 +24,6 @@ func _on_Intro_finished():
 "
 
 [node name="Ocean" type="Node2D"]
-script = SubResource( 1 )
 
 [node name="CreatureSpawner" parent="." instance=ExtResource( 1 )]
 
@@ -93,16 +69,52 @@ __meta__ = {
 [node name="CurrencyLabel" type="Label" parent="UiElements/UiControl"]
 modulate = Color( 0.964706, 1, 0, 1 )
 margin_left = 32.0
-margin_top = 544.0
+margin_top = 536.0
 margin_right = 72.0
-margin_bottom = 558.0
+margin_bottom = 550.0
+text = "4"
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TextureRect" type="TextureRect" parent="UiElements/UiControl"]
+margin_left = -1.0
+margin_top = 510.0
+margin_right = 75.0
+margin_bottom = 567.0
+texture = ExtResource( 13 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClownfishSpawnUI" parent="UiElements" instance=ExtResource( 14 )]
+margin_left = 256.0
+margin_top = 536.0
+margin_right = 445.0
+margin_bottom = 678.0
+
+[node name="TurtleSpawnUI" parent="UiElements" instance=ExtResource( 14 )]
+margin_left = 422.0
+margin_top = 536.0
+margin_right = 611.0
+margin_bottom = 678.0
+
+[node name="SwordfishSpawnUI" parent="UiElements" instance=ExtResource( 14 )]
+margin_left = 583.0
+margin_top = 536.0
+margin_right = 772.0
+margin_bottom = 678.0
+type = "swordfish"
+
+[node name="CreatureSprite" parent="UiElements/SwordfishSpawnUI" index="0"]
+position = Vector2( 98, 77.0002 )
+scale = Vector2( 0.158333, 0.158333 )
+texture = ExtResource( 15 )
+
 [node name="Light2D" type="Light2D" parent="."]
-position = Vector2( 533, 0.999996 )
+position = Vector2( 533, 24 )
 scale = Vector2( 1.47875, 1.19146 )
 texture = ExtResource( 7 )
 color = Color( 0, 0.6, 1, 1 )
@@ -123,4 +135,7 @@ script = SubResource( 2 )
 
 [node name="AudioController" parent="." instance=ExtResource( 10 )]
 
+[connection signal="pressed" from="UiElements/TurtleSpawnUI" to="CreatureSpawner" method="_on_CreatureSpawnUI_pressed"]
 [connection signal="finished" from="Intro" to="Loop" method="_on_Intro_finished"]
+
+[editable path="UiElements/SwordfishSpawnUI"]

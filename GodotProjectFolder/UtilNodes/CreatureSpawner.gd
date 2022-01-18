@@ -29,3 +29,7 @@ func get_random_spawn_position():
 
 func _on_Intro_finished():
 	pass # Replace with function body.
+
+
+func _on_CreatureSpawnUI_pressed():
+	pass # Replace with function body.

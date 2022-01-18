@@ -2,6 +2,7 @@ extends Node
 
 export var xp_increase_per_lvl = 5
 signal evolve_creature(creature)
+signal stats_changed()
 
 var stats_map
 var xp_map
