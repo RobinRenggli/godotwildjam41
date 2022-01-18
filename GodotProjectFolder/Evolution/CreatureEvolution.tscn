@@ -1,20 +1,7 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Creatures/Turtle.png" type="Texture" id=1]
-[ext_resource path="res://Evolution/Cards/HealthIncrease.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Evolution/CreatureEvolution.gd" type="Script" id=3]
-[ext_resource path="res://Evolution/Cards/StrengthIncrease.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Evolution/Cards/SpeedIncrease.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Evolution/Cards/AllStatsAndCost.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Evolution/Cards/InstantStrengthIncrease.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Evolution/Cards/IncreaseCurrencyPickup.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Evolution/Cards/HaiGroundMovement.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Evolution/Cards/ExpOnDeath.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Evolution/Cards/StayTogetherMovement.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Evolution/Cards/HarvestMovement.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Evolution/Cards/HuntMovement.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Evolution/Cards/PinballMovement.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Evolution/Cards/BasicProjectile.tscn" type="PackedScene" id=15]
 
 [node name="CreatureEvolution" type="Control"]
 pause_mode = 2
@@ -25,7 +12,6 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-cards = [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ]
 
 [node name="Panel" type="Panel" parent="."]
 modulate = Color( 1, 1, 1, 0.392157 )

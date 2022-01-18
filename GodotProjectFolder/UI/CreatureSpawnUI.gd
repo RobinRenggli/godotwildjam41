@@ -32,4 +32,5 @@ func _on_CreatureSpawnUI_mouse_exited():
 	open = false
 
 func _on_CreatureSpawnUI_pressed():
-	spawner.spawn_creature(type)
+	if not get_tree().paused:
+		spawner.spawn_with_cost(type)

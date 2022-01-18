@@ -8,7 +8,6 @@ var waves = [
 		"barrel":1
 	}
 ]
-var wave_number = 0
 var Random = RandomNumberGenerator.new()
 signal wave_spawned
 
@@ -19,15 +18,15 @@ func spawn_wave():
 	var t = Timer.new()
 	t.set_wait_time(0.02)
 	self.add_child(t)
-	var index = Random.randi_range(0, min(wave_number, waves.size() - 1))
+	var index = Random.randi_range(0, min(Overviewer.wave, waves.size() - 1))
 	var wave = waves[index] 
 	for key in wave.keys():
-		for i in range(max(wave[key], floor(wave[key] * EnemyInfo.multiplier_map[key] * (wave_number - index)))):
+		for i in range(max(wave[key], floor(wave[key] * EnemyInfo.multiplier_map[key] * (Overviewer.wave - index)))):
 			spawn_enemy(key)
 			t.start()
 			yield(t, "timeout")
 	t.queue_free()
-	wave_number += 1
+	Overviewer.wave += 1
 	emit_signal("wave_spawned")
 	AudioController.get_node("WaveSpawnSound").play()
 

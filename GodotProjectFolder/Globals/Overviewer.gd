@@ -1,5 +1,7 @@
 extends Node
 
+var wave = 0;
+
 func _ready():
 	pause_mode = Node.PAUSE_MODE_PROCESS
 
@@ -10,6 +12,7 @@ func check_defeat():
 		get_tree().reload_current_scene()
 		CreatureInfo.reset()
 		PlayerStats.reset_currency()
+		wave = 0
 
 func pause_game():
 	get_tree().paused = true

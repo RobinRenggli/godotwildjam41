@@ -29,8 +29,8 @@ func reset():
 		"clownfish": {
 			"cost": 1,
 			"health": 2,
-			"strength": 1,
-			"speed": 4,
+			"strength": 2,
+			"speed": 5,
 			"movepattern": "basic",
 			"cooldown": 5
 		},
@@ -82,8 +82,8 @@ func increase_experience(creature, amount):
 	var xp = xp_map[creature]
 	var needed_xp = needed_xp_map[creature]
 	xp += amount
-	if xp >= needed_xp:
-		print("evolving")
+	while xp >= needed_xp:
+		needed_xp = needed_xp_map[creature]
 		xp -= needed_xp
 		needed_xp_map[creature] = needed_xp + xp_increase_per_lvl
 		emit_signal("evolve_creature", creature)
