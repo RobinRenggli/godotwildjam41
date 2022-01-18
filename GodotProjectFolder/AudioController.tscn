@@ -1,0 +1,64 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Sound/whoosh.wav" type="AudioStream" id=1]
+[ext_resource path="res://Sound/fishy spawn.wav" type="AudioStream" id=2]
+[ext_resource path="res://Sound/level up.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sound/fishy steal.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sound/select evolution.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sound/creature spawn.wav" type="AudioStream" id=6]
+[ext_resource path="res://Sound/creature death.wav" type="AudioStream" id=7]
+[ext_resource path="res://Sound/collect fishy.wav" type="AudioStream" id=8]
+[ext_resource path="res://Sound/enemy death.wav" type="AudioStream" id=9]
+[ext_resource path="res://Sound/collision.wav" type="AudioStream" id=10]
+
+[node name="AudioController" type="Node"]
+
+[node name="CollectFishySound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 8 )
+volume_db = -12.0
+
+[node name="CollisionSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 10 )
+volume_db = -12.0
+
+[node name="CreatureDeathSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 7 )
+volume_db = -12.0
+
+[node name="EnemyDeathSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 9 )
+volume_db = -12.0
+
+[node name="FishySpawnSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 2 )
+volume_db = -12.0
+
+[node name="FishyStealSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 4 )
+volume_db = -12.0
+
+[node name="LevelUpSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 3 )
+volume_db = -12.0
+
+[node name="SelectEvolutionSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 5 )
+volume_db = -12.0
+
+[node name="WaveSpawnSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 1 )
+volume_db = -8.0
+
+[node name="CreatureSpawnSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 6 )
+volume_db = -12.0
