@@ -12,32 +12,7 @@
 [ext_resource path="res://UtilNodes/AudioController.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Sound/intro whooshless.wav" type="AudioStream" id=11]
 [ext_resource path="res://Sound/loop whooshless.wav" type="AudioStream" id=12]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends Node
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if !$Intro.playing:
-		if !$Loop.playing:
-			$Loop.play()
-	pass
-
-
-func _on_Intro_finished():
-	
-	pass # Replace with function body.
-"
+[ext_resource path="res://Evolution/Cards/BasicProjectile.tscn" type="PackedScene" id=13]
 
 [sub_resource type="GDScript" id=2]
 script/source = "extends AudioStreamPlayer
@@ -47,7 +22,6 @@ func _on_Intro_finished():
 "
 
 [node name="Ocean" type="Node2D"]
-script = SubResource( 1 )
 
 [node name="CreatureSpawner" parent="." instance=ExtResource( 1 )]
 
@@ -69,6 +43,7 @@ __meta__ = {
 
 [node name="CreatureEvolution" parent="UiElements" instance=ExtResource( 6 )]
 visible = false
+cards = [ ExtResource( 13 ), ExtResource( 13 ), ExtResource( 13 ) ]
 
 [node name="UiControl" type="Control" parent="UiElements"]
 anchor_right = 1028.0

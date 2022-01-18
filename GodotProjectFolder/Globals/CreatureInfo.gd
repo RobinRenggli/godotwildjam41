@@ -8,6 +8,7 @@ var xp_map
 var needed_xp_map
 var pickup_effects
 var death_effects
+var timed_effects
 var creature_map = {
 	"swordfish": preload("res://Creatures/Swordfish.tscn"),
 	"turtle": preload("res://Creatures/Turtle.tscn"),
@@ -27,14 +28,16 @@ func reset():
 			"health": 3,
 			"strength": 2,
 			"speed": 3,
-			"movepattern": "basic"
+			"movepattern": "basic",
+			"cooldown": 5
 		},
 		"turtle": {
 			"cost": 1,
 			"health": 6,
 			"strength": 1,
 			"speed": 2,
-			"movepattern": "basic"
+			"movepattern": "basic",
+			"cooldown": 5
 		},
 	}
 	pickup_effects = {
@@ -45,7 +48,10 @@ func reset():
 		"swordfish": [],
 		"turtle": [],
 	}
-
+	timed_effects = {
+		"swordfish": [],
+		"turtle": [],
+	}
 	xp_map = {
 		"swordfish": 0,
 		"turtle": 0,
