@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/clownfish spawn.wav-00fa4f00a756102c91ff5e4e9707c87a.sample"
+
+[deps]
+
+source_file="res://Sound/clownfish spawn.wav"
+dest_files=[ "res://.import/clownfish spawn.wav-00fa4f00a756102c91ff5e4e9707c87a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

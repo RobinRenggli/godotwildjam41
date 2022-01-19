@@ -13,7 +13,12 @@ func spawn(creature):
 	var spawned_creature = CreatureInfo.creature_map[creature].instance()
 	spawned_creature.global_position = get_random_spawn_position()
 	get_node("/root/Ocean").add_child(spawned_creature)
-	AudioController.get_node("CreatureSpawnSound").play()
+	if creature == "turtle":
+		AudioController.get_node("TurtleSpawnSound").play()
+	if creature == "swordfish":
+		AudioController.get_node("SwordfishSpawnSound").play()
+	if creature == "clownfish":
+		AudioController.get_node("ClownfishSpawnSound").play()
 
 func get_random_spawn_position():
 	var x = rand_range(0, Constants.window_width)

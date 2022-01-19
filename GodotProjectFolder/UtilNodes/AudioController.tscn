@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Sound/whoosh.wav" type="AudioStream" id=1]
 [ext_resource path="res://Sound/fishy spawn.wav" type="AudioStream" id=2]
@@ -10,6 +10,15 @@
 [ext_resource path="res://Sound/collect fishy.wav" type="AudioStream" id=8]
 [ext_resource path="res://Sound/enemy death.wav" type="AudioStream" id=9]
 [ext_resource path="res://Sound/collision.wav" type="AudioStream" id=10]
+[ext_resource path="res://Sound/bubble pop.wav" type="AudioStream" id=11]
+[ext_resource path="res://Sound/swordfish spawn.wav" type="AudioStream" id=12]
+[ext_resource path="res://Sound/Turtle death.wav" type="AudioStream" id=13]
+[ext_resource path="res://Sound/bubble shot.wav" type="AudioStream" id=14]
+[ext_resource path="res://Sound/fishbowl rise.wav" type="AudioStream" id=15]
+[ext_resource path="res://Sound/defeat.wav" type="AudioStream" id=16]
+[ext_resource path="res://Sound/clownfish death.wav" type="AudioStream" id=17]
+[ext_resource path="res://Sound/clownfish spawn.wav" type="AudioStream" id=18]
+[ext_resource path="res://Sound/fishbowl sink.wav" type="AudioStream" id=19]
 
 [node name="AudioController" type="Node"]
 
@@ -23,7 +32,7 @@ pause_mode = 2
 stream = ExtResource( 10 )
 volume_db = -12.0
 
-[node name="CreatureDeathSound" type="AudioStreamPlayer" parent="."]
+[node name="SwordfishDeathSound" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 7 )
 volume_db = -12.0
@@ -58,7 +67,43 @@ pause_mode = 2
 stream = ExtResource( 1 )
 volume_db = -8.0
 
-[node name="CreatureSpawnSound" type="AudioStreamPlayer" parent="."]
+[node name="TurtleSpawnSound" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 6 )
 volume_db = -12.0
+
+[node name="BubbleShotSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -5.0
+
+[node name="BubblePopSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -12.0
+
+[node name="ClownfishDeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+volume_db = -12.0
+
+[node name="ClownfishSpawnSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+volume_db = -10.0
+
+[node name="DefeatSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+volume_db = -12.0
+
+[node name="FishbowlRiseSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+volume_db = -12.0
+
+[node name="FishbowlSinkSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+volume_db = -12.0
+
+[node name="SwordfishSpawnSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -12.0
+
+[node name="TurtleDeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -10.0

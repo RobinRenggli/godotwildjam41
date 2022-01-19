@@ -27,9 +27,11 @@ func _process(delta):
 
 func _on_CreatureSpawnUI_mouse_entered():
 	open = true
+	AudioController.get_node("FishbowlRiseSound").play()
 
 func _on_CreatureSpawnUI_mouse_exited():
 	open = false
+	AudioController.get_node("FishbowlSinkSound").play()
 
 func _on_CreatureSpawnUI_pressed():
 	if not get_tree().paused:
