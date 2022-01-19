@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Can man 2@0.5x.png-cc7398f7f198c27e948fad4e73f3f9ec.stex"
+path="res://.import/CanEnemy.png-f2519511a1a0c81d8a109861f6f289dd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/Can man 2@0.5x.png"
-dest_files=[ "res://.import/Can man 2@0.5x.png-cc7398f7f198c27e948fad4e73f3f9ec.stex" ]
+source_file="res://Enemies/CanEnemy.png"
+dest_files=[ "res://.import/CanEnemy.png-f2519511a1a0c81d8a109861f6f289dd.stex" ]
 
 [params]
 
