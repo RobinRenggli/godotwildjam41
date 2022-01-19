@@ -1,11 +1,16 @@
 extends Node2D
 
 var velocity
-export var damage = 1
-var type
+export var heal = 1
+var creature
+onready var healed_creatures = []
+
+func _ready():
+	scale = Vector2.ZERO
 
 func _physics_process(delta):
-	global_position += (velocity * 8)
-
-func _on_Area2D_area_entered(area):
-	queue_free()
+	scale += Vector2(0.1, 0.1)
+	global_position = creature.global_position
+	
+func _on_Timer_timeout():
+	self.queue_free()
