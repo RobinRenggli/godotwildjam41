@@ -6,6 +6,7 @@
 [ext_resource path="res://Blink.gdshader" type="Shader" id=4]
 
 [sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
 shader = ExtResource( 4 )
 shader_param/flash_color = Color( 1, 0, 0, 1 )
 shader_param/flash_modifier = 0.0
