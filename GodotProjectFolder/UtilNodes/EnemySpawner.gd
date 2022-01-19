@@ -2,10 +2,10 @@ extends Node
 
 var waves = [
 	{
-		"basic": 3
+		"basic": 2
 	},
 	{
-		"barrel":1
+		"barrel": 1
 	}
 ]
 var Random = RandomNumberGenerator.new()
@@ -15,6 +15,7 @@ func _ready():
 	randomize()
 
 func spawn_wave():
+	WaveEffects.execute_effects()
 	var t = Timer.new()
 	t.set_wait_time(0.02)
 	self.add_child(t)

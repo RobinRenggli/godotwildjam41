@@ -24,6 +24,13 @@ func _on_EvolutionCard_gui_input(event):
 			evolve_stats()
 		for effect in $Effects.get_children():
 			effect.execute(type)
+		var t = Timer.new()
+		t.set_wait_time(0.001)
+		t.set_one_shot(true)
+		self.add_child(t)
+		t.start()
+		yield(t, "timeout")
+		t.queue_free()
 		emit_signal("evolution_selected")
 
 func evolve_stats():
@@ -38,7 +45,7 @@ func format_number(number):
 		if (number >= 0):
 			return "+" + str(number)
 		else:
-			return "-" + str(number)
+			return str(number)
 	else:
 		return number
 	

@@ -1,6 +1,7 @@
 extends Node
 
 var wave = 0;
+var evolutionQueue = []
 
 func _ready():
 	pause_mode = Node.PAUSE_MODE_PROCESS
