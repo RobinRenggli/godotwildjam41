@@ -6,6 +6,10 @@ var waves = [
 	},
 	{
 		"barrel": 1
+	},
+	{
+		"basic": 2,
+		"barrel": 1,
 	}
 ]
 var Random = RandomNumberGenerator.new()
@@ -22,7 +26,7 @@ func spawn_wave():
 	var index = Random.randi_range(0, min(Overviewer.wave, waves.size() - 1))
 	var wave = waves[index] 
 	for key in wave.keys():
-		for i in range(max(wave[key], floor(wave[key] * EnemyInfo.multiplier_map[key] * (Overviewer.wave - index)))):
+		for i in range(max(wave[key], floor(wave[key] + EnemyInfo.multiplier_map[key] * (Overviewer.wave - index)))):
 			spawn_enemy(key)
 			t.start()
 			yield(t, "timeout")
