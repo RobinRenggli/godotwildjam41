@@ -7,4 +7,4 @@ func _ready():
 	spawner.connect("wave_spawned", self, "_on_wave_spawned")
 
 func _on_wave_spawned():
-	text = "Wave: " + str(spawner.wave_number)
+	text = "Wave: " + str(Overviewer.wave)

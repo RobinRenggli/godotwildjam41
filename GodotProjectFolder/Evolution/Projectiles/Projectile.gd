@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var velocity
+var velocity
 export var damage = 1
 var type
 

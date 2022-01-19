@@ -1,7 +1,23 @@
 extends Control
 
 export var cards_shown = 3
-export (Array, Resource) var cards = []
+var cards = [
+	preload("res://Evolution/Cards/AllStatsAndCost.tscn"),
+	preload("res://Evolution/Cards/BasicProjectile.tscn"),
+	preload("res://Evolution/Cards/ExpOnDeath.tscn"),
+	preload("res://Evolution/Cards/HaiGroundMovement.tscn"),
+	preload("res://Evolution/Cards/HarvestMovement.tscn"),
+	preload("res://Evolution/Cards/HealthIncrease.tscn"),
+	preload("res://Evolution/Cards/HuntMovement.tscn"),
+	preload("res://Evolution/Cards/IncreaseCurrencyPickup.tscn"),
+	preload("res://Evolution/Cards/InstantStrengthIncrease.tscn"),
+	preload("res://Evolution/Cards/PinballMovement.tscn"),
+	preload("res://Evolution/Cards/SpawnCreatures.tscn"),
+	preload("res://Evolution/Cards/SpeedIncrease.tscn"),
+	preload("res://Evolution/Cards/StayTogetherMovement.tscn"),
+	preload("res://Evolution/Cards/StrengthIncrease.tscn"),
+	preload("res://Evolution/Cards/DivideXp.tscn"),
+	]
 var Random = RandomNumberGenerator.new()
 
 func _ready():
