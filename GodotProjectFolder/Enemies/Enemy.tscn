@@ -5,6 +5,7 @@
 [ext_resource path="res://Modules/Movement.tscn" type="PackedScene" id=3]
 
 [node name="Enemy" type="KinematicBody2D" groups=["Enemies"]]
+z_index = 1
 collision_layer = 8
 collision_mask = 5
 script = ExtResource( 2 )

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/clownfish death.wav-254f61a424d7e2947d809f0974abd32a.sample"
+
+[deps]
+
+source_file="res://Sound/clownfish death.wav"
+dest_files=[ "res://.import/clownfish death.wav-254f61a424d7e2947d809f0974abd32a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

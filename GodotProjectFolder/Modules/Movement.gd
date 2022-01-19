@@ -5,7 +5,7 @@ onready var CollisionTimer = $CollisionTimer
 onready var creatureSprite = creature.get_node("Sprite")
 onready var creatureCollisionBox = creature.get_node("CollisionPolygon2D")
 onready var creatureHitBox = creature.get_node("Body/CollisionPolygon2D")
-onready var directionIndicator = Vector2(rand_range(0, Constants.window_width), Constants.window_height/2)
+onready var directionIndicator = creature.global_position
 
 
 var velocity = Vector2(1,0)

@@ -4,5 +4,6 @@
 
 [node name="EvolutionCard" instance=ExtResource( 1 )]
 stat_changes = {
-"movepattern": "harvest"
+"movepattern": "harvest",
+"speed": -1
 }

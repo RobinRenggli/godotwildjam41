@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/—Pngtree—glowing light effect with white_6271113.png-cfdd2a923dcd17cd2f940d53a97b11b0.stex"
+path="res://.import/bubble_11_256.png-33bb69e0c9eef9d2e447ebdac5fb3026.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://—Pngtree—glowing light effect with white_6271113.png"
-dest_files=[ "res://.import/—Pngtree—glowing light effect with white_6271113.png-cfdd2a923dcd17cd2f940d53a97b11b0.stex" ]
+source_file="res://Evolution/Resources/bubble_11_256.png"
+dest_files=[ "res://.import/bubble_11_256.png-33bb69e0c9eef9d2e447ebdac5fb3026.stex" ]
 
 [params]
 

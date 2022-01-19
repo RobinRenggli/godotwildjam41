@@ -22,9 +22,13 @@ func _physics_process(delta):
 
 func _on_Body_area_entered(area):
 	var collider = area.get_parent()
+	if collider.is_in_group("Healing"):
+		if not(collider.healed_creatures.has(self)):
+			collider.healed_creatures.append(self)
+			Stats.change_health(collider.heal)
 	if collider.is_in_group("Currency"):
 		for pickupEffect in $PickupEffects.get_children():
-			pickupEffect.execute()
+			pickupEffect.execute(type)
 		PlayerStats.change_currency(1)
 		CreatureInfo.increase_experience(type, 1)
 
@@ -36,12 +40,17 @@ func _on_Body_area_entered(area):
 			Stats.change_health(-collider.Stats.strength)
 
 func _on_stats_no_health():
-	for pickupEffect in $PickupEffects.get_children():
-		pickupEffect.execute()
+	for deathEffect in $DeathEffects.get_children():
+		deathEffect.execute(type)
 	Overviewer.check_defeat()
 	#CreatureInfo.increase_experience(last_collider_type, 1)
 	self.queue_free()
-	AudioController.get_node("CreatureDeathSound").play()
+	if type == "turtle":
+		AudioController.get_node("TurtleDeathSound").play()
+	if type == "swordfish":
+		AudioController.get_node("SwordfishDeathSound").play()
+	if type == "clownfish":
+		AudioController.get_node("ClownfishDeathSound").play()
 
 func _on_CollisionTimer_timeout():
 	last_collider = null

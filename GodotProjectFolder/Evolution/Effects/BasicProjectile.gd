@@ -1,6 +1,6 @@
 extends Node
 
-var projectile_resource = preload("res://FriendlyProjectile.tscn")
+var projectile_resource = preload("res://Evolution/Resources/FriendlyProjectile.tscn")
 
 func execute(type, velocity):
 	var projectile = projectile_resource.instance()
@@ -8,3 +8,4 @@ func execute(type, velocity):
 	projectile.velocity = velocity
 	projectile.type = type
 	get_node("/root/Ocean").add_child(projectile)
+	AudioController.get_node("BubbleShotSound").play()
