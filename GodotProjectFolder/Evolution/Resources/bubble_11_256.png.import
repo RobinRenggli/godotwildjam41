@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bubble_11_256.png-3f9d9fcf864c079e6caebbd535dad714.stex"
+path="res://.import/bubble_11_256.png-33bb69e0c9eef9d2e447ebdac5fb3026.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Evolution/Projectiles/bubble_11_256.png"
-dest_files=[ "res://.import/bubble_11_256.png-3f9d9fcf864c079e6caebbd535dad714.stex" ]
+source_file="res://Evolution/Resources/bubble_11_256.png"
+dest_files=[ "res://.import/bubble_11_256.png-33bb69e0c9eef9d2e447ebdac5fb3026.stex" ]
 
 [params]
 

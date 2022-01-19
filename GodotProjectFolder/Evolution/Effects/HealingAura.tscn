@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Evolution/Effects/HealingAura.gd" type="Script" id=1]
+
+[node name="HealingAura" type="Node"]
+script = ExtResource( 1 )

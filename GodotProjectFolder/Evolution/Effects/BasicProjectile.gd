@@ -1,6 +1,6 @@
 extends Node
 
-var projectile_resource = preload("res://Evolution/Projectiles/FriendlyProjectile.tscn")
+var projectile_resource = preload("res://Evolution/Resources/FriendlyProjectile.tscn")
 
 func execute(type, velocity):
 	var projectile = projectile_resource.instance()
