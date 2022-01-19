@@ -1,7 +1,7 @@
 extends Node
 
 export var xp_increase_per_lvl = 5
-signal evolve_creature(creature)
+signal evolve_creature()
 signal stats_changed()
 
 var stats_map
@@ -81,11 +81,16 @@ func reset():
 func increase_experience(creature, amount):
 	var xp = xp_map[creature]
 	var needed_xp = needed_xp_map[creature]
+	var evolved = false
 	xp += amount
 	while xp >= needed_xp:
-		needed_xp = needed_xp_map[creature]
+		evolved = true
 		xp -= needed_xp
 		needed_xp_map[creature] = needed_xp + xp_increase_per_lvl
-		emit_signal("evolve_creature", creature)
-		AudioController.get_node("LevelUpSound").play()
+		needed_xp = needed_xp_map[creature]
+		Overviewer.evolutionQueue.append(creature)
+	if evolved:
+		print("Evolving " + creature)
+		emit_signal("evolve_creature")
 	xp_map[creature] = xp
+	
