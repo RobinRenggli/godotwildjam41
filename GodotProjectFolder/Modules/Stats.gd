@@ -23,7 +23,7 @@ func set_health(value):
 		emit_signal("no_health")
 	
 func change_health(amount):
-	health += amount
+	health = min(health + amount, max_health)
 	if health <= 0:
 		emit_signal("no_health")
 

@@ -6,6 +6,7 @@
 [ext_resource path="res://Creatures/TimedEffects.gd" type="Script" id=4]
 
 [node name="Creature" type="KinematicBody2D" groups=["Creatures"]]
+z_index = 1
 collision_layer = 4
 collision_mask = 11
 script = ExtResource( 2 )

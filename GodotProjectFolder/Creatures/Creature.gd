@@ -22,6 +22,10 @@ func _physics_process(delta):
 
 func _on_Body_area_entered(area):
 	var collider = area.get_parent()
+	if collider.is_in_group("Healing"):
+		if not(collider.healed_creatures.has(self)):
+			collider.healed_creatures.append(self)
+			Stats.change_health(collider.heal)
 	if collider.is_in_group("Currency"):
 		for pickupEffect in $PickupEffects.get_children():
 			pickupEffect.execute(type)
