@@ -41,7 +41,12 @@ func _on_stats_no_health():
 	Overviewer.check_defeat()
 	#CreatureInfo.increase_experience(last_collider_type, 1)
 	self.queue_free()
-	AudioController.get_node("CreatureDeathSound").play()
+	if type == "turtle":
+		AudioController.get_node("TurtleDeathSound").play()
+	if type == "swordfish":
+		AudioController.get_node("SwordfishDeathSound").play()
+	if type == "clownfish":
+		AudioController.get_node("ClownfishDeathSound").play()
 
 func _on_CollisionTimer_timeout():
 	last_collider = null

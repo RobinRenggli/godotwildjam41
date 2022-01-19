@@ -8,3 +8,4 @@ func execute(type, velocity):
 	projectile.velocity = velocity
 	projectile.type = type
 	get_node("/root/Ocean").add_child(projectile)
+	AudioController.get_node("BubbleShotSound").play()

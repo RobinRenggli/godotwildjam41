@@ -19,6 +19,7 @@ func _on_Body_area_entered(area):
 	if collider.is_in_group("Projectiles"):
 		last_collider_type = collider.type
 		Stats.change_health(-collider.damage)
+		AudioController.get_node("BubblePopSound").play()
 	if collider.is_in_group("Creatures"):
 		if not(last_collider == collider):
 			last_collider = collider

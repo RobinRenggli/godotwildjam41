@@ -13,6 +13,7 @@ func check_defeat():
 		CreatureInfo.reset()
 		PlayerStats.reset_currency()
 		wave = 0
+		AudioController.get_node("DefeatSound").play()
 
 func pause_game():
 	get_tree().paused = true
