@@ -6,6 +6,7 @@
 
 [node name="EvolutionCard" instance=ExtResource( 1 )]
 stat_changes = {
+"cooldown": 5,
 "cost": 3
 }
 description = "Spawn Fishies on Cooldown"
