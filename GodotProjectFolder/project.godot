@@ -22,6 +22,7 @@ Overviewer="*res://Globals/Overviewer.gd"
 EnemyInfo="*res://Globals/EnemyInfo.gd"
 CreatureInfo="*res://Globals/CreatureInfo.gd"
 AudioController="*res://UtilNodes/AudioController.tscn"
+WaveEffects="*res://Evolution/Effects/WaveEffects.tscn"
 
 [display]
 
