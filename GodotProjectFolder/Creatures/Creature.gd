@@ -26,6 +26,7 @@ func _on_Body_area_entered(area):
 		if not(collider.healed_creatures.has(self)):
 			collider.healed_creatures.append(self)
 			Stats.change_health(collider.heal)
+			$AnimationPlayer.play("Heal")
 	if collider.is_in_group("Currency"):
 		for pickupEffect in $PickupEffects.get_children():
 			pickupEffect.execute(type)
@@ -38,6 +39,7 @@ func _on_Body_area_entered(area):
 			CollisionTimer.start(0.25)
 			last_collider_type = collider.type
 			Stats.change_health(-collider.Stats.strength)
+			$AnimationPlayer.play("Damage")
 
 func _on_stats_no_health():
 	for deathEffect in $DeathEffects.get_children():

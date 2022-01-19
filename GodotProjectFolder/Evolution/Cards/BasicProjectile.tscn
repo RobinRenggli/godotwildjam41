@@ -5,7 +5,7 @@
 [ext_resource path="res://Evolution/Effects/BasicProjectile.tscn" type="PackedScene" id=3]
 
 [node name="EvolutionCard" instance=ExtResource( 1 )]
-description = "Shoot bubbles"
+description = "Shoot bubbles on cooldown."
 
 [node name="AddTimedEffect" parent="Effects" index="0" instance=ExtResource( 2 )]
 effect = ExtResource( 3 )

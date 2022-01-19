@@ -4,6 +4,6 @@
 [ext_resource path="res://Evolution/EvolutionCard.tscn" type="PackedScene" id=2]
 
 [node name="EvolutionCard" instance=ExtResource( 2 )]
-description = "Spawn 3X creatures of this type, where X is the current wave"
+description = "Emit a healing aura on cooldown."
 
 [node name="HealingAura" parent="Effects" index="0" instance=ExtResource( 1 )]
