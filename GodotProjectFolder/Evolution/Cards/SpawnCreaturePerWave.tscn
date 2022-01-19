@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Evolution/EvolutionCard.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Evolution/Effects/AddWaveEffect.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Evolution/Cards/SpawnCreatures.tscn" type="PackedScene" id=3]
+
+[node name="EvolutionCard" instance=ExtResource( 1 )]
+stat_changes = {
+"cost": 1
+}
+description = "Spawn one creature of this type whenever a new enemy wave spawns"
+
+[node name="AddWaveEffect" parent="Effects" index="0" instance=ExtResource( 2 )]
+effect = ExtResource( 3 )

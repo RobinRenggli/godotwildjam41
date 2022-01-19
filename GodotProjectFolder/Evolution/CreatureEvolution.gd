@@ -18,7 +18,8 @@ var cards = [
 	preload("res://Evolution/Cards/StrengthIncrease.tscn"),
 	preload("res://Evolution/Cards/DivideXp.tscn"),
 	preload("res://Evolution/Cards/SpawnCurrency.tscn"),
-	preload("res://Evolution/Cards/HealingAura.tscn")
+	preload("res://Evolution/Cards/HealingAura.tscn"),
+	preload("res://Evolution/Cards/SpawnCreaturePerWave.tscn"),
 	]
 var Random = RandomNumberGenerator.new()
 var evolution_in_progress = false
