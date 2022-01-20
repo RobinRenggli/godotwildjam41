@@ -15,7 +15,6 @@ func initialize(stats):
 	set_strength(stats["strength"])
 	set_speed(stats["speed"])
 	set_movepattern(stats["movepattern"])
-	set_timer(stats["cooldown"])
 	
 func set_health(value):
 	health = value

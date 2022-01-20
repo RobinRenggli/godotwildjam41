@@ -14,4 +14,6 @@ func execute(type):
 						creature.Stats.change_strength(stat_changes[key])
 					"speed":
 						creature.Stats.change_speed(stat_changes[key])
+					"movepattern":
+						creature.Stats.set_movepattern(stat_changes[key])
 

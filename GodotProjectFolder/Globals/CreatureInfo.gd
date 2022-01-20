@@ -32,7 +32,6 @@ func reset():
 			"strength": 2,
 			"speed": 5,
 			"movepattern": "basic",
-			"cooldown": 5
 		},
 		"swordfish": {
 			"cost": 1,
@@ -40,7 +39,6 @@ func reset():
 			"strength": 2,
 			"speed": 3,
 			"movepattern": "basic",
-			"cooldown": 5
 		},
 		"turtle": {
 			"cost": 1,
@@ -48,7 +46,6 @@ func reset():
 			"strength": 1,
 			"speed": 2,
 			"movepattern": "basic",
-			"cooldown": 5
 		},
 	}
 	pickup_effects = {
