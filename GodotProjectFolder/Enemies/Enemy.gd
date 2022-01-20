@@ -36,7 +36,10 @@ func _on_stats_no_health():
 	Overviewer.check_defeat()
 	CreatureInfo.increase_experience(last_collider_type, 1)
 	self.queue_free()
-	AudioController.get_node("EnemyDeathSound").play()
+	if type == "basic":
+		AudioController.get_node("SmallEnemyDeathSound").play()
+	if type == "barrel":
+		AudioController.get_node("BigEnemyDeathSound").play()
 
 
 func _on_CollisionTimer_timeout():
