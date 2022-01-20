@@ -10,3 +10,6 @@ func execute(type, velocity):
 		
 func get_random_spawn_position():
 	return Vector2(rand_range(32, Constants.window_width-32),rand_range(32, Constants.window_height-32))
+
+func _on_Timer_timeout():
+	execute(get_parent().get_parent().type, get_parent().get_parent().get_node("Movement").velocity)

@@ -11,6 +11,8 @@ func check_defeat():
 	if get_tree().get_nodes_in_group("Creatures").size() <= 1:
 		# TODO: got to game over screen
 		get_tree().reload_current_scene()
+		for type in CreatureInfo.creature_map.keys():
+			WaveEffects.effects_per_creature[type] = []
 		CreatureInfo.reset()
 		PlayerStats.reset_currency()
 		wave = 0

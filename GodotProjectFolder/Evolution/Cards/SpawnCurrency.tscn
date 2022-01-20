@@ -6,10 +6,10 @@
 
 [node name="EvolutionCard" instance=ExtResource( 1 )]
 stat_changes = {
-"cooldown": 5,
-"cost": 3
+"cost": 5,
+"strength": "-1"
 }
-description = "Spawn Fishies on Cooldown"
+description = "Spawn Fishies every 15 seconds."
 
 [node name="AddTimedEffect" parent="Effects" index="0" instance=ExtResource( 2 )]
 effect = ExtResource( 3 )

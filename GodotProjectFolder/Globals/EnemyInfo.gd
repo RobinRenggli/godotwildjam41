@@ -21,6 +21,6 @@ var stats_map = {
 	},
 }
 var multiplier_map = {
-	"basic": 1,
-	"barrel": 0.5,
+	"basic": 0.2,
+	"barrel": 0.4,
 }
