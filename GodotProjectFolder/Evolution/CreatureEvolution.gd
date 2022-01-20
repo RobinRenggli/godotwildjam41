@@ -22,6 +22,7 @@ var cards = [
 	preload("res://Evolution/Cards/SpawnCreaturePerWave.tscn"),
 	preload("res://Evolution/Cards/InstantHuntBoost.tscn"),
 	preload("res://Evolution/Cards/GainExpPerWave.tscn"),
+	preload("res://Evolution/Cards/IncreaseHealthReduceSpeed.tscn"),
 	]
 var Random = RandomNumberGenerator.new()
 var evolution_in_progress = false

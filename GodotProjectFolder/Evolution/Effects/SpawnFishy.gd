@@ -1,8 +1,12 @@
 extends Node
 
 var currency = preload("res://Currency/Currency.tscn")
+var sparkles = preload("res://Sparkles.tscn")
 
 func execute(type, velocity):
+	var spawn_sparkles = sparkles.instance()
+	spawn_sparkles.global_position = get_parent().get_parent().global_position
+	get_node("/root/Ocean").add_child(spawn_sparkles)
 	var spawned_currency = currency.instance()
 	spawned_currency.global_position = get_random_spawn_position()
 	get_node("/root/Ocean").add_child(spawned_currency)
