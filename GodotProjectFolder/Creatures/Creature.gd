@@ -6,6 +6,7 @@ onready var CollisionTimer = $CollisionTimer
 export var type = "name"
 var last_collider_type
 var last_collider
+var death_bubbles = preload("res://LittleBubbles.tscn")
 
 func _ready():
 	Stats.connect("no_health", self, "_on_stats_no_health")
@@ -44,6 +45,10 @@ func _on_Body_area_entered(area):
 func _on_stats_no_health():
 	for deathEffect in $DeathEffects.get_children():
 		deathEffect.execute(type)
+	var bubbles = death_bubbles.instance()
+	bubbles.global_position = global_position
+	get_node("/root/Ocean").add_child(bubbles)
+	bubbles.set_emitting(true)
 	Overviewer.check_defeat()
 	#CreatureInfo.increase_experience(last_collider_type, 1)
 	self.queue_free()

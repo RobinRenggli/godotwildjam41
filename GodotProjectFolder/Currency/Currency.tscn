@@ -121,6 +121,7 @@ script = ExtResource( 3 )
 
 [node name="Particles2D" type="CPUParticles2D" parent="."]
 material = SubResource( 5 )
+z_index = 2
 amount = 2
 texture = ExtResource( 5 )
 emission_shape = 2
