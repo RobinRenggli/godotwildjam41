@@ -1,4 +1,4 @@
 extends Node
 
-func effect():
+func execute(type):
 	PlayerStats.change_currency(10)
