@@ -23,6 +23,10 @@ var cards = [
 	preload("res://Evolution/Cards/InstantHuntBoost.tscn"),
 	preload("res://Evolution/Cards/GainExpPerWave.tscn"),
 	preload("res://Evolution/Cards/IncreaseHealthReduceSpeed.tscn"),
+	preload("res://Evolution/Cards/ExpOnDeathForOthers.tscn"),
+	preload("res://Evolution/Cards/BigBasicProjectile.tscn"),
+	preload("res://Evolution/Cards/GainCurrency.tscn"),
+	preload("res://Evolution/Effects/SpawnOtherCreature.tscn"),
 	]
 var Random = RandomNumberGenerator.new()
 var evolution_in_progress = false
