@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Evolution/EvolutionCard.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Evolution/Effects/AddDeathEffect.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Evolution/Effects/IncreaseExpForOthers.tscn" type="PackedScene" id=3]
+
+[node name="EvolutionCard" instance=ExtResource( 1 )]
+description = "Give other types 1 exp upon death."
+
+[node name="AddDeathEffect" parent="Effects" index="0" instance=ExtResource( 2 )]
+effect = ExtResource( 3 )
