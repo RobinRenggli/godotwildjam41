@@ -5,5 +5,5 @@
 [node name="EvolutionCard" instance=ExtResource( 1 )]
 stat_changes = {
 "movepattern": "pinball",
-"speed": 1
+"speed": 2
 }
