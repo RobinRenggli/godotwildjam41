@@ -15,6 +15,4 @@ func execute(type, velocity):
 func _on_Timer_timeout():
 	var creature = get_parent().get_parent()
 	var velocity = creature.get_node("Movement").velocity
-	if creature.get_node("Stats").speed < 0:
-		velocity *= -1
 	execute(creature.type, creature.get_node("Movement").velocity)
