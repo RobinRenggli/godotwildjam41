@@ -7,6 +7,7 @@ func _ready():
 		effects_per_creature[type] = []
 
 func execute_effects():
+	PlayerStats.change_currency(3)
 	for type in effects_per_creature.keys():
 		for eff in effects_per_creature[type]:
 			eff.execute(type)
