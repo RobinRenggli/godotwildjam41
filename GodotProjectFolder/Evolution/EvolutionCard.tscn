@@ -1,12 +1,20 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Evolution/EvolutionCard.gd" type="Script" id=1]
+[ext_resource path="res://Card.png" type="Texture" id=2]
+[ext_resource path="res://CoconutHouse-9YG0y.otf" type="DynamicFontData" id=3]
 
-[node name="EvolutionCard" type="PanelContainer"]
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
+
+[node name="EvolutionCard" type="Container"]
 pause_mode = 2
 margin_right = 128.0
 margin_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
 rect_min_size = Vector2( 128, 160 )
+rect_scale = Vector2( 5, 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -14,26 +22,37 @@ __meta__ = {
 
 [node name="Effects" type="Node" parent="."]
 
-[node name="Panel" type="Panel" parent="."]
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 121.0
 margin_bottom = 153.0
-mouse_filter = 2
+texture = ExtResource( 2 )
+region_rect = Rect2( 54.7935, 68.7908, 562.401, 570.291 )
+patch_margin_left = 46
+patch_margin_top = 53
+patch_margin_right = 50
+patch_margin_bottom = 46
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 121.0
-margin_bottom = 153.0
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 104.0
+margin_bottom = 135.0
 mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="EvolutionText" type="Label" parent="MarginContainer"]
-margin_top = 66.0
-margin_right = 114.0
-margin_bottom = 80.0
+[node name="EvolutionText" type="Label" parent="NinePatchRect/MarginContainer"]
+margin_top = 54.0
+margin_right = 94.0
+margin_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_colors/font_color = Color( 0.380392, 0.0745098, 0.0745098, 1 )
+custom_colors/font_color_shadow = Color( 0.615686, 0.615686, 0.615686, 1 )
+custom_fonts/font = SubResource( 1 )
 align = 1
 valign = 1
 autowrap = true
