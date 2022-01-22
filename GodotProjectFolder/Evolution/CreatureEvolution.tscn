@@ -48,10 +48,10 @@ __meta__ = {
 }
 
 [node name="CardContainer" type="HBoxContainer" parent="."]
-margin_left = 90.0
+margin_left = 187.0
 margin_top = 209.0
-margin_right = 932.0
-margin_bottom = 423.0
+margin_right = 835.0
+margin_bottom = 424.0
 mouse_filter = 2
 custom_constants/separation = 64
 alignment = 1

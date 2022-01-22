@@ -30,7 +30,7 @@ func change_strength(amount):
 	strength = max(0, strength + amount)
 
 func change_speed(amount):
-	speed = max(0, speed + amount)
+	speed = clamp(max(0, speed + amount), 1, 1000000)
 
 func set_strength(value):
 	strength = value

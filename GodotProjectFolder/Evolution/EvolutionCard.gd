@@ -37,7 +37,12 @@ func evolve_stats():
 		if typeof(stat_changes[key]) == TYPE_STRING:
 			CreatureInfo.stats_map[type][key] = stat_changes[key]
 		elif typeof(stat_changes[key]) == TYPE_INT:
-			CreatureInfo.stats_map[type][key] += stat_changes[key]
+			var initial_value = CreatureInfo.stats_map[type][key]
+			var new_value = initial_value + stat_changes[key]
+			if key == "speed" || key == "health":
+				new_value = clamp(new_value, 1, new_value)
+			else:
+				new_value = clamp(new_value, 0, new_value)
 
 func format_number(number):
 	if typeof(number) == typeof(1):
