@@ -28,6 +28,7 @@ func _on_CreatureSpawnUI_mouse_entered():
 	print("mouse enter")
 	open = true
 	AudioController.get_node("FishbowlRiseSound").play()
+	
 
 func _on_CreatureSpawnUI_mouse_exited():
 	print("mouse exit")
