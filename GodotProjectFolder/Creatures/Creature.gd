@@ -28,7 +28,6 @@ func _on_Body_area_entered(area):
 		if not(collider.healed_creatures.has(self)):
 			collider.healed_creatures.append(self)
 			Stats.change_health(collider.heal)
-			$AnimationPlayer.play("Heal")
 	if collider.is_in_group("Currency"):
 		for pickupEffect in $PickupEffects.get_children():
 			pickupEffect.execute(type)
@@ -41,13 +40,12 @@ func _on_Body_area_entered(area):
 			CollisionTimer.start(0.25)
 			last_collider_type = collider.type
 			Stats.change_health(-collider.Stats.strength)
-			$AnimationPlayer.play("Damage")
 	
 	if collider.is_in_group("Debris"):
 		Stats.change_health(-collider.strength)
 		$AnimationPlayer.play("Damage")
 		AudioController.get_node("DebrisHitSound").play()
-		
+
 func _on_stats_no_health():
 	for deathEffect in $DeathEffects.get_children():
 		deathEffect.execute(type)
@@ -57,14 +55,14 @@ func _on_stats_no_health():
 	bubbles.set_emitting(true)
 	Overviewer.check_defeat()
 	Overviewer.check_crowded()
-	#CreatureInfo.increase_experience(last_collider_type, 1)
-	self.queue_free()
 	if type == "turtle":
 		AudioController.get_node("TurtleDeathSound").play()
 	if type == "swordfish":
 		AudioController.get_node("SwordfishDeathSound").play()
 	if type == "clownfish":
 		AudioController.get_node("ClownfishDeathSound").play()
+	self.queue_free()
+
 
 func _on_CollisionTimer_timeout():
 	last_collider = null
