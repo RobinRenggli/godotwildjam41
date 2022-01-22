@@ -43,6 +43,7 @@ func evolve_stats():
 				new_value = clamp(new_value, 1, new_value)
 			else:
 				new_value = clamp(new_value, 0, new_value)
+			CreatureInfo.stats_map[type][key] = new_value
 
 func format_number(number):
 	if typeof(number) == typeof(1):
