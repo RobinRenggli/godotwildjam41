@@ -16,8 +16,15 @@ func _ready():
 	debris_timer.connect("timeout", self, "_on_debris_timer_timeout")
 
 func check_defeat():
+	var t = Timer.new()
+	t.set_wait_time(0.5)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	yield(t, "timeout")
+	t.queue_free()
 	# we check for <= 1, because check defeat is only called right before the last creature gets deleted
-	if get_tree().get_nodes_in_group("Creatures").size() <= 1:
+	if get_tree().get_nodes_in_group("Creatures").size() <= 0:
 		# TODO: got to game over screen
 		get_tree().reload_current_scene()
 		for type in CreatureInfo.creature_map.keys():
@@ -36,7 +43,7 @@ func check_crowded():
 func _on_debris_timer_timeout():
 	if wave >= 25:
 		spawn_debris()
-	if wave >= 50:
+	if wave >= 30:
 		debris_timer.set_wait_time(1)
 
 func spawn_debris():
@@ -54,4 +61,3 @@ func pause_game():
 
 func resume_game():
 	get_tree().paused = false
- 

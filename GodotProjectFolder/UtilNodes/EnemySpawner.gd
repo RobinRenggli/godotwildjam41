@@ -47,4 +47,5 @@ func get_random_spawn_position():
 	return Vector2(x, y)
 
 func _on_SpawnTimer_timeout():
+	Overviewer.check_defeat()
 	spawn_wave()

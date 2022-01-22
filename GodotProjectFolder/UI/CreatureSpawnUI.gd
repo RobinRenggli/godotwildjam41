@@ -10,7 +10,6 @@ func _ready():
 	start_pos = rect_position
 	spawner = get_node("../../CreatureSpawner")
 
-
 func update_stats():
 	$ExpCost/Cost.text = str(CreatureInfo.stats_map[type]["cost"])
 	$ExpCost/Exp.text = str(CreatureInfo.xp_map[type]) + "/" + str(CreatureInfo.needed_xp_map[type])
