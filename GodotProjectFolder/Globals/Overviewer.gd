@@ -2,6 +2,7 @@ extends Node
 
 var wave = 0;
 var evolutionQueue = []
+var crowded = false
 
 func _ready():
 	pause_mode = Node.PAUSE_MODE_PROCESS
@@ -17,6 +18,12 @@ func check_defeat():
 		PlayerStats.reset_currency()
 		wave = 0
 		AudioController.get_node("DefeatSound").play()
+
+func check_crowded():
+	if get_tree().get_nodes_in_group("Creatures").size() >= 100:
+		crowded = true
+	else:
+		crowded = false
 
 func pause_game():
 	get_tree().paused = true

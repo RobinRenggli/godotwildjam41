@@ -28,6 +28,9 @@ var cards = [
 	preload("res://Evolution/Cards/GainCurrency.tscn"),
 	preload("res://Evolution/Cards/SpawnOtherCreature.tscn"),
 	preload("res://Evolution/Cards/TemporaryStrengthBuff.tscn"),
+	preload("res://Evolution/Cards/KillForExpCard.tscn"),
+	preload("res://Evolution/Cards/SpawnBabyCard.tscn"),
+	preload("res://Evolution/Cards/MultipleEvolutionsCard.tscn"),
 	]
 var Random = RandomNumberGenerator.new()
 var evolution_in_progress = false

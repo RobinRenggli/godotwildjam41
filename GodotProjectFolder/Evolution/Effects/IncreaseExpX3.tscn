@@ -4,4 +4,4 @@
 
 [node name="IncreaseExp" type="Node"]
 script = ExtResource( 1 )
-amount = 5
+amount = 3

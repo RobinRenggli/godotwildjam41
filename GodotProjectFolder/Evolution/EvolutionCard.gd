@@ -1,4 +1,4 @@
-extends PanelContainer
+extends Container
 
 export (Dictionary) var stat_changes
 export (String) var description
@@ -16,7 +16,7 @@ func create_description():
 			description += "\n\n"
 		for key in stat_changes.keys():
 			description += str(key) + ": " + format_number(stat_changes[key]) + "\n"
-	$MarginContainer/EvolutionText.text = description
+	$NinePatchRect/MarginContainer/EvolutionText.text = description
 
 func _on_EvolutionCard_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
