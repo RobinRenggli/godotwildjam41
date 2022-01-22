@@ -7,6 +7,7 @@ var evolutionQueue = []
 var crowded = false
 var gas = false
 var debris_timer
+var game_playing = false
 
 func _ready():
 	debris_timer = Timer.new()
@@ -15,6 +16,9 @@ func _ready():
 	self.add_child(debris_timer)
 	debris_timer.start()
 	debris_timer.connect("timeout", self, "_on_debris_timer_timeout")
+
+func reset():
+	debris_timer.set_wait_time(2)
 
 func check_defeat():
 	var t = Timer.new()
@@ -26,6 +30,7 @@ func check_defeat():
 	t.queue_free()
 	# we check for <= 1, because check defeat is only called right before the last creature gets deleted
 	if get_tree().get_nodes_in_group("Creatures").size() <= 0:
+		game_playing = false
 		get_tree().change_scene_to(GameOverScreen)
 		for type in CreatureInfo.creature_map.keys():
 			WaveEffects.effects_per_creature[type] = []
@@ -41,12 +46,13 @@ func check_crowded():
 		crowded = false
 
 func _on_debris_timer_timeout():
-	if wave >= 25:
-		spawn_debris()
-	if wave >= 30:
-		debris_timer.set_wait_time(1)
-	if wave >= 35:
-		debris_timer.set_wait_time(0.5)
+	if game_playing:
+		if wave >= 25:
+			spawn_debris()
+		if wave >= 30:
+			debris_timer.set_wait_time(1)
+		if wave >= 35:
+			debris_timer.set_wait_time(0.5)
 
 func spawn_debris():
 	var debris = Debris.instance()

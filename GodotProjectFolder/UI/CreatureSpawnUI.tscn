@@ -35,7 +35,7 @@ __meta__ = {
 }
 
 [node name="Cost" type="Label" parent="ExpCost"]
-modulate = Color( 0.87451, 1, 0, 1 )
+modulate = Color( 0.894118, 0.752941, 0.0666667, 1 )
 margin_top = 11.0
 margin_right = 49.0
 margin_bottom = 28.0
@@ -74,7 +74,7 @@ __meta__ = {
 }
 
 [node name="Health" type="Label" parent="HSS"]
-modulate = Color( 0.196078, 1, 0, 1 )
+modulate = Color( 0.176471, 0.545098, 0.0862745, 1 )
 margin_top = 11.0
 margin_right = 21.0
 margin_bottom = 28.0
@@ -86,7 +86,7 @@ __meta__ = {
 }
 
 [node name="Strength" type="Label" parent="HSS"]
-modulate = Color( 1, 0, 0, 1 )
+modulate = Color( 0.568627, 0.0941176, 0.0941176, 1 )
 margin_left = 25.0
 margin_top = 11.0
 margin_right = 46.0
@@ -99,7 +99,7 @@ __meta__ = {
 }
 
 [node name="Speed" type="Label" parent="HSS"]
-modulate = Color( 1, 0.466667, 0, 1 )
+modulate = Color( 0.666667, 0.352941, 0.0784314, 1 )
 margin_left = 50.0
 margin_top = 11.0
 margin_right = 71.0
