@@ -1,11 +1,19 @@
 extends Node
 
+
+var Debris = preload("res://Debris/debris.tscn")
 var wave = 0;
 var evolutionQueue = []
 var crowded = false
+var debris_timer
 
 func _ready():
-	pause_mode = Node.PAUSE_MODE_PROCESS
+	var debris_timer = Timer.new()
+	debris_timer.set_wait_time(2)
+	debris_timer.set_one_shot(false)
+	self.add_child(debris_timer)
+	debris_timer.start()
+	debris_timer.connect("timeout", self, "_on_debris_timer_timeout")
 
 func check_defeat():
 	# we check for <= 1, because check defeat is only called right before the last creature gets deleted
@@ -24,6 +32,22 @@ func check_crowded():
 		crowded = true
 	else:
 		crowded = false
+
+func _on_debris_timer_timeout():
+	if wave >= 25:
+		spawn_debris()
+	if wave >= 50:
+		debris_timer.set_wait_time(1)
+
+func spawn_debris():
+	var debris = Debris.instance()
+	get_tree().root.get_node("Ocean").add_child(debris)
+	debris.global_position = get_random_spawn_position()
+
+func get_random_spawn_position():
+	var x = rand_range(0, Constants.window_width)
+	var y = rand_range(0, - Constants.spawn_offset)
+	return Vector2(x, y)
 
 func pause_game():
 	get_tree().paused = true

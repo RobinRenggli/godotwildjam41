@@ -41,6 +41,10 @@ func _on_Body_area_entered(area):
 			last_collider_type = collider.type
 			Stats.change_health(-collider.Stats.strength)
 			$AnimationPlayer.play("Damage")
+	
+	if collider.is_in_group("Debris"):
+		Stats.change_health(-collider.strength)
+		$AnimationPlayer.play("Damage")
 
 func _on_stats_no_health():
 	for deathEffect in $DeathEffects.get_children():
