@@ -29,6 +29,7 @@ margin_left = -51.5
 margin_top = -36.0
 margin_right = 51.5
 margin_bottom = 4.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -67,6 +68,7 @@ margin_left = -35.5
 margin_top = 20.0
 margin_right = 35.5
 margin_bottom = 60.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }

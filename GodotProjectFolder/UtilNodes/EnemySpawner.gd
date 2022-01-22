@@ -20,16 +20,6 @@ func _ready():
 	randomize()
 
 func spawn_wave():
-	Overviewer.wave += 1
-	if Overviewer.wave >= 47 && (Overviewer.wave + 3)%5 == 0 :
-		display_warning()
-	elif Overviewer.wave >= 37 && (Overviewer.wave + 3)%10 == 0 :
-		display_warning()
-	if Overviewer.wave > 50 && Overviewer.wave%5 == 0 :
-		spawn_gas()
-	elif Overviewer.wave >= 40 && Overviewer.wave%10 == 0 :
-		spawn_gas()
-	WaveEffects.execute_effects()
 	var t = Timer.new()
 	t.set_wait_time(0.02)
 	self.add_child(t)
@@ -41,6 +31,16 @@ func spawn_wave():
 			t.start()
 			yield(t, "timeout")
 	t.queue_free()
+	Overviewer.wave += 1
+	if Overviewer.wave >= 47 && (Overviewer.wave + 3)%5 == 0 :
+		display_warning()
+	elif Overviewer.wave >= 37 && (Overviewer.wave + 3)%10 == 0 :
+		display_warning()
+	if Overviewer.wave > 50 && Overviewer.wave%5 == 0 :
+		spawn_gas()
+	elif Overviewer.wave >= 40 && Overviewer.wave%10 == 0 :
+		spawn_gas()
+	WaveEffects.execute_effects()
 	emit_signal("wave_spawned")
 	AudioController.get_node("WaveSpawnSound").play()
 
