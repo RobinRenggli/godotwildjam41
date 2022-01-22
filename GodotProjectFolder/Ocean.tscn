@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://UtilNodes/CreatureSpawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UtilNodes/CurrencySpawner.tscn" type="PackedScene" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://sunlight.png" type="Texture" id=7]
 [ext_resource path="res://Light2D.gd" type="Script" id=8]
 [ext_resource path="res://WaveLabel.gd" type="Script" id=9]
-[ext_resource path="res://UtilNodes/AudioController.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Sound/intro whooshless with fadeout.wav" type="AudioStream" id=11]
 [ext_resource path="res://Sound/loop whooshless.wav" type="AudioStream" id=12]
 [ext_resource path="res://fishbowl.png" type="Texture" id=13]
@@ -379,6 +378,8 @@ scale = Vector2( 1.47875, 1.19146 )
 texture = ExtResource( 7 )
 script = ExtResource( 8 )
 
+[node name="Titlescreen" type="AudioStreamPlayer" parent="."]
+
 [node name="Intro" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 11 )
@@ -396,8 +397,6 @@ stream = ExtResource( 12 )
 volume_db = -10.0
 script = SubResource( 2 )
 
-[node name="AudioController" parent="." instance=ExtResource( 10 )]
-
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 7 )
 position = Vector2( 517.5, 278.25 )
@@ -412,6 +411,7 @@ anims/swordfish = SubResource( 11 )
 anims/turtle = SubResource( 9 )
 
 [connection signal="gui_input" from="UiElements/PollutionWarning" to="UiElements/PollutionWarning" method="_on_PollutionWarning_gui_input"]
+[connection signal="finished" from="Intro" to="Loop" method="_on_Intro_finished"]
 [connection signal="timeout" from="Intro/Timer" to="Loop" method="_on_Timer_timeout"]
 
 [editable path="UiElements/ClownfishSpawnUI"]
