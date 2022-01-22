@@ -6,3 +6,4 @@
 stat_changes = {
 "movepattern": "stay_together"
 }
+description = "Stay together! (This creature now gathers with the others in the center of the ocean.)"

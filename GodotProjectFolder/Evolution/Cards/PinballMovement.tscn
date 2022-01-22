@@ -5,5 +5,6 @@
 [node name="EvolutionCard" instance=ExtResource( 1 )]
 stat_changes = {
 "movepattern": "pinball",
-"speed": 2
+"speed": 3
 }
+description = "Bounce around! (This creature now moves in straigth lines accross the screen.) "

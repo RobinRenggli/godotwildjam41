@@ -8,7 +8,7 @@
 stat_changes = {
 "cost": 1
 }
-description = "Spawn one creature of this type whenever a new enemy wave spawns"
+description = "Spawn one creature of this type whenever a new enemy wave spawns."
 
 [node name="AddWaveEffect" parent="Effects" index="0" instance=ExtResource( 2 )]
 effect = ExtResource( 3 )

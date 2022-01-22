@@ -6,3 +6,4 @@
 stat_changes = {
 "movepattern": "hai_ground"
 }
+description = "Protect the surface! (This creature now patrols the top of the ocean.)"

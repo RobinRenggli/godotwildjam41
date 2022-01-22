@@ -159,6 +159,7 @@ func harvest_movement(speed):
 		
 func hunt_movement(speed):
 	var enemies = get_tree().get_nodes_in_group("Enemies")
+
 	if not recent_collision:
 		if enemies.empty():
 			basic_movement(speed)
@@ -169,7 +170,20 @@ func hunt_movement(speed):
 					nearest_enemy = enemy
 
 			velocity = (nearest_enemy.global_position - creature.global_position).normalized()
-
+			
+	if  creature.global_position.x > Constants.window_width:
+		if velocity.x > 0:
+			velocity *= -1
+	if creature.global_position.x < 0:
+		if velocity.x < 0:
+			velocity.x *= -1
+	if creature.global_position.y > Constants.window_height:
+		if velocity.y > 0:
+			velocity.y *= -1
+	if creature.global_position.y < 0:
+		if velocity.y < 0:
+			velocity.y *= -1
+			
 func pinball_movement(speed):
 	directionIndicator = directionIndicator + directionIndicatorVelocity * speed
 	

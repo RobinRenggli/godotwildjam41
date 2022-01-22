@@ -14,7 +14,11 @@ func create_description():
 		if not description.empty():
 			description += "\n\n"
 		for key in stat_changes.keys():
-			description += str(key) + ": " + format_number(stat_changes[key]) + "\n"
+			if key != "movepattern":
+				if stat_changes[key] > 0:
+					description += "Gain" + format_number(stat_changes[key]) + str(key) + format_number(stat_changes[key]) + ".\n"
+				elif stat_changes[key] < 0:
+					description += "Lose" + format_number(stat_changes[key]) + str(key) + format_number(stat_changes[key]) + ".\n"
 	$MarginContainer/EvolutionText.text = description
 
 func _on_EvolutionCard_gui_input(event):

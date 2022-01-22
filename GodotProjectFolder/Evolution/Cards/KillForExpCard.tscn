@@ -4,6 +4,6 @@
 [ext_resource path="res://Evolution/Effects/KillForExp.tscn" type="PackedScene" id=2]
 
 [node name="EvolutionCard" instance=ExtResource( 1 )]
-description = "Kill all creatures with this type and gain 5 XP for each"
+description = "Sacrifice all creatures of this type for 5 experience each. (If you have no other creatures, you lose!)"
 
 [node name="KillForExp" parent="Effects" index="0" instance=ExtResource( 2 )]

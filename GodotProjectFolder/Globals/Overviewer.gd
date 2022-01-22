@@ -8,7 +8,7 @@ var crowded = false
 var debris_timer
 
 func _ready():
-	var debris_timer = Timer.new()
+	debris_timer = Timer.new()
 	debris_timer.set_wait_time(2)
 	debris_timer.set_one_shot(false)
 	self.add_child(debris_timer)

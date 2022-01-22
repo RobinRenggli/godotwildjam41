@@ -7,3 +7,4 @@ stat_changes = {
 "movepattern": "harvest",
 "speed": -1
 }
+description = "Gather currency! (This creature now moves towards the closest fishy.)"
