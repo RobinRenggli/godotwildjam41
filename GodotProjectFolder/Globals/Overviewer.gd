@@ -1,6 +1,7 @@
 extends Node
 
 var Debris = preload("res://Debris/debris.tscn")
+var GameOverScreen = preload("res://GameOver.tscn")
 var wave = 0;
 var evolutionQueue = []
 var crowded = false
@@ -16,16 +17,22 @@ func _ready():
 	debris_timer.connect("timeout", self, "_on_debris_timer_timeout")
 
 func check_defeat():
+	var t = Timer.new()
+	t.set_wait_time(0.5)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	yield(t, "timeout")
+	t.queue_free()
 	# we check for <= 1, because check defeat is only called right before the last creature gets deleted
-	if get_tree().get_nodes_in_group("Creatures").size() <= 1:
-		# TODO: got to game over screen
-		get_tree().reload_current_scene()
+	if get_tree().get_nodes_in_group("Creatures").size() <= 0:
+		get_tree().change_scene_to(GameOverScreen)
 		for type in CreatureInfo.creature_map.keys():
 			WaveEffects.effects_per_creature[type] = []
 		CreatureInfo.reset()
 		PlayerStats.reset_currency()
-		wave = 0
 		AudioController.get_node("DefeatSound").play()
+		
 
 func check_crowded():
 	if get_tree().get_nodes_in_group("Creatures").size() >= 100:
@@ -36,7 +43,7 @@ func check_crowded():
 func _on_debris_timer_timeout():
 	if wave >= 25:
 		spawn_debris()
-	if wave >= 50:
+	if wave >= 30:
 		debris_timer.set_wait_time(1)
 
 func spawn_debris():
@@ -55,4 +62,3 @@ func pause_game():
 
 func resume_game():
 	get_tree().paused = false
- 

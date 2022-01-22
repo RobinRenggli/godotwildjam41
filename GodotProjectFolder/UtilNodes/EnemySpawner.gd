@@ -53,6 +53,7 @@ func spawn_gas():
 	$GasTimer.start()
 	$WaveDuration.start()
 	get_node("/root/Ocean/WasteAnimations").play(type)
+	AudioController.get_node("PollutionSound").play()
 	
 func get_random_spawn_position():
 	var x = rand_range(0, Constants.window_width)
@@ -60,6 +61,7 @@ func get_random_spawn_position():
 	return Vector2(x, y)
 
 func _on_SpawnTimer_timeout():
+	Overviewer.check_defeat()
 	spawn_wave()
 
 func _on_GasTimer_timeout():
@@ -83,6 +85,7 @@ func _on_WaveDuration_timeout():
 	pass
 	
 func display_warning():
+	AudioController.get_node("WarningSound").play()
 	var most_common_type = get_tree().get_nodes_in_group("Turtles")
 	type = "turtle"
 	if get_tree().get_nodes_in_group("Swordfish").size() > most_common_type.size():
