@@ -9,4 +9,12 @@ script = ExtResource( 1 )
 wait_time = 15.0
 autostart = true
 
+[node name="GasTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="WaveDuration" type="Timer" parent="."]
+wait_time = 30.0
+
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
+[connection signal="timeout" from="GasTimer" to="." method="_on_GasTimer_timeout"]
+[connection signal="timeout" from="WaveDuration" to="." method="_on_WaveDuration_timeout"]

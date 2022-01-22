@@ -1,10 +1,10 @@
 extends Node
 
-
 var Debris = preload("res://Debris/debris.tscn")
 var wave = 0;
 var evolutionQueue = []
 var crowded = false
+var gas = false
 var debris_timer
 
 func _ready():
@@ -41,7 +41,7 @@ func check_crowded():
 		crowded = false
 
 func _on_debris_timer_timeout():
-	if wave >= 25:
+	if wave >= 1:
 		spawn_debris()
 	if wave >= 30:
 		debris_timer.set_wait_time(1)
@@ -50,6 +50,7 @@ func spawn_debris():
 	var debris = Debris.instance()
 	get_tree().root.get_node("Ocean").add_child(debris)
 	debris.global_position = get_random_spawn_position()
+	AudioController.get_node("DebrisSpawnSound").play()
 
 func get_random_spawn_position():
 	var x = rand_range(0, Constants.window_width)

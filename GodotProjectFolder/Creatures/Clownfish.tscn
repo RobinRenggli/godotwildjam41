@@ -10,7 +10,7 @@ shader = ExtResource( 3 )
 shader_param/flash_color = Color( 1, 0, 0, 1 )
 shader_param/flash_modifier = 0.0
 
-[node name="Creature" instance=ExtResource( 1 )]
+[node name="Creature" groups=["Clownfish"] instance=ExtResource( 1 )]
 type = "clownfish"
 
 [node name="Sprite" parent="." index="0"]
