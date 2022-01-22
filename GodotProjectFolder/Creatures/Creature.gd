@@ -63,9 +63,6 @@ func _on_stats_no_health():
 		AudioController.get_node("ClownfishDeathSound").play()
 	self.queue_free()
 
-
 func _on_CollisionTimer_timeout():
 	last_collider = null
-
-
 

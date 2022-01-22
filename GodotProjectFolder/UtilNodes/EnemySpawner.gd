@@ -82,7 +82,7 @@ func _on_GasTimer_timeout():
 				c.get_node("Stats").change_health(-1)
 
 func _on_WaveDuration_timeout():
-	type = ""
+	pass
 	
 func display_warning():
 	AudioController.get_node("WarningSound").play()
