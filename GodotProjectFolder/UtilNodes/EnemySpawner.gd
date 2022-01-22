@@ -25,7 +25,7 @@ func spawn_wave():
 		display_warning()
 	elif Overviewer.wave >= 37 && (Overviewer.wave + 3)%10 == 0 :
 		display_warning()
-	if Overviewer.wave > 0 && Overviewer.wave%5 == 0 :
+	if Overviewer.wave > 50 && Overviewer.wave%5 == 0 :
 		spawn_gas()
 	elif Overviewer.wave >= 40 && Overviewer.wave%10 == 0 :
 		spawn_gas()
@@ -80,7 +80,7 @@ func _on_GasTimer_timeout():
 				c.get_node("Stats").change_health(-1)
 
 func _on_WaveDuration_timeout():
-	type = ""
+	pass
 	
 func display_warning():
 	var most_common_type = get_tree().get_nodes_in_group("Turtles")
