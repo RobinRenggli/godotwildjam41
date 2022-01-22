@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Evolution/EvolutionCard.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Evolution/Effects/IncreaseExpX5.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Evolution/Effects/IncreaseExpX3.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Evolution/Effects/AddWaveEffect.tscn" type="PackedScene" id=3]
 
 [node name="EvolutionCard" instance=ExtResource( 1 )]
-description = "Gain 5 Xp whenever an enemy wave spawns"
+description = "Gain 3 Xp whenever an enemy wave spawns"
 
 [node name="AddWaveEffect" parent="Effects" index="0" instance=ExtResource( 3 )]
 effect = ExtResource( 2 )
