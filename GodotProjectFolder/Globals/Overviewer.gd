@@ -34,7 +34,7 @@ func check_crowded():
 		crowded = false
 
 func _on_debris_timer_timeout():
-	if wave >= 1:
+	if wave >= 25:
 		spawn_debris()
 	if wave >= 50:
 		debris_timer.set_wait_time(1)
