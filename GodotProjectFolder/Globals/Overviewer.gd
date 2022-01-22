@@ -1,10 +1,10 @@
 extends Node
 
-
 var Debris = preload("res://Debris/debris.tscn")
 var wave = 0;
 var evolutionQueue = []
 var crowded = false
+var gas = false
 var debris_timer
 
 func _ready():

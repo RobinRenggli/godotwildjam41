@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://UtilNodes/CreatureSpawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UtilNodes/CurrencySpawner.tscn" type="PackedScene" id=2]
@@ -18,6 +18,8 @@
 [ext_resource path="res://Creatures/Clownfish.png" type="Texture" id=16]
 [ext_resource path="res://CrowdedWarning.gd" type="Script" id=17]
 [ext_resource path="res://CoconutHouse-9YG0y.otf" type="DynamicFontData" id=18]
+[ext_resource path="res://Card.png" type="Texture" id=19]
+[ext_resource path="res://PollutionWarning.gd" type="Script" id=20]
 
 [sub_resource type="DynamicFont" id=3]
 size = 20
@@ -31,6 +33,10 @@ font_data = ExtResource( 18 )
 size = 30
 font_data = ExtResource( 18 )
 
+[sub_resource type="DynamicFont" id=12]
+size = 20
+font_data = ExtResource( 18 )
+
 [sub_resource type="GDScript" id=2]
 script/source = "extends AudioStreamPlayer
 
@@ -38,6 +44,170 @@ script/source = "extends AudioStreamPlayer
 func _on_Timer_timeout():
 	play()
 "
+
+[sub_resource type="Shader" id=6]
+code = "shader_type canvas_item;
+
+uniform vec3 color = vec3(1, 1, 1);
+uniform int OCTAVES = 4;
+uniform float intensity = 0.5;
+
+float rand(vec2 coord){
+	return fract(sin(dot(coord, vec2(56, 78)) * 1000.0) * 1000.0);
+}
+
+float noise(vec2 coord){
+	vec2 i = floor(coord);
+	vec2 f = fract(coord);
+
+	float a = rand(i);
+	float b = rand(i + vec2(1.0, 0.0));
+	float c = rand(i + vec2(0.0, 1.0));
+	float d = rand(i + vec2(1.0, 1.0));
+
+	vec2 cubic = f * f * (3.0 - 2.0 * f);
+
+	return mix(a, b, cubic.x) + (c - a) * cubic.y * (1.0 - cubic.x) + (d - b) * cubic.x * cubic.y;
+}
+
+float fbm(vec2 coord){
+	float value = 0.0;
+	float scale = 0.5;
+
+	for(int i = 0; i < OCTAVES; i++){
+		value += noise(coord) * scale;
+		coord *= 2.0;
+		scale *= 0.5;
+	}
+	return value;
+}
+
+void fragment() {
+	vec2 coord = UV * 10.0;
+
+	vec2 motion = vec2( fbm(coord + vec2(TIME * -0.5, TIME * 0.5)) );
+
+	float final = fbm(coord + motion);
+
+	COLOR = vec4(color, final * intensity);
+}"
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = SubResource( 6 )
+shader_param/color = Vector3( 1, 1, 1 )
+shader_param/OCTAVES = 4
+shader_param/intensity = 0.0
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:material:shader_param/intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:material:shader_param/color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "clownfish"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:material:shader_param/intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 15.1, 30 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.5, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:material:shader_param/color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 30 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 1, 0.5, 0 ), Vector3( 1, 0.5, 0 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "swordfish"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:material:shader_param/intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 15.1, 29.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.8, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:material:shader_param/color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 29.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "turtle"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:material:shader_param/intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 15.1, 30 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.5, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:material:shader_param/color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 30 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1, 0 ), Vector3( 0, 1, 0 ) ]
+}
 
 [node name="Ocean" type="Node2D"]
 
@@ -157,13 +327,57 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="PollutionWarning" type="NinePatchRect" parent="UiElements"]
+pause_mode = 2
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -216.0
+margin_top = -121.0
+margin_right = 216.0
+margin_bottom = 121.0
+mouse_filter = 1
+texture = ExtResource( 19 )
+patch_margin_left = 101
+patch_margin_top = 122
+patch_margin_right = 96
+patch_margin_bottom = 120
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="UiElements/PollutionWarning"]
+margin_left = 32.0
+margin_top = 41.0
+margin_right = 400.0
+margin_bottom = 201.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UiElements/PollutionWarning/MarginContainer"]
+margin_top = 33.0
+margin_right = 368.0
+margin_bottom = 126.0
+mouse_filter = 1
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+custom_constants/shadow_offset_x = 1
+custom_fonts/font = SubResource( 12 )
+text = "WARNING!!!
+A ship just spilled waste that is very toxic to turtles. Within 3 waves, the pollution will arrive..."
+align = 1
+autowrap = true
+
 [node name="Light2D" type="Light2D" parent="."]
-position = Vector2( 531, 24 )
+position = Vector2( 536, 24 )
 scale = Vector2( 1.47875, 1.19146 )
 texture = ExtResource( 7 )
 script = ExtResource( 8 )
-
-[node name="AudioController" parent="." instance=ExtResource( 10 )]
 
 [node name="Intro" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
@@ -184,7 +398,20 @@ script = SubResource( 2 )
 
 [node name="AudioController" parent="." instance=ExtResource( 10 )]
 
-[connection signal="finished" from="Intro" to="Loop" method="_on_Intro_finished"]
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 7 )
+position = Vector2( 517.5, 278.25 )
+scale = Vector2( 1.65719, 0.924542 )
+z_index = 2
+texture = ExtResource( 19 )
+
+[node name="WasteAnimations" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 8 )
+anims/clownfish = SubResource( 10 )
+anims/swordfish = SubResource( 11 )
+anims/turtle = SubResource( 9 )
+
+[connection signal="gui_input" from="UiElements/PollutionWarning" to="UiElements/PollutionWarning" method="_on_PollutionWarning_gui_input"]
 [connection signal="timeout" from="Intro/Timer" to="Loop" method="_on_Timer_timeout"]
 
 [editable path="UiElements/ClownfishSpawnUI"]
