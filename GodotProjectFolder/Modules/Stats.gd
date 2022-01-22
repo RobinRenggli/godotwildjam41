@@ -32,7 +32,6 @@ func change_health(amount):
 		get_parent().get_node("AnimationPlayer").play("Damage")
 	elif amount > 0 && health != max_health:
 		get_parent().get_node("AnimationPlayer").play("Heal")
-		AudioController.get_node("ClownfishDeathSound").play()
 	health = min(health + amount, max_health)
 	if health <= 0:
 		emit_signal("no_health")
