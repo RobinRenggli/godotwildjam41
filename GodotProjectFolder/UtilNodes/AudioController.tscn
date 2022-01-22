@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Sound/whoosh.wav" type="AudioStream" id=1]
 [ext_resource path="res://Sound/fishy spawn.wav" type="AudioStream" id=2]
@@ -21,6 +21,10 @@
 [ext_resource path="res://Sound/fishbowl sink.wav" type="AudioStream" id=19]
 [ext_resource path="res://Sound/big enemy death sound.wav" type="AudioStream" id=20]
 [ext_resource path="res://Sound/heal.wav" type="AudioStream" id=21]
+[ext_resource path="res://Sound/debris spawn sound.wav" type="AudioStream" id=22]
+[ext_resource path="res://Sound/pollution.wav" type="AudioStream" id=23]
+[ext_resource path="res://Sound/debris break sound.wav" type="AudioStream" id=24]
+[ext_resource path="res://Sound/warning.wav" type="AudioStream" id=25]
 
 [node name="AudioController" type="Node"]
 
@@ -117,3 +121,19 @@ volume_db = -10.0
 [node name="HealSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 21 )
 volume_db = -12.0
+
+[node name="DebrisSpawnSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 22 )
+volume_db = -12.0
+
+[node name="DebrisHitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 24 )
+volume_db = -12.0
+
+[node name="PollutionSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 23 )
+volume_db = -10.0
+
+[node name="WarningSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 25 )
+volume_db = -10.0

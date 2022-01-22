@@ -7,6 +7,9 @@ func execute(type, velocity):
 	var heal_aura = heal_aura_resource.instance()
 	var creature = get_parent().get_parent()
 	creature.add_child(heal_aura)
+	AudioController.get_node("HealSound").play
 
 func _on_Timer_timeout():
 	execute(get_parent().get_parent().type, get_parent().get_parent().get_node("Movement").velocity)
+
+

@@ -9,7 +9,6 @@
 [ext_resource path="res://sunlight.png" type="Texture" id=7]
 [ext_resource path="res://Light2D.gd" type="Script" id=8]
 [ext_resource path="res://WaveLabel.gd" type="Script" id=9]
-[ext_resource path="res://UtilNodes/AudioController.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Sound/intro whooshless with fadeout.wav" type="AudioStream" id=11]
 [ext_resource path="res://Sound/loop whooshless.wav" type="AudioStream" id=12]
 [ext_resource path="res://fishbowl.png" type="Texture" id=13]
@@ -18,6 +17,7 @@
 [ext_resource path="res://Creatures/Clownfish.png" type="Texture" id=16]
 [ext_resource path="res://CrowdedWarning.gd" type="Script" id=17]
 [ext_resource path="res://CoconutHouse-9YG0y.otf" type="DynamicFontData" id=18]
+[ext_resource path="res://Sound/titlescreen.wav" type="AudioStream" id=19]
 
 [sub_resource type="DynamicFont" id=3]
 size = 20
@@ -163,7 +163,8 @@ scale = Vector2( 1.47875, 1.19146 )
 texture = ExtResource( 7 )
 script = ExtResource( 8 )
 
-[node name="AudioController" parent="." instance=ExtResource( 10 )]
+[node name="Titlescreen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
 
 [node name="Intro" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
@@ -181,8 +182,6 @@ pause_mode = 2
 stream = ExtResource( 12 )
 volume_db = -10.0
 script = SubResource( 2 )
-
-[node name="AudioController" parent="." instance=ExtResource( 10 )]
 
 [connection signal="finished" from="Intro" to="Loop" method="_on_Intro_finished"]
 [connection signal="timeout" from="Intro/Timer" to="Loop" method="_on_Timer_timeout"]
