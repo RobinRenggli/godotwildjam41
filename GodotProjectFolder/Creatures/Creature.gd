@@ -46,7 +46,8 @@ func _on_Body_area_entered(area):
 	if collider.is_in_group("Debris"):
 		Stats.change_health(-collider.strength)
 		$AnimationPlayer.play("Damage")
-
+		AudioController.get_node("DebrisHitSound").play()
+		
 func _on_stats_no_health():
 	for deathEffect in $DeathEffects.get_children():
 		deathEffect.execute(type)
