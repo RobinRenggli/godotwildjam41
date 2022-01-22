@@ -12,11 +12,11 @@ func _ready():
 
 
 func update_stats():
-	$Cost.text = str(CreatureInfo.stats_map[type]["cost"])
-	$Exp.text = str(CreatureInfo.xp_map[type]) + "/" + str(CreatureInfo.needed_xp_map[type])
-	$Health.text = str(CreatureInfo.stats_map[type]["health"])
-	$Strength.text = str(CreatureInfo.stats_map[type]["strength"])
-	$Speed.text = str(CreatureInfo.stats_map[type]["speed"])
+	$ExpCost/Cost.text = str(CreatureInfo.stats_map[type]["cost"])
+	$ExpCost/Exp.text = str(CreatureInfo.xp_map[type]) + "/" + str(CreatureInfo.needed_xp_map[type])
+	$HSS/Health.text = str(CreatureInfo.stats_map[type]["health"])
+	$HSS/Strength.text = str(CreatureInfo.stats_map[type]["strength"])
+	$HSS/Speed.text = str(CreatureInfo.stats_map[type]["speed"])
 
 func _process(delta):
 	update_stats()
