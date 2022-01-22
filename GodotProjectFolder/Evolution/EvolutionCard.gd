@@ -1,4 +1,4 @@
-extends Container
+extends NinePatchRect
 
 export (Dictionary) var stat_changes
 export (String) var description
@@ -10,13 +10,12 @@ func _ready():
 	create_description()
 
 func create_description():
-	
 	if stat_changes != null:
 		if not description.empty():
 			description += "\n\n"
 		for key in stat_changes.keys():
 			description += str(key) + ": " + format_number(stat_changes[key]) + "\n"
-	$NinePatchRect/MarginContainer/EvolutionText.text = description
+	$MarginContainer/EvolutionText.text = description
 
 func _on_EvolutionCard_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
@@ -49,3 +48,7 @@ func format_number(number):
 	else:
 		return number
 	
+
+
+func _on_Container_gui_input(event):
+	pass # Replace with function body.
