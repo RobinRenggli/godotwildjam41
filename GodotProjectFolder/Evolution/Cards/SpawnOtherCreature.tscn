@@ -6,9 +6,9 @@
 
 [node name="EvolutionCard" instance=ExtResource( 3 )]
 stat_changes = {
-"cost": 4
+"cost": 5
 }
-description = "Spawn a creature of another type every 15 seconds."
+description = "Spawn a creature of another type every 30 seconds."
 
 [node name="AddTimedEffect" parent="Effects" index="0" instance=ExtResource( 2 )]
 effect = ExtResource( 1 )
