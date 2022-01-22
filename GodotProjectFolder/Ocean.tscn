@@ -9,7 +9,6 @@
 [ext_resource path="res://sunlight.png" type="Texture" id=7]
 [ext_resource path="res://Light2D.gd" type="Script" id=8]
 [ext_resource path="res://WaveLabel.gd" type="Script" id=9]
-[ext_resource path="res://UtilNodes/AudioController.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Sound/intro whooshless with fadeout.wav" type="AudioStream" id=11]
 [ext_resource path="res://Sound/loop whooshless.wav" type="AudioStream" id=12]
 [ext_resource path="res://fishbowl.png" type="Texture" id=13]
@@ -18,11 +17,8 @@
 [ext_resource path="res://Creatures/Clownfish.png" type="Texture" id=16]
 [ext_resource path="res://CrowdedWarning.gd" type="Script" id=17]
 [ext_resource path="res://CoconutHouse-9YG0y.otf" type="DynamicFontData" id=18]
-<<<<<<< Updated upstream
 [ext_resource path="res://Card.png" type="Texture" id=19]
 [ext_resource path="res://PollutionWarning.gd" type="Script" id=20]
-=======
->>>>>>> Stashed changes
 
 [sub_resource type="DynamicFont" id=3]
 size = 20
@@ -382,11 +378,7 @@ scale = Vector2( 1.47875, 1.19146 )
 texture = ExtResource( 7 )
 script = ExtResource( 8 )
 
-<<<<<<< Updated upstream
 [node name="Titlescreen" type="AudioStreamPlayer" parent="."]
-=======
-[node name="AudioController" parent="." instance=ExtResource( 10 )]
->>>>>>> Stashed changes
 
 [node name="Intro" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
@@ -405,7 +397,6 @@ stream = ExtResource( 12 )
 volume_db = -10.0
 script = SubResource( 2 )
 
-<<<<<<< Updated upstream
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 7 )
 position = Vector2( 517.5, 278.25 )
@@ -420,10 +411,6 @@ anims/swordfish = SubResource( 11 )
 anims/turtle = SubResource( 9 )
 
 [connection signal="gui_input" from="UiElements/PollutionWarning" to="UiElements/PollutionWarning" method="_on_PollutionWarning_gui_input"]
-=======
-[node name="AudioController" parent="." instance=ExtResource( 10 )]
-
->>>>>>> Stashed changes
 [connection signal="finished" from="Intro" to="Loop" method="_on_Intro_finished"]
 [connection signal="timeout" from="Intro/Timer" to="Loop" method="_on_Timer_timeout"]
 
