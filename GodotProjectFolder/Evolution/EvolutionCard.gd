@@ -1,4 +1,4 @@
-extends Container
+extends NinePatchRect
 
 export (Dictionary) var stat_changes
 export (String) var description
@@ -10,13 +10,16 @@ func _ready():
 	create_description()
 
 func create_description():
-	
 	if stat_changes != null:
 		if not description.empty():
 			description += "\n\n"
 		for key in stat_changes.keys():
-			description += str(key) + ": " + format_number(stat_changes[key]) + "\n"
-	$NinePatchRect/MarginContainer/EvolutionText.text = description
+			if key != "movepattern":
+				if stat_changes[key] > 0:
+					description += "Gain" + format_number(stat_changes[key]) + str(key) + format_number(stat_changes[key]) + ".\n"
+				elif stat_changes[key] < 0:
+					description += "Lose" + format_number(stat_changes[key]) + str(key) + format_number(stat_changes[key]) + ".\n"
+	$MarginContainer/EvolutionText.text = description
 
 func _on_EvolutionCard_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
@@ -38,7 +41,13 @@ func evolve_stats():
 		if typeof(stat_changes[key]) == TYPE_STRING:
 			CreatureInfo.stats_map[type][key] = stat_changes[key]
 		elif typeof(stat_changes[key]) == TYPE_INT:
-			CreatureInfo.stats_map[type][key] += stat_changes[key]
+			var initial_value = CreatureInfo.stats_map[type][key]
+			var new_value = initial_value + stat_changes[key]
+			if key == "speed" || key == "health":
+				new_value = clamp(new_value, 1, new_value)
+			else:
+				new_value = clamp(new_value, 0, new_value)
+			CreatureInfo.stats_map[type][key] = new_value
 
 func format_number(number):
 	if typeof(number) == typeof(1):
@@ -49,3 +58,7 @@ func format_number(number):
 	else:
 		return number
 	
+
+
+func _on_Container_gui_input(event):
+	pass # Replace with function body.

@@ -7,14 +7,22 @@
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 3 )
 
-[node name="EvolutionCard" type="Container"]
+[node name="EvolutionCard" type="NinePatchRect"]
 pause_mode = 2
-margin_right = 128.0
-margin_bottom = 160.0
+margin_right = 173.0
+margin_bottom = 232.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 128, 160 )
-rect_scale = Vector2( 5, 5 )
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+region_rect = Rect2( 51.1099, 71.233, 566.281, 564.987 )
+patch_margin_left = 55
+patch_margin_top = 54
+patch_margin_right = 57
+patch_margin_bottom = 52
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -22,34 +30,25 @@ __meta__ = {
 
 [node name="Effects" type="Node" parent="."]
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 121.0
-margin_bottom = 153.0
-texture = ExtResource( 2 )
-region_rect = Rect2( 54.7935, 68.7908, 562.401, 570.291 )
-patch_margin_left = 46
-patch_margin_top = 53
-patch_margin_right = 50
-patch_margin_bottom = 46
-
-[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 104.0
-margin_bottom = 135.0
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 20.0
+margin_top = 19.0
+margin_right = 155.0
+margin_bottom = 210.0
 mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="EvolutionText" type="Label" parent="NinePatchRect/MarginContainer"]
-margin_top = 54.0
-margin_right = 94.0
-margin_bottom = 71.0
+[node name="EvolutionText" type="Label" parent="MarginContainer"]
+margin_top = 87.0
+margin_right = 135.0
+margin_bottom = 104.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
 custom_colors/font_color = Color( 0.380392, 0.0745098, 0.0745098, 1 )
 custom_colors/font_color_shadow = Color( 0.615686, 0.615686, 0.615686, 1 )
 custom_fonts/font = SubResource( 1 )

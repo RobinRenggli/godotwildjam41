@@ -4,5 +4,5 @@
 
 [node name="EvolutionCard" instance=ExtResource( 1 )]
 stat_changes = {
-"speed": 3
+"speed": 4
 }

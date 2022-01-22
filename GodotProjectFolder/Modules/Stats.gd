@@ -8,6 +8,8 @@ var movepattern
 onready var timer = get_parent().get_node("TimedEffects/Timer")
 
 signal no_health
+signal full_health
+signal not_full_health
 
 func initialize(stats):
 	max_health = (stats["health"])
@@ -20,17 +22,25 @@ func set_health(value):
 	health = value
 	if health <= 0:
 		emit_signal("no_health")
-	
+	if health == max_health:
+		emit_signal("max_health")
+	else:
+		emit_signal("not_full_health")
+		
 func change_health(amount):
 	health = min(health + amount, max_health)
 	if health <= 0:
 		emit_signal("no_health")
-
+	if health == max_health:
+		emit_signal("max_health")
+	else:
+		emit_signal("not_full_health")
+	
 func change_strength(amount):
 	strength = max(0, strength + amount)
 
 func change_speed(amount):
-	speed = max(0, speed + amount)
+	speed = clamp(max(0, speed + amount), 1, 1000000)
 
 func set_strength(value):
 	strength = value

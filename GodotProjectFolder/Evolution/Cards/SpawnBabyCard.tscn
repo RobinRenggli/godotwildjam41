@@ -5,7 +5,7 @@
 [ext_resource path="res://Evolution/Effects/SpawnBaby.tscn" type="PackedScene" id=3]
 
 [node name="EvolutionCard" instance=ExtResource( 1 )]
-description = "Create a baby when spawned"
+description = "Creatures of this type now spawn together with a baby. (It has 1 health and 1 strength.)"
 
 [node name="AddSpawnEffect" parent="Effects" index="0" instance=ExtResource( 2 )]
 effect = ExtResource( 3 )

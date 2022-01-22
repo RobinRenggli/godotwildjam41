@@ -6,3 +6,4 @@
 stat_changes = {
 "movepattern": "hunt"
 }
+description = "Hunt the enemy! (This creature now moves towards the closest enemy.)"

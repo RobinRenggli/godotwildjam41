@@ -7,7 +7,7 @@
 stat_changes = {
 "cost": 1
 }
-description = "Evolve this creature two times"
+description = "Immediately evolve this creature two times"
 
 [node name="EvolveMultipleTimes" parent="Effects" index="0" instance=ExtResource( 2 )]
 amount = 2

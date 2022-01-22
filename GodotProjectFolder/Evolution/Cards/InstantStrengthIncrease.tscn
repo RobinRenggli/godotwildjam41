@@ -4,7 +4,7 @@
 [ext_resource path="res://Evolution/Effects/InstantStatChange.tscn" type="PackedScene" id=2]
 
 [node name="EvolutionCard" instance=ExtResource( 1 )]
-description = "Strength +5 for all active creatures with this type"
+description = "+5 strength for all active creatures of this type."
 
 [node name="InstantStatChanges" parent="Effects" index="0" instance=ExtResource( 2 )]
 stat_changes = {

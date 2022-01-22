@@ -24,6 +24,7 @@ func _physics_process(delta):
 func _on_Body_area_entered(area):
 	var collider = area.get_parent()
 	if collider.is_in_group("Healing"):
+		print("collision_detected")
 		if not(collider.healed_creatures.has(self)):
 			collider.healed_creatures.append(self)
 			Stats.change_health(collider.heal)
@@ -41,6 +42,10 @@ func _on_Body_area_entered(area):
 			last_collider_type = collider.type
 			Stats.change_health(-collider.Stats.strength)
 			$AnimationPlayer.play("Damage")
+	
+	if collider.is_in_group("Debris"):
+		Stats.change_health(-collider.strength)
+		$AnimationPlayer.play("Damage")
 
 func _on_stats_no_health():
 	for deathEffect in $DeathEffects.get_children():
@@ -62,3 +67,6 @@ func _on_stats_no_health():
 
 func _on_CollisionTimer_timeout():
 	last_collider = null
+
+
+

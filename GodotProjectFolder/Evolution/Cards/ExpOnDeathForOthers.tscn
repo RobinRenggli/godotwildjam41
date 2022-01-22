@@ -5,7 +5,7 @@
 [ext_resource path="res://Evolution/Effects/IncreaseExpForOthers.tscn" type="PackedScene" id=3]
 
 [node name="EvolutionCard" instance=ExtResource( 1 )]
-description = "Give other types 1 exp upon death."
+description = "Give 1 experience to each other type whenever a creature of this type dies."
 
 [node name="AddDeathEffect" parent="Effects" index="0" instance=ExtResource( 2 )]
 effect = ExtResource( 3 )
