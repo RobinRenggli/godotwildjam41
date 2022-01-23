@@ -8,3 +8,4 @@ func execute(type):
 	explosion.global_position = get_parent().get_parent().global_position
 	explosion.type = type
 	get_node("/root/Ocean").add_child(explosion)
+	AudioController.get_node("ExplosionSound").play()

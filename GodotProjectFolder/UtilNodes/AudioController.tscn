@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Sound/whoosh.wav" type="AudioStream" id=1]
 [ext_resource path="res://Sound/fishy spawn.wav" type="AudioStream" id=2]
@@ -38,6 +38,7 @@
 [ext_resource path="res://Sound/ranks/piranha.wav" type="AudioStream" id=36]
 [ext_resource path="res://Sound/ranks/sting ray.wav" type="AudioStream" id=37]
 [ext_resource path="res://Sound/ranks/orca.wav" type="AudioStream" id=38]
+[ext_resource path="res://Sound/bubbleexplosion.wav" type="AudioStream" id=39]
 
 [node name="AudioController" type="Node"]
 
@@ -162,7 +163,7 @@ volume_db = -18.0
 [node name="WarningSound" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 25 )
-volume_db = -10.0
+volume_db = -6.0
 
 [node name="StartGameSound" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
@@ -228,3 +229,8 @@ volume_db = -10.0
 pause_mode = 2
 stream = ExtResource( 33 )
 volume_db = -10.0
+
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 39 )
+volume_db = -12.0
