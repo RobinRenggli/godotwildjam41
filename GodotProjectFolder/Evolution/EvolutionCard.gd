@@ -4,6 +4,7 @@ export (Dictionary) var stat_changes
 export (String) var description
 
 var type
+var clicked = false
 
 signal evolution_selected()
 
@@ -28,13 +29,14 @@ func create_description():
 	$MarginContainer/EvolutionText.text = description
 
 func _on_EvolutionCard_gui_input(event): 
-	if Input.is_action_pressed("ChooseCard") or (event is InputEventScreenTouch and event.is_pressed()):
+	if not clicked and Input.is_action_pressed("ChooseCard") or (event is InputEventScreenTouch and event.is_pressed()):
+		clicked = true
 		if stat_changes != null:
 			evolve_stats()
 		for effect in $Effects.get_children():
 			effect.execute(type)
 		var t = Timer.new()
-		t.set_wait_time(0.001)
+		t.set_wait_time(0.01)
 		t.set_one_shot(true)
 		self.add_child(t)
 		t.start()
