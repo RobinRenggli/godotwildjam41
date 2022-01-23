@@ -16,7 +16,9 @@ func create_description():
 			description += "\n\n"
 		for key in stat_changes.keys():
 			if key != "movepattern":
-				if stat_changes[key] > 0:
+				if key == "cost":
+					description += "Increase " + str(key) + " by " + format_number(stat_changes[key]) + ".\n"
+				elif stat_changes[key] > 0:
 					description += "Gain " + format_number(stat_changes[key]) + " " + str(key) + ".\n"
 				elif stat_changes[key] < 0:
 					description += "Lose " + format_number(stat_changes[key]) + " " + str(key) + ".\n"

@@ -10,6 +10,7 @@ var needed_xp_map
 var pickup_effects
 var death_effects
 var timed_effects
+var kill_effects
 var creature_map = {
 	"clownfish": preload("res://Creatures/Clownfish.tscn"),
 	"swordfish": preload("res://Creatures/Swordfish.tscn"),
@@ -59,6 +60,11 @@ func reset():
 		"turtle": [],
 	}
 	timed_effects = {
+		"clownfish": [],
+		"swordfish": [],
+		"turtle": [],
+	}
+	kill_effects = {
 		"clownfish": [],
 		"swordfish": [],
 		"turtle": [],

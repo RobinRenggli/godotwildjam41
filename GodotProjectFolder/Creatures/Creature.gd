@@ -17,6 +17,8 @@ func _ready():
 		$DeathEffects.add_child(effect.instance())
 	for effect in CreatureInfo.timed_effects[type]:
 		$TimedEffects.add_child(effect.instance())
+	for effect in CreatureInfo.kill_effects[type]:
+		$KillEffects.add_child(effect.instance())
 		
 func _physics_process(delta):
 	Movement.move(Stats.speed * delta * Constants.delta_factor)
@@ -40,6 +42,9 @@ func _on_Body_area_entered(area):
 			CollisionTimer.start(0.25)
 			last_collider_type = collider.type
 			Stats.change_health(-collider.Stats.strength)
+			if(collider.Stats.health <= Stats.health):
+				for killEffect in $KillEffects.get_children():
+					killEffect.execute(type)
 	
 	if collider.is_in_group("Debris"):
 		Stats.change_health(-collider.strength)

@@ -38,7 +38,6 @@ func check_defeat():
 		PlayerStats.reset_currency()
 		AudioController.get_node("DefeatSound").play()
 		
-
 func check_crowded():
 	if get_tree().get_nodes_in_group("Creatures").size() >= 100:
 		crowded = true

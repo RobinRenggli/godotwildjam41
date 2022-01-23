@@ -30,6 +30,10 @@ var cards = [
 	preload("res://Evolution/Cards/KillForExpCard.tscn"),
 	preload("res://Evolution/Cards/SpawnBabyCard.tscn"),
 	preload("res://Evolution/Cards/MultipleEvolutionsCard.tscn"),
+	preload("res://Evolution/Cards/MineBubble.tscn"),
+	preload("res://Evolution/Cards/CurrencyOnKill.tscn"),
+	preload("res://Evolution/Cards/ExpOnKill.tscn"),
+	preload("res://Evolution/Cards/HealOnKill.tscn"),
 	]
 var Random = RandomNumberGenerator.new()
 var evolution_in_progress = false
