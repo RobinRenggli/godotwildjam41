@@ -7,4 +7,5 @@ func _on_StartGameButton_pressed():
 	Overviewer.wave = 0
 	Overviewer.game_playing = true
 	Overviewer.display_initial_message()
+	Overviewer.reset()
 	get_tree().change_scene_to(OceanScene)

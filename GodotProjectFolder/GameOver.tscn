@@ -38,9 +38,9 @@ __meta__ = {
 
 [node name="ScoreLabel" type="Label" parent="."]
 modulate = Color( 1, 0.796078, 0, 1 )
-margin_left = 224.0
+margin_left = 236.0
 margin_top = 310.0
-margin_right = 278.0
+margin_right = 290.0
 margin_bottom = 376.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_y = 3
