@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Evolution/EvolutionCard.gd" type="Script" id=1]
-[ext_resource path="res://Card.png" type="Texture" id=2]
+[ext_resource path="res://UI/Card.png" type="Texture" id=2]
 [ext_resource path="res://CoconutHouse-9YG0y.otf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=1]
@@ -9,20 +9,21 @@ font_data = ExtResource( 3 )
 
 [node name="EvolutionCard" type="NinePatchRect"]
 pause_mode = 2
+self_modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
 margin_right = 177.0
-margin_bottom = 237.0
+margin_bottom = 192.0
 grow_horizontal = 2
 grow_vertical = 2
-rect_min_size = Vector2( 128, 160 )
+rect_min_size = Vector2( 128, 192 )
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 2 )
-region_rect = Rect2( 51.1099, 71.233, 566.281, 564.987 )
-patch_margin_left = 55
-patch_margin_top = 54
-patch_margin_right = 57
-patch_margin_bottom = 52
+region_rect = Rect2( 0, 0, 138, 136 )
+patch_margin_left = 45
+patch_margin_top = 47
+patch_margin_right = 49
+patch_margin_bottom = 45
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -34,7 +35,7 @@ __meta__ = {
 margin_left = 20.0
 margin_top = 19.0
 margin_right = 155.0
-margin_bottom = 210.0
+margin_bottom = 173.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -43,16 +44,17 @@ __meta__ = {
 }
 
 [node name="EvolutionText" type="Label" parent="MarginContainer"]
-margin_top = 87.0
+margin_top = 68.0
 margin_right = 135.0
-margin_bottom = 104.0
+margin_bottom = 85.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 align = 1
 valign = 1
 autowrap = true
 
 [connection signal="gui_input" from="." to="." method="_on_EvolutionCard_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_EvolutionCard_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_EvolutionCard_mouse_exited"]

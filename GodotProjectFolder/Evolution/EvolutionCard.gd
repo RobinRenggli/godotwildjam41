@@ -2,6 +2,7 @@ extends NinePatchRect
 
 export (Dictionary) var stat_changes
 export (String) var description
+
 var type
 
 signal evolution_selected()
@@ -57,8 +58,11 @@ func format_number(number):
 			return str(number)
 	else:
 		return number
-	
 
 
-func _on_Container_gui_input(event):
-	pass # Replace with function body.
+func _on_EvolutionCard_mouse_entered():
+	self_modulate = Color(0.8, 0.8, 0.8)
+
+
+func _on_EvolutionCard_mouse_exited():
+	self_modulate = Color(1, 1, 1)
