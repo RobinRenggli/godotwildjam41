@@ -13,6 +13,9 @@ var waves = [
 	{
 		"bag": 2,
 	},
+	{
+		"tire": 1,
+	},
 ]
 var Random = RandomNumberGenerator.new()
 var type = ""

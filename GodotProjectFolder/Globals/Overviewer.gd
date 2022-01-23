@@ -84,7 +84,7 @@ func display_initial_message():
 	yield(t, "timeout")
 	t.queue_free()
 	if show_tutorial:
-		get_tree().root.get_node("Ocean/UiElements/InfoMessage/MarginContainer/Label").bbcode_text = "[center]Try to fight back against the pollution of the ocean for as long as possible! You lose when there are no more fish in the ocean.\n\nClick on a fish bowl to spawn a creature of that type. \n\n(First, click on this message to close it.)[/center]"
+		get_tree().root.get_node("Ocean/UiElements/InfoMessage/MarginContainer/Label").bbcode_text = "[center]Try to fight back against the pollution of the ocean for as long as possible! When there are no more fish in the ocean, you lose.\n\nClick on a fish bowl to spawn a creature of that type. \n\n(First, click on this message to close it.)[/center]"
 		get_tree().root.get_node("Ocean/UiElements/InfoMessage").visible = true
 		Overviewer.pause_game()
 
