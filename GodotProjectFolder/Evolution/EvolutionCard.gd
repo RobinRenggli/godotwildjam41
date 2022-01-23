@@ -28,7 +28,7 @@ func create_description():
 	$MarginContainer/EvolutionText.text = description
 
 func _on_EvolutionCard_gui_input(event): 
-	if Input.is_action_pressed("ChooseCard"):
+	if Input.is_action_pressed("ChooseCard") or (event is InputEventScreenTouch and event.is_pressed()):
 		if stat_changes != null:
 			evolve_stats()
 		for effect in $Effects.get_children():
