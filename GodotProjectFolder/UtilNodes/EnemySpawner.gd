@@ -8,10 +8,10 @@ var waves = [
 		"barrel": 1
 	},
 	{
-		"lunch": 2,
+		"lunch": 1,
 	},
 	{
-		"bag": 2,
+		"bag": 1,
 	},
 	{
 		"tire": 1,

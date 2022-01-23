@@ -47,7 +47,7 @@ var stats_map = {
 var multiplier_map = {
 	"basic": 0.6,
 	"barrel": 0.35,
-	"bag": 0.45,
-	"lunch": 0.45,
+	"bag": 0.5,
+	"lunch": 0.5,
 	"tire": 0.3
 }
