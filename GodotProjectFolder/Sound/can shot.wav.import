@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/can shot.wav-761a169b5764a8cb3ab01f4bfeaa6138.sample"
+
+[deps]
+
+source_file="res://Sound/can shot.wav"
+dest_files=[ "res://.import/can shot.wav-761a169b5764a8cb3ab01f4bfeaa6138.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

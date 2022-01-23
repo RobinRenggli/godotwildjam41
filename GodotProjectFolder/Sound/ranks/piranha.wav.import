@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/piranha.wav-67bf16d5cac38d03bb739a3b3a9f4eae.sample"
+
+[deps]
+
+source_file="res://Sound/ranks/piranha.wav"
+dest_files=[ "res://.import/piranha.wav-67bf16d5cac38d03bb739a3b3a9f4eae.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

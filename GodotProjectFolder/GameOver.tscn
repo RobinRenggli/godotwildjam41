@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://UI/AgainHover.png" type="Texture" id=1]
 [ext_resource path="res://UI/StartGameButton.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://EndScreen.png" type="Texture" id=4]
 [ext_resource path="res://CoconutHouse-9YG0y.otf" type="DynamicFontData" id=5]
 [ext_resource path="res://ScoreLabel.gd" type="Script" id=6]
+[ext_resource path="res://Sound/titlescreen.wav" type="AudioStream" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -52,4 +53,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TitleMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -10.0
+autoplay = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
 [connection signal="pressed" from="StartGameButton" to="StartGameButton" method="_on_StartGameButton_pressed"]
+[connection signal="timeout" from="Timer" to="ScoreLabel" method="_on_Timer_timeout"]

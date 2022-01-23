@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/blue whale.wav-65f8e999543503d6bea5af6cfa2540b9.sample"
+
+[deps]
+
+source_file="res://Sound/ranks/blue whale.wav"
+dest_files=[ "res://.import/blue whale.wav-65f8e999543503d6bea5af6cfa2540b9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -9,3 +9,4 @@ func _on_ProjectileTimer_timeout():
 	projectile.velocity = velocity
 	projectile.rotation = velocity.angle()
 	get_node("/root/Ocean").add_child(projectile)
+	AudioController.get_node("CanShotSound").play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Sound/whoosh.wav" type="AudioStream" id=1]
 [ext_resource path="res://Sound/fishy spawn.wav" type="AudioStream" id=2]
@@ -20,12 +20,24 @@
 [ext_resource path="res://Sound/clownfish spawn.wav" type="AudioStream" id=18]
 [ext_resource path="res://Sound/fishbowl sink.wav" type="AudioStream" id=19]
 [ext_resource path="res://Sound/big enemy death sound.wav" type="AudioStream" id=20]
-[ext_resource path="res://Sound/heal.wav" type="AudioStream" id=21]
+[ext_resource path="res://Sound/ranks/seabass.wav" type="AudioStream" id=21]
 [ext_resource path="res://Sound/debris spawn sound.wav" type="AudioStream" id=22]
 [ext_resource path="res://Sound/pollution.wav" type="AudioStream" id=23]
 [ext_resource path="res://Sound/debris break sound.wav" type="AudioStream" id=24]
 [ext_resource path="res://Sound/warning.wav" type="AudioStream" id=25]
 [ext_resource path="res://Sound/start game sound.wav" type="AudioStream" id=26]
+[ext_resource path="res://Sound/ranks/tuna.wav" type="AudioStream" id=27]
+[ext_resource path="res://Sound/ranks/blue whale.wav" type="AudioStream" id=28]
+[ext_resource path="res://Sound/ranks/blue marlin.wav" type="AudioStream" id=29]
+[ext_resource path="res://Sound/tutorial window.wav" type="AudioStream" id=30]
+[ext_resource path="res://Sound/ranks/plankton.wav" type="AudioStream" id=31]
+[ext_resource path="res://Sound/can shot.wav" type="AudioStream" id=32]
+[ext_resource path="res://Sound/ranks/kraken.wav" type="AudioStream" id=33]
+[ext_resource path="res://Sound/heal_new.wav" type="AudioStream" id=34]
+[ext_resource path="res://Sound/ranks/white shark.wav" type="AudioStream" id=35]
+[ext_resource path="res://Sound/ranks/piranha.wav" type="AudioStream" id=36]
+[ext_resource path="res://Sound/ranks/sting ray.wav" type="AudioStream" id=37]
+[ext_resource path="res://Sound/ranks/orca.wav" type="AudioStream" id=38]
 
 [node name="AudioController" type="Node"]
 
@@ -131,8 +143,7 @@ volume_db = -10.0
 
 [node name="HealSound" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
-stream = ExtResource( 21 )
-volume_db = -10.0
+stream = ExtResource( 34 )
 
 [node name="DebrisSpawnSound" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
@@ -145,7 +156,6 @@ stream = ExtResource( 24 )
 volume_db = -12.0
 
 [node name="PollutionSound" type="AudioStreamPlayer" parent="."]
-pause_mode = 2
 stream = ExtResource( 23 )
 volume_db = -18.0
 
@@ -155,5 +165,66 @@ stream = ExtResource( 25 )
 volume_db = -10.0
 
 [node name="StartGameSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 stream = ExtResource( 26 )
 volume_db = -12.0
+
+[node name="CanShotSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 32 )
+volume_db = -24.0
+
+[node name="TutorialWindowSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 30 )
+volume_db = -8.0
+
+[node name="PlanktonRankSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 31 )
+volume_db = -10.0
+
+[node name="SeabassRankSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 21 )
+volume_db = -10.0
+
+[node name="PiranhaRankSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 36 )
+volume_db = -10.0
+
+[node name="TunaRankSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 27 )
+volume_db = -10.0
+
+[node name="StingRayRankSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 37 )
+volume_db = -10.0
+
+[node name="BlueMarlinRankSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 29 )
+volume_db = -10.0
+
+[node name="WhiteSharkRankSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 35 )
+volume_db = -10.0
+
+[node name="OrcaRankSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 38 )
+volume_db = -10.0
+
+[node name="BlueWhaleRankSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 28 )
+volume_db = -10.0
+
+[node name="KrakenRankSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 33 )
+volume_db = -10.0

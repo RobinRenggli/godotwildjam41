@@ -20,7 +20,7 @@
 [ext_resource path="res://CoconutHouse-9YG0y.otf" type="DynamicFontData" id=18]
 [ext_resource path="res://Card.png" type="Texture" id=19]
 [ext_resource path="res://PollutionWarning.gd" type="Script" id=20]
-[ext_resource path="res://Sound/intro whooshless with fadeout.wav" type="AudioStream" id=21]
+[ext_resource path="res://Sound/intro fadeout no bell.wav" type="AudioStream" id=21]
 
 [sub_resource type="DynamicFont" id=3]
 size = 20
@@ -479,7 +479,7 @@ volume_db = -10.0
 autoplay = true
 
 [node name="Timer" type="Timer" parent="Intro"]
-wait_time = 47.916
+wait_time = 48.0
 one_shot = true
 autostart = true
 
