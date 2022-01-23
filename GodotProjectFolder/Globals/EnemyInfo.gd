@@ -48,6 +48,6 @@ var multiplier_map = {
 	"basic": 0.6,
 	"barrel": 0.5,
 	"bag": 0.6,
-	"lunch": 0.5,
+	"lunch": 0.4,
 	"tire": 0.4
 }
