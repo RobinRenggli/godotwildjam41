@@ -5,6 +5,7 @@ var enemy_map = {
 	"barrel": preload("res://Enemies/BarrelEnemy.tscn"),
 	"bag": preload("res://Enemies/BagEnemy.tscn"),
 	"lunch": preload("res://Enemies/LunchEnemy.tscn"),
+	"tire": preload("res://Enemies/TireEnemy.tscn"),
 }
 var stats_map = {
 	"basic": {
@@ -37,7 +38,7 @@ var stats_map = {
 	},
 	"tire": {
 		"health": 25,
-		"strength": 2,
+		"strength": 1,
 		"speed": 1,
 		"movepattern": "stay_together",
 		"cooldown": 5

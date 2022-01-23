@@ -1,0 +1,8 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[ext_resource path="res://CoconutHouse-9YG0y.otf" type="DynamicFontData" id=1]
+
+[resource]
+outline_size = 1
+outline_color = Color( 0.239216, 0.239216, 0.239216, 1 )
+font_data = ExtResource( 1 )

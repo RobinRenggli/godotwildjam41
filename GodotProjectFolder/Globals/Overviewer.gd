@@ -104,6 +104,6 @@ func show_spawn_tip():
 
 func show_evolution_tip():
 	if show_tutorial:
-		get_tree().root.get_node("Ocean/UiElements/InfoMessage/MarginContainer/Label").bbcode_text ="[center]Your creatures earn experience by destroying garbage and collecting fishies.\n\nUpon leveling you get to choose an evolution that affects every creature of that type you spawn from now on.[/center]"
+		get_tree().root.get_node("Ocean/UiElements/InfoMessage/MarginContainer/Label").bbcode_text ="[center]Your creatures earn [color=#7a7878]experience[/color] by destroying garbage and collecting fishies.\n\nUpon leveling you get to choose an evolution that affects every creature of that type you spawn from now on.[/center]"
 		get_tree().root.get_node("Ocean/UiElements/InfoMessage").visible = true
 		Overviewer.pause_game()
