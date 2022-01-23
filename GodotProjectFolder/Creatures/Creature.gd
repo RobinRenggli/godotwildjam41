@@ -42,9 +42,10 @@ func _on_Body_area_entered(area):
 			CollisionTimer.start(0.25)
 			last_collider_type = collider.type
 			Stats.change_health(-collider.Stats.strength)
-			if(collider.Stats.health <= Stats.health):
+			if(collider.Stats.health <= Stats.strength):
 				for killEffect in $KillEffects.get_children():
 					killEffect.execute(type)
+			collider.take_damage(Stats.strength)
 	
 	if collider.is_in_group("Debris"):
 		Stats.change_health(-collider.strength)

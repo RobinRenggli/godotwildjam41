@@ -20,15 +20,12 @@ func _on_Body_area_entered(area):
 	if collider.is_in_group("Projectiles"):
 		last_collider_type = collider.type
 		Stats.change_health(-collider.damage)
-		$AnimationPlayer.play("Damage")
 		AudioController.get_node("BubblePopSound").play()
 	if collider.is_in_group("Creatures"):
 		if not(last_collider == collider):
 			last_collider = collider
 			CollisionTimer.start(0.25)
 			last_collider_type = collider.type
-			Stats.change_health(-collider.Stats.strength)
-			$AnimationPlayer.play("Damage")
 			AudioController.get_node("CollisionSound").play()
 	if collider.is_in_group("Currency"):
 		AudioController.get_node("FishyStealSound").play()
@@ -49,3 +46,6 @@ func _on_stats_no_health():
 
 func _on_CollisionTimer_timeout():
 	last_collider = null
+	
+func take_damage(amount):
+	Stats.change_health(-amount)
