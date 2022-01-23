@@ -15,6 +15,8 @@ func _ready():
 
 func _physics_process(delta):
 	global_position += Vector2(0, delta * speed * Constants.delta_factor)
+	if  global_position.y > Constants.window_height + 50 :
+		queue_free()
 
 
 func _on_Area2D_area_entered(area):

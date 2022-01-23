@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BagMan.png-b6c3dc27561716c793f5a8f434371958.stex"
+path="res://.import/BagSnake.png-0379e3a29b3b8f988f6d7f57b762920c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/BagMan.png"
-dest_files=[ "res://.import/BagMan.png-b6c3dc27561716c793f5a8f434371958.stex" ]
+source_file="res://Enemies/BagSnake.png"
+dest_files=[ "res://.import/BagSnake.png-0379e3a29b3b8f988f6d7f57b762920c.stex" ]
 
 [params]
 
