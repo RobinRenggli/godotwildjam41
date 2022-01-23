@@ -158,18 +158,22 @@ func harvest_movement(speed):
 		velocity = (nearest_currency.global_position - creature.global_position).normalized()
 		
 func hunt_movement(speed):
-	var enemies = get_tree().get_nodes_in_group("Enemies")
+	var targets
+	if creature.is_in_group("Creatures"):
+		targets = get_tree().get_nodes_in_group("Enemies")
+	else:
+		targets = get_tree().get_nodes_in_group("Creatures")
 
 	if not recent_collision:
-		if enemies.empty():
+		if targets.empty():
 			basic_movement(speed)
 		else:
-			var nearest_enemy = enemies[0]
-			for enemy in enemies:
-				if enemy.global_position.distance_to(creature.global_position) < nearest_enemy.global_position.distance_to(creature.global_position):
-					nearest_enemy = enemy
+			var nearest_target = targets[0]
+			for target in targets:
+				if target.global_position.distance_to(creature.global_position) < nearest_target.global_position.distance_to(creature.global_position):
+					nearest_target = target
 
-			velocity = (nearest_enemy.global_position - creature.global_position).normalized()
+			velocity = (nearest_target.global_position - creature.global_position).normalized()
 			
 	if  creature.global_position.x > Constants.window_width:
 		if velocity.x > 0:

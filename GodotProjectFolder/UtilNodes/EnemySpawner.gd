@@ -8,9 +8,11 @@ var waves = [
 		"barrel": 1
 	},
 	{
-		"basic": 1,
-		"barrel": 1,
-	}
+		"lunch": 1,
+	},
+	{
+		"bag": 2,
+	},
 ]
 var Random = RandomNumberGenerator.new()
 var type = ""

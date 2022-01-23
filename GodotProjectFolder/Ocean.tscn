@@ -378,6 +378,8 @@ scale = Vector2( 1.47875, 1.19146 )
 texture = ExtResource( 7 )
 script = ExtResource( 8 )
 
+[node name="Titlescreen" type="AudioStreamPlayer" parent="."]
+
 [node name="Intro" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 11 )

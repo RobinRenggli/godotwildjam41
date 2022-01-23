@@ -25,13 +25,11 @@ func _process(delta):
 		rect_position.y = min(rect_position.y + 1000 * delta, start_pos.y)
 
 func _on_CreatureSpawnUI_mouse_entered():
-	print("mouse enter")
 	open = true
 	AudioController.get_node("FishbowlRiseSound").play()
 	
 
 func _on_CreatureSpawnUI_mouse_exited():
-	print("mouse exit")
 	open = false
 	AudioController.get_node("FishbowlSinkSound").play()
 
