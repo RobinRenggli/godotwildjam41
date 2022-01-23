@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Modules/Stats.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Creatures/Creature.gd" type="Script" id=2]
 [ext_resource path="res://Modules/Movement.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Creatures/TimedEffects.gd" type="Script" id=4]
 [ext_resource path="res://Blink.gdshader" type="Shader" id=5]
-[ext_resource path="res://Creatures/BlinkPlayer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Creatures/Body.gd" type="Script" id=7]
 
 [sub_resource type="ShaderMaterial" id=2]
@@ -15,7 +14,34 @@ shader_param/flash_color = Color( 1, 0, 0, 1 )
 shader_param/flash_modifier = 0.0
 
 [sub_resource type="Animation" id=3]
-resource_name = "Heal"
+resource_name = "Damage"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:material:shader_param/flash_modifier")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.5, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:material:shader_param/flash_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:material:shader_param/flash_color")
@@ -36,10 +62,49 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.5, 0.0, 0.0 ]
+"values": [ 0.5, 0.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:material:shader_param/active")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:material:shader_param/flash_modifier")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:material:shader_param/flash_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ) ]
 }
 
 [node name="Creature" type="KinematicBody2D" groups=["Creatures"]]
@@ -76,8 +141,10 @@ script = ExtResource( 4 )
 
 [node name="ModulateTimer" type="Timer" parent="."]
 
-[node name="AnimationPlayer" parent="." instance=ExtResource( 6 )]
-anims/Heal = SubResource( 3 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Damage = SubResource( 3 )
+anims/Heal = SubResource( 5 )
+anims/RESET = SubResource( 4 )
 
 [connection signal="full_health" from="Stats" to="Body" method="_on_Stats_full_health"]
 [connection signal="not_full_health" from="Stats" to="Body" method="_on_Stats_not_full_health"]

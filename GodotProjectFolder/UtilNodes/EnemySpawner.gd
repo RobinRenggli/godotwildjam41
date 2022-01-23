@@ -16,6 +16,7 @@ var waves = [
 ]
 var Random = RandomNumberGenerator.new()
 var type = ""
+var pollution_damage = 0
 signal wave_spawned
 
 func _ready():
@@ -52,6 +53,7 @@ func spawn_enemy(enemy):
 	get_node("/root/Ocean").add_child(spawned_enemy)
 
 func spawn_gas():
+	pollution_damage += 1
 	$GasTimer.start()
 	$WaveDuration.start()
 	get_node("/root/Ocean/WasteAnimations").play(type)
@@ -71,17 +73,17 @@ func _on_GasTimer_timeout():
 		if $WaveDuration.time_left < 20 && $WaveDuration.time_left > 10:
 			var creatures = get_tree().get_nodes_in_group("Turtles")
 			for c in creatures:
-				c.get_node("Stats").change_health(-2)
+				c.get_node("Stats").change_health(-pollution_damage)
 	elif type == "swordfish":
 		if $WaveDuration.time_left < 20 && $WaveDuration.time_left > 10:
 			var creatures = get_tree().get_nodes_in_group("Swordfish")
 			for c in creatures:
-				c.get_node("Stats").change_health(-2)
+				c.get_node("Stats").change_health(-pollution_damage)
 	elif type == "clownfish":
 		if $WaveDuration.time_left < 20 && $WaveDuration.time_left > 10:
 			var creatures = get_tree().get_nodes_in_group("Clownfish")
 			for c in creatures:
-				c.get_node("Stats").change_health(-2)
+				c.get_node("Stats").change_health(-pollution_damage)
 
 func _on_WaveDuration_timeout():
 	pass

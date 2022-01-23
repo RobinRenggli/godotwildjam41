@@ -67,7 +67,7 @@ func reset():
 	kill_effects = {
 		"clownfish": [],
 		"swordfish": [],
-		"turtle": [],
+		"turtle": [load("res://Evolution/Effects/HealEffect.tscn")],
 	}
 	xp_map = {
 		"clownfish": 0,
