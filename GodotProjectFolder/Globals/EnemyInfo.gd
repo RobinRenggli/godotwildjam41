@@ -4,6 +4,7 @@ var enemy_map = {
 	"basic": preload("res://Enemies/BasicEnemy.tscn"),
 	"barrel": preload("res://Enemies/BarrelEnemy.tscn"),
 	"bag": preload("res://Enemies/BagEnemy.tscn"),
+	"lunch": preload("res://Enemies/LunchEnemy.tscn"),
 }
 var stats_map = {
 	"basic": {
