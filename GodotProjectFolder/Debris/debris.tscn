@@ -9,7 +9,7 @@ extents = Vector2( 12.5, 6.5 )
 [node name="Debris" type="Node2D" groups=["Debris"]]
 script = ExtResource( 3 )
 speed = 1
-strength = 2
+strength = 5
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0

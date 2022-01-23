@@ -107,7 +107,7 @@ func show_spawn_tip():
 	t.queue_free()
 	if show_tutorial:
 		AudioController.get_node("TutorialWindowSound").play()
-		get_tree().root.get_node("Ocean/UiElements/InfoMessage/MarginContainer/Label").bbcode_text = "[center]Spawning a creature costs [color=#e4c011]fishies[/color]. You gain new fishies whenever your creatures collect one or when a new wave of garbage arrives.\n\nEach creatures has a [color=#3c742e]health[/color], [color=#911818]strength[/color] and [color=#aa5a14]speed[/color] value.[/center]"
+		get_tree().root.get_node("Ocean/UiElements/InfoMessage/MarginContainer/Label").bbcode_text = "[center]Spawning a creature costs [color=#e4c011]fishies[/color]. You gain new fishies whenever your creatures collect one or when a new wave of garbage arrives.\n\nEach creature has a [color=#3c742e]health[/color], [color=#911818]strength[/color] and [color=#aa5a14]speed[/color] value.[/center]"
 		get_tree().root.get_node("Ocean/UiElements/InfoMessage").visible = true
 		Overviewer.pause_game()
 
