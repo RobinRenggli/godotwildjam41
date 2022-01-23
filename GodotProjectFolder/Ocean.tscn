@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://UtilNodes/CreatureSpawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UtilNodes/CurrencySpawner.tscn" type="PackedScene" id=2]
@@ -10,7 +10,7 @@
 [ext_resource path="res://Light2D.gd" type="Script" id=8]
 [ext_resource path="res://WaveLabel.gd" type="Script" id=9]
 [ext_resource path="res://UI/Card.png" type="Texture" id=10]
-[ext_resource path="res://Sound/intro whooshless with fadeout.wav" type="AudioStream" id=11]
+[ext_resource path="res://Currency/Currency-2@0.25x.png" type="Texture" id=11]
 [ext_resource path="res://Sound/loop whooshless.wav" type="AudioStream" id=12]
 [ext_resource path="res://fishbowl.png" type="Texture" id=13]
 [ext_resource path="res://UI/CreatureSpawnUI.tscn" type="PackedScene" id=14]
@@ -20,6 +20,7 @@
 [ext_resource path="res://CoconutHouse-9YG0y.otf" type="DynamicFontData" id=18]
 [ext_resource path="res://Card.png" type="Texture" id=19]
 [ext_resource path="res://PollutionWarning.gd" type="Script" id=20]
+[ext_resource path="res://Sound/intro whooshless with fadeout.wav" type="AudioStream" id=21]
 
 [sub_resource type="DynamicFont" id=3]
 size = 20
@@ -123,6 +124,30 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector3( 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Light2D:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Light2D:energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -327,6 +352,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="UiElements/UiControl"]
+position = Vector2( 48, 534 )
+rotation = 0.47473
+scale = Vector2( 0.15, 0.15 )
+z_index = -1
+texture = ExtResource( 11 )
+
+[node name="Sprite2" type="Sprite" parent="UiElements/UiControl"]
+position = Vector2( 46, 546 )
+rotation = 2.988
+scale = Vector2( 0.15, 0.15 )
+z_index = -1
+texture = ExtResource( 11 )
+
+[node name="Sprite3" type="Sprite" parent="UiElements/UiControl"]
+position = Vector2( 32, 551 )
+rotation = 3.735
+scale = Vector2( 0.15, 0.15 )
+z_index = -1
+texture = ExtResource( 11 )
+
+[node name="Sprite4" type="Sprite" parent="UiElements/UiControl"]
+position = Vector2( 26, 534 )
+rotation = -0.544543
+scale = Vector2( 0.15, 0.15 )
+z_index = -1
+texture = ExtResource( 11 )
+
 [node name="PollutionWarning" type="NinePatchRect" parent="UiElements"]
 pause_mode = 2
 visible = false
@@ -412,7 +465,7 @@ custom_constants/shadow_offset_x = 1
 bbcode_enabled = true
 
 [node name="Light2D" type="Light2D" parent="."]
-position = Vector2( 536, 24 )
+position = Vector2( 544, 160 )
 scale = Vector2( 1.47875, 1.19146 )
 texture = ExtResource( 7 )
 script = ExtResource( 8 )
@@ -421,7 +474,7 @@ script = ExtResource( 8 )
 
 [node name="Intro" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
-stream = ExtResource( 11 )
+stream = ExtResource( 21 )
 volume_db = -10.0
 autoplay = true
 
