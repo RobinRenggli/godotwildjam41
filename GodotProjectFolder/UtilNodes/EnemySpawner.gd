@@ -8,7 +8,7 @@ var waves = [
 		"barrel": 1
 	},
 	{
-		"lunch": 3,
+		"lunch": 2,
 	},
 	{
 		"bag": 2,
@@ -35,13 +35,16 @@ func spawn_wave():
 	t.queue_free()
 	Overviewer.wave += 1
 	if Overviewer.wave >= 47 && (Overviewer.wave + 3)%5 == 0 :
-		display_warning()
+		display_pollution_warning()
 	elif Overviewer.wave >= 37 && (Overviewer.wave + 3)%10 == 0 :
-		display_warning()
+		display_pollution_warning()
 	if Overviewer.wave > 50 && Overviewer.wave%5 == 0 :
 		spawn_gas()
 	elif Overviewer.wave >= 40 && Overviewer.wave%10 == 0 :
 		spawn_gas()
+	if Overviewer.wave == 25:
+		display_debrie_warning()
+		EnemyInfo.buff_enemies()
 	WaveEffects.execute_effects()
 	emit_signal("wave_spawned")
 	AudioController.get_node("WaveSpawnSound").play()
@@ -86,7 +89,7 @@ func _on_GasTimer_timeout():
 func _on_WaveDuration_timeout():
 	pass
 	
-func display_warning():
+func display_pollution_warning():
 	AudioController.get_node("WarningSound").play()
 	var most_common_type = get_tree().get_nodes_in_group("Turtles")
 	type = "turtle"
@@ -99,5 +102,11 @@ func display_warning():
 	get_node("../UiElements/PollutionWarning/MarginContainer/Label").text = "WARNING!!! \n A ship just spilled waste that is very toxic to " + type + ". Within 3 waves, the pollution will arrive..."
 	if type == "turtle":
 			get_node("../UiElements/PollutionWarning/MarginContainer/Label").text = "WARNING!!! \n A ship just spilled waste that is very toxic to " + type + "s. Within 3 waves, the pollution will arrive..."
+	get_node("../UiElements/PollutionWarning").visible = true
+	Overviewer.pause_game()
+
+func display_debrie_warning():
+	AudioController.get_node("WarningSound").play()
+	get_node("../UiElements/PollutionWarning/MarginContainer/Label").text = "WARNING!!! \n Pollution on the planet has gotten worse and more garbage ends up in the ocean!"
 	get_node("../UiElements/PollutionWarning").visible = true
 	Overviewer.pause_game()

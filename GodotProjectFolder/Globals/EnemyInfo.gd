@@ -23,7 +23,7 @@ var stats_map = {
 	},
 	"lunch": {
 		"health": 6,
-		"strength": 4,
+		"strength": 1,
 		"speed": 2,
 		"movepattern": "harvest",
 		"cooldown": 5
@@ -37,7 +37,7 @@ var stats_map = {
 	},
 }
 var multiplier_map = {
-	"basic": 0.3,
+	"basic": 0.4,
 	"barrel": 0.3,
 	"bag": 0.4,
 	"lunch": 0.3
