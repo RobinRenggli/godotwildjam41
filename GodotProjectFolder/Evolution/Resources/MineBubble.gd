@@ -11,3 +11,6 @@ func _on_Area2D_area_entered(area):
 	get_node("/root/Ocean").add_child(bubbles)
 	bubbles.set_emitting(true)
 	queue_free()
+
+func _on_Lifetime_timeout():
+	self.queue_free()
