@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Evolution/EvolutionCard.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Evolution/Effects/AddKillEffect.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Evolution/Effects/IncreaseStrength.gd" type="Script" id=3]
+
+[node name="EvolutionCard" instance=ExtResource( 1 )]
+description = "Gain +1 strength on melee kill."
+
+[node name="AddKillEffect" parent="Effects" index="0" instance=ExtResource( 2 )]
+effect = ExtResource( 3 )
