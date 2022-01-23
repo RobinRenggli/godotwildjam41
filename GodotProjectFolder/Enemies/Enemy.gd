@@ -47,5 +47,6 @@ func _on_stats_no_health():
 func _on_CollisionTimer_timeout():
 	last_collider = null
 	
-func take_damage(amount):
+func take_damage(amount, type):
+	last_collider_type = type
 	Stats.change_health(-amount)

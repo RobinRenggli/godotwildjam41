@@ -45,7 +45,7 @@ func _on_Body_area_entered(area):
 			if(collider.Stats.health <= Stats.strength):
 				for killEffect in $KillEffects.get_children():
 					killEffect.execute(type)
-			collider.take_damage(Stats.strength)
+			collider.take_damage(Stats.strength, type)
 	
 	if collider.is_in_group("Debris"):
 		Stats.change_health(-collider.strength)
