@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/EndScreen.png-268e9cd95455f38b5763b712fc45cbd1.stex"
+path="res://.import/Tire.png-97a024162486e3551c843cc46d924e49.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://EndScreen.png"
-dest_files=[ "res://.import/EndScreen.png-268e9cd95455f38b5763b712fc45cbd1.stex" ]
+source_file="res://Enemies/Tire.png"
+dest_files=[ "res://.import/Tire.png-97a024162486e3551c843cc46d924e49.stex" ]
 
 [params]
 

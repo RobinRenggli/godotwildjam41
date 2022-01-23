@@ -13,7 +13,10 @@ func _ready():
 func create_description():
 	if stat_changes != null:
 		if not description.empty():
-			description += "\n\n"
+			if not stat_changes.keys().has("movepattern") && stat_changes.keys().size() > 1:
+				description += "\n\n"
+			if stat_changes.keys().has("movepattern") && stat_changes.keys().size() > 2:
+				description += "\n\n"
 		for key in stat_changes.keys():
 			if key != "movepattern":
 				if key == "cost":

@@ -85,7 +85,7 @@ func display_initial_message():
 	t.queue_free()
 	if show_tutorial:
 		AudioController.get_node("TutorialWindowSound").play()
-		get_tree().root.get_node("Ocean/UiElements/InfoMessage/MarginContainer/Label").bbcode_text = "[center]Try to fight back against the pollution of the ocean for as long as possible! You lose when there are no more fish in the ocean.\n\nClick on a fish bowl to spawn a creature of that type. \n\n(First, click on this message to close it.)[/center]"
+		get_tree().root.get_node("Ocean/UiElements/InfoMessage/MarginContainer/Label").bbcode_text = "[center]Try to fight back against the pollution of the ocean for as long as possible! When there are no more fish in the ocean, you lose.\n\nClick on a fish bowl to spawn a creature of that type. \n\n(First, click on this message to close it.)[/center]"
 		get_tree().root.get_node("Ocean/UiElements/InfoMessage").visible = true
 		Overviewer.pause_game()
 
@@ -107,6 +107,6 @@ func show_spawn_tip():
 func show_evolution_tip():
 	if show_tutorial:
 		AudioController.get_node("TutorialWindowSound").play()
-		get_tree().root.get_node("Ocean/UiElements/InfoMessage/MarginContainer/Label").bbcode_text ="[center]Your creatures earn experience by destroying garbage and collecting fishies.\n\nUpon leveling you get to choose an evolution that affects every creature of that type you spawn from now on.[/center]"
+		get_tree().root.get_node("Ocean/UiElements/InfoMessage/MarginContainer/Label").bbcode_text ="[center]Your creatures earn [color=#7a7878]experience[/color] by destroying garbage and collecting fishies.\n\nUpon leveling you get to choose an evolution that affects every creature of that type you spawn from now on.[/center]"
 		get_tree().root.get_node("Ocean/UiElements/InfoMessage").visible = true
 		Overviewer.pause_game()

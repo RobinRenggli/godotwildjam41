@@ -28,6 +28,8 @@ font_data = ExtResource( 18 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 25
+outline_size = 1
+outline_color = Color( 0.239216, 0.239216, 0.239216, 1 )
 font_data = ExtResource( 18 )
 
 [sub_resource type="DynamicFont" id=5]
@@ -124,30 +126,6 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector3( 1, 1, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Light2D:color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Light2D:energy")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 1.0 ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -308,11 +286,11 @@ __meta__ = {
 }
 
 [node name="CurrencyLabel" type="Label" parent="UiElements/UiControl"]
-modulate = Color( 1, 0.827451, 0, 1 )
 margin_left = 18.0
 margin_top = 528.0
 margin_right = 58.0
 margin_bottom = 554.0
+custom_colors/font_color = Color( 1, 0.827451, 0, 1 )
 custom_fonts/font = SubResource( 4 )
 text = "4"
 align = 1
@@ -463,6 +441,8 @@ margin_bottom = 160.0
 mouse_filter = 1
 custom_constants/shadow_offset_x = 1
 bbcode_enabled = true
+fit_content_height = true
+scroll_active = false
 
 [node name="Light2D" type="Light2D" parent="."]
 position = Vector2( 544, 160 )
