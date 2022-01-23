@@ -21,18 +21,18 @@ var stats_map = {
 		"movepattern": "basic",
 		"cooldown": 5
 	},
-	"lunch": {
-		"health": 6,
-		"strength": 1,
-		"speed": 2,
-		"movepattern": "harvest",
-		"cooldown": 5
-	},
 	"bag": {
 		"health": 2,
 		"strength": 15,
 		"speed": 3,
 		"movepattern": "hunt",
+		"cooldown": 5
+	},
+	"lunch": {
+		"health": 6,
+		"strength": 1,
+		"speed": 2,
+		"movepattern": "harvest",
 		"cooldown": 5
 	},
 }

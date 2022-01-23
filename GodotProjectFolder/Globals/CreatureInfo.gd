@@ -93,7 +93,8 @@ func increase_experience(creature, amount):
 		needed_xp = needed_xp_map[creature]
 		Overviewer.evolutionQueue.append(creature)
 	if evolved:
-		print("Evolving " + creature)
-		emit_signal("evolve_creature")
+		if not Overviewer.show_tutorial:
+			emit_signal("evolve_creature")
+		Overviewer.show_evolution_tip()
 	xp_map[creature] = xp
 	

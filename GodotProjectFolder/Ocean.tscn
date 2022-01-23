@@ -124,30 +124,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector3( 1, 1, 1 ) ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("Light2D:color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Light2D:energy")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 1.0 ]
-}
 
 [sub_resource type="Animation" id=10]
 resource_name = "clownfish"
@@ -396,6 +372,45 @@ A ship just spilled waste that is very toxic to turtles. Within 3 waves, the pol
 align = 1
 autowrap = true
 
+[node name="InfoMessage" type="NinePatchRect" parent="UiElements"]
+pause_mode = 2
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -216.0
+margin_top = -121.0
+margin_right = 216.0
+margin_bottom = 121.0
+mouse_filter = 1
+texture = ExtResource( 10 )
+patch_margin_left = 120
+patch_margin_top = 122
+patch_margin_right = 117
+patch_margin_bottom = 120
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="UiElements/InfoMessage"]
+margin_left = 32.0
+margin_top = 41.0
+margin_right = 400.0
+margin_bottom = 201.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="RichTextLabel" parent="UiElements/InfoMessage/MarginContainer"]
+margin_right = 368.0
+margin_bottom = 160.0
+mouse_filter = 1
+custom_constants/shadow_offset_x = 1
+bbcode_enabled = true
+
 [node name="Light2D" type="Light2D" parent="."]
 position = Vector2( 536, 24 )
 scale = Vector2( 1.47875, 1.19146 )
@@ -435,6 +450,7 @@ anims/swordfish = SubResource( 11 )
 anims/turtle = SubResource( 9 )
 
 [connection signal="gui_input" from="UiElements/PollutionWarning" to="UiElements/PollutionWarning" method="_on_PollutionWarning_gui_input"]
+[connection signal="gui_input" from="UiElements/InfoMessage" to="UiElements/InfoMessage" method="_on_InfoMessage_gui_input"]
 [connection signal="finished" from="Intro" to="Loop" method="_on_Intro_finished"]
 [connection signal="timeout" from="Intro/Timer" to="Loop" method="_on_Timer_timeout"]
 
