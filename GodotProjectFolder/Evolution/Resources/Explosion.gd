@@ -1,7 +1,7 @@
 extends Node2D
 
 var type
-export var damage = 2
+export var damage = 3
 onready var damaged_creatures = []
 
 func _ready():
