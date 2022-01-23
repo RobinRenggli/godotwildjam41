@@ -48,7 +48,6 @@ func spawn_wave():
 		spawn_gas()
 	if Overviewer.wave == 25:
 		display_debrie_warning()
-		EnemyInfo.buff_enemies()
 	WaveEffects.execute_effects()
 	emit_signal("wave_spawned")
 	AudioController.get_node("WaveSpawnSound").play()
