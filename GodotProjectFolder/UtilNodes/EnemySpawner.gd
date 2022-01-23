@@ -42,11 +42,11 @@ func spawn_wave():
 			yield(t, "timeout")
 	t.queue_free()
 	Overviewer.wave += 1
-	if Overviewer.wave >= 0 && (Overviewer.wave + 3)%5 == 0 :
+	if Overviewer.wave >= 47 && (Overviewer.wave + 3)%5 == 0 :
 		display_pollution_warning()
 	elif Overviewer.wave >= 37 && (Overviewer.wave + 3)%10 == 0 :
 		display_pollution_warning()
-	if Overviewer.wave > 0 && Overviewer.wave%5 == 0 :
+	if Overviewer.wave > 50 && Overviewer.wave%5 == 0 :
 		spawn_gas()
 	elif Overviewer.wave >= 40 && Overviewer.wave%10 == 0 :
 		spawn_gas()
