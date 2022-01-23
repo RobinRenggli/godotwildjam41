@@ -6,7 +6,7 @@
 
 [node name="EvolutionCard" instance=ExtResource( 1 )]
 stat_changes = {
-"cost": 2
+"cost": 1
 }
 description = "Gain 1 currency on melee kill."
 
