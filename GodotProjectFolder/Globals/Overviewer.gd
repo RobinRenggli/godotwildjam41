@@ -38,7 +38,6 @@ func check_defeat():
 		PlayerStats.reset_currency()
 		AudioController.get_node("DefeatSound").play()
 		
-
 func check_crowded():
 	if get_tree().get_nodes_in_group("Creatures").size() >= 100:
 		crowded = true
@@ -53,6 +52,9 @@ func _on_debris_timer_timeout():
 			debris_timer.set_wait_time(1)
 		if wave >= 35:
 			debris_timer.set_wait_time(0.5)
+		if wave >= 50:
+			spawn_debris()
+			spawn_debris()
 
 func spawn_debris():
 	var debris = Debris.instance()

@@ -8,7 +8,7 @@ var waves = [
 		"barrel": 1
 	},
 	{
-		"lunch": 1,
+		"lunch": 3,
 	},
 	{
 		"bag": 2,
@@ -71,17 +71,17 @@ func _on_GasTimer_timeout():
 		if $WaveDuration.time_left < 20 && $WaveDuration.time_left > 10:
 			var creatures = get_tree().get_nodes_in_group("Turtles")
 			for c in creatures:
-				c.get_node("Stats").change_health(-1)
+				c.get_node("Stats").change_health(-2)
 	elif type == "swordfish":
 		if $WaveDuration.time_left < 20 && $WaveDuration.time_left > 10:
 			var creatures = get_tree().get_nodes_in_group("Swordfish")
 			for c in creatures:
-				c.get_node("Stats").change_health(-1)
+				c.get_node("Stats").change_health(-2)
 	elif type == "clownfish":
 		if $WaveDuration.time_left < 20 && $WaveDuration.time_left > 10:
 			var creatures = get_tree().get_nodes_in_group("Clownfish")
 			for c in creatures:
-				c.get_node("Stats").change_health(-1)
+				c.get_node("Stats").change_health(-2)
 
 func _on_WaveDuration_timeout():
 	pass

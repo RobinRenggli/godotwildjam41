@@ -67,6 +67,8 @@ script = ExtResource( 7 )
 
 [node name="DeathEffects" type="Node" parent="."]
 
+[node name="KillEffects" type="Node" parent="."]
+
 [node name="TimedEffects" type="Node" parent="."]
 script = ExtResource( 4 )
 
