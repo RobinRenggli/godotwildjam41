@@ -17,7 +17,7 @@ _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 offsets = PoolRealArray( 0, 0.022293, 1 )
 colors = PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1 )
 
-[node name="LunchEnemyProjectile" type="Node2D"]
+[node name="LunchEnemyProjectile" type="Node2D" groups=["Debris"]]
 script = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -30,7 +30,6 @@ shape = SubResource( 1 )
 
 [node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
 material = SubResource( 2 )
-scale = Vector2( 1, 1 )
 amount = 10
 lifetime = 0.5
 lifetime_randomness = 0.5
@@ -49,3 +48,5 @@ color_ramp = SubResource( 4 )
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.15, 0.15 )
 texture = ExtResource( 1 )
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
