@@ -18,12 +18,16 @@ var waves = [
 	},
 ]
 var Random = RandomNumberGenerator.new()
-var type = ""
-var pollution_damage = 0
+var type = "turtle"
+var pollution_damage = 1
 signal wave_spawned
 
 func _ready():
+	Overviewer.connect("game_started", self, "_on_game_started")
 	randomize()
+
+func _on_game_started():
+	$SpawnTimer.start()
 
 func spawn_wave():
 	var t = Timer.new()
@@ -58,7 +62,7 @@ func spawn_enemy(enemy):
 	get_node("/root/Ocean").add_child(spawned_enemy)
 
 func spawn_gas():
-	pollution_damage += 1
+	pollution_damage += 2
 	$GasTimer.start()
 	$WaveDuration.start()
 	get_node("/root/Ocean/WasteAnimations").play(type)

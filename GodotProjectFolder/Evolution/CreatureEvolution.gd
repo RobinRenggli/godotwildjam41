@@ -34,6 +34,13 @@ var cards = [
 	preload("res://Evolution/Cards/CurrencyOnKill.tscn"),
 	preload("res://Evolution/Cards/ExpOnKill.tscn"),
 	preload("res://Evolution/Cards/HealOnKill.tscn"),
+	preload("res://Evolution/Cards/SpeedToHealth.tscn"),
+	preload("res://Evolution/Cards/HealthToStrength.tscn"),
+	preload("res://Evolution/Cards/BubblesOnDeath.tscn"),
+	preload("res://Evolution/Cards/StrengthOnKill.tscn"),
+	preload("res://Evolution/Cards/ExplodeOnDeath.tscn"),
+	preload("res://Evolution/Cards/AlphaCard.tscn"),
+	preload("res://Evolution/Cards/InstantBuffButLoseHealth.tscn"),
 	]
 var Random = RandomNumberGenerator.new()
 var evolution_in_progress = false

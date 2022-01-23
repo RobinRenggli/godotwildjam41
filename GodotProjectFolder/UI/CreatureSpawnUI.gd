@@ -38,3 +38,5 @@ func _on_CreatureSpawnUI_pressed():
 		spawner.spawn_with_cost(type)
 		if not Overviewer.spawn_tip_shown:
 			Overviewer.show_spawn_tip()
+		if not Overviewer.game_started:
+			Overviewer.start_game()

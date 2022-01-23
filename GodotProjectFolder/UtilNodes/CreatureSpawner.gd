@@ -50,6 +50,24 @@ func spawn_baby(type):
 		AudioController.get_node("ClownfishSpawnSound").play()
 	Overviewer.check_crowded()
 
+func spawn_alpha(type):
+	if Overviewer.crowded:
+		return
+	var spawned_creature = CreatureInfo.creature_map[type].instance()
+	spawned_creature.global_position = get_random_spawn_position()
+	get_node("/root/Ocean").add_child(spawned_creature)
+	spawned_creature.Stats.max_health = CreatureInfo.stats_map[type]["health"] + 10
+	spawned_creature.Stats.health = CreatureInfo.stats_map[type]["health"] + 10
+	spawned_creature.Stats.strength = CreatureInfo.stats_map[type]["strength"] + 5
+	spawned_creature.scale = Vector2(1.5, 1.5)
+	if type == "turtle":
+		AudioController.get_node("TurtleSpawnSound").play()
+	if type == "swordfish":
+		AudioController.get_node("SwordfishSpawnSound").play()
+	if type == "clownfish":
+		AudioController.get_node("ClownfishSpawnSound").play()
+	Overviewer.check_crowded()
+
 func get_random_spawn_position():
 	var x = rand_range(0, Constants.window_width)
 	var y = rand_range(Constants.window_height, Constants.window_height + spawn_height)

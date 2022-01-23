@@ -2,6 +2,13 @@ extends Node
 
 var currency = preload("res://Currency/Currency.tscn")
 
+func _ready():
+	Overviewer.connect("game_started", self, "_on_game_started")
+	randomize()
+
+func _on_game_started():
+	$Timer.start()
+
 func _on_Timer_timeout():
 	yield(get_tree().create_timer(rand_range(0,1)),"timeout")
 	var spawned_currency = currency.instance()

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Evolution/EvolutionCard.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Evolution/Effects/SpawnAlphaEffect.tscn" type="PackedScene" id=2]
+
+[node name="EvolutionCard" instance=ExtResource( 1 )]
+description = "Spawn an alpha creature of this type with +10 health and +5 strength."
+
+[node name="Node" parent="Effects" index="0" instance=ExtResource( 2 )]

@@ -38,16 +38,16 @@ var stats_map = {
 	},
 	"tire": {
 		"health": 25,
-		"strength": 1,
+		"strength": 2,
 		"speed": 1,
 		"movepattern": "stay_together",
 		"cooldown": 5
 	},
 }
 var multiplier_map = {
-	"basic": 0.4,
-	"barrel": 0.3,
-	"bag": 0.4,
-	"lunch": 0.3,
-	"tire": 0.2
+	"basic": 0.6,
+	"barrel": 0.5,
+	"bag": 0.6,
+	"lunch": 0.5,
+	"tire": 0.4
 }

@@ -26,6 +26,9 @@ func set_health(value):
 		emit_signal("full_health")
 	else:
 		emit_signal("not_full_health")
+
+func change_max_health(amount):
+	max_health += (amount)
 		
 func change_health(amount):
 	if amount < 0:

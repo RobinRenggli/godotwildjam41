@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Evolution/EvolutionCard.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Evolution/Effects/HealthToStrength.tscn" type="PackedScene" id=2]
+
+[node name="EvolutionCard" instance=ExtResource( 1 )]
+description = "Reduce health to 1, gain +1 strength for each 2 points of health lost."
+
+[node name="HealthToStrength" parent="Effects" index="0" instance=ExtResource( 2 )]
