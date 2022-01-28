@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Enemies/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemies/CanEnemy.png" type="Texture" id=2]
+[ext_resource path="res://Blink.gdshader" type="Shader" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 3 )
+shader_param/flash_color = Color( 1, 0, 0, 1 )
+shader_param/flash_modifier = 0.0
+
+[node name="Enemy" instance=ExtResource( 1 )]
+scale = Vector2( 3, 3 )
+type = "big_basic"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Body" index="0"]
+visible = false
+polygon = PoolVector2Array( -1, -24, 5, -15, 11, -17, 27, -7, 26, 1, 18, 2, 15, 8, -2, 22, -20, 9, -23, -6, -15, -18 )
+
+[node name="Sprite" parent="." index="3"]
+material = SubResource( 1 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="6"]
+visible = false
+polygon = PoolVector2Array( -1, -24, 5, -15, 11, -17, 27, -7, 26, 1, 18, 2, 15, 8, -2, 22, -20, 9, -23, -6, -15, -18 )

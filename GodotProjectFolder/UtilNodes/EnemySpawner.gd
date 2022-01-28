@@ -31,16 +31,30 @@ func _on_game_started():
 
 func spawn_wave():
 	var t = Timer.new()
-	t.set_wait_time(0.02)
-	self.add_child(t)
-	var index = Random.randi_range(0, min(Overviewer.wave, waves.size() - 1))
-	var wave = waves[index] 
-	for key in wave.keys():
-		for i in range(wave[key] + floor(wave[key] * EnemyInfo.multiplier_map[key] * (Overviewer.wave - index))):
-			spawn_enemy(key)
-			t.start()
-			yield(t, "timeout")
-	t.queue_free()
+	var bossWave = Overviewer.wave > 50 and Overviewer.wave % 10 == 9
+	if bossWave:
+		match Overviewer.wave:
+			60:
+				spawn_enemy("big_basic")
+			70:
+				spawn_enemy("big_barrel")
+			80:
+				spawn_enemy("big_lunch")
+			90:
+				spawn_enemy("big_bag")
+			100:
+				spawn_enemy("big_tire")
+	else:
+		t.set_wait_time(0.02)
+		self.add_child(t)
+		var index = Random.randi_range(0, min(Overviewer.wave, waves.size() - 1))
+		var wave = waves[index] 
+		for key in wave.keys():
+			for i in range(wave[key] + floor(wave[key] * EnemyInfo.multiplier_map[key] * (Overviewer.wave - index))):
+				spawn_enemy(key)
+				t.start()
+				yield(t, "timeout")
+		t.queue_free()
 	Overviewer.wave += 1
 	if Overviewer.wave >= 47 && (Overviewer.wave + 3)%5 == 0 :
 		display_pollution_warning()

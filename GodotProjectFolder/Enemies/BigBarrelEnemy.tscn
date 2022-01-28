@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Enemies/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemies/BarrelEnemy.png" type="Texture" id=2]
+[ext_resource path="res://Blink.gdshader" type="Shader" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 3 )
+shader_param/flash_color = Color( 1, 0, 0, 1 )
+shader_param/flash_modifier = 0.0
+
+[node name="Enemy" instance=ExtResource( 1 )]
+scale = Vector2( 1.5, 1.5 )
+type = "big_barrel"
+
+[node name="Body" parent="." index="0"]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Body" index="0"]
+visible = false
+polygon = PoolVector2Array( 7, -88, 98, -1, 42, 76, 6, 85, -63, 72, -88, 15, -71, -69, -23, -55 )
+
+[node name="Sprite" parent="." index="3"]
+material = SubResource( 1 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="6"]
+visible = false
+polygon = PoolVector2Array( 7, -88, 98, -1, 42, 76, 6, 85, -63, 72, -88, 15, -71, -69, -23, -55 )
