@@ -56,10 +56,10 @@ func spawn_alpha(type):
 	var spawned_creature = CreatureInfo.creature_map[type].instance()
 	spawned_creature.global_position = get_random_spawn_position()
 	get_node("/root/Ocean").add_child(spawned_creature)
-	spawned_creature.Stats.max_health = CreatureInfo.stats_map[type]["health"] + 10
-	spawned_creature.Stats.health = CreatureInfo.stats_map[type]["health"] + 10
+	spawned_creature.Stats.max_health = CreatureInfo.stats_map[type]["health"] + 20
+	spawned_creature.Stats.health = CreatureInfo.stats_map[type]["health"] + 20
 	spawned_creature.Stats.strength = CreatureInfo.stats_map[type]["strength"] + 5
-	spawned_creature.scale = Vector2(1.5, 1.5)
+	spawned_creature.scale = Vector2(2, 2)
 	if type == "turtle":
 		AudioController.get_node("TurtleSpawnSound").play()
 	if type == "swordfish":

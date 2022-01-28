@@ -5,7 +5,7 @@
 [ext_resource path="res://Evolution/Effects/BuffButLoseHp.tscn" type="PackedScene" id=3]
 
 [node name="EvolutionCard" instance=ExtResource( 1 )]
-description = "Give all active creatures with this type +10 health and +3 strength. They lose 1 health every 5 seconds."
+description = "Give all active creatures with this type +15 health and +3 strength. They lose 1 health every 10 seconds."
 
 [node name="Node" parent="Effects" index="0" instance=ExtResource( 3 )]
 effect = ExtResource( 2 )

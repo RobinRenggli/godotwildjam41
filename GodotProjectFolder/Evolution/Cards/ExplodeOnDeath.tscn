@@ -5,7 +5,7 @@
 [ext_resource path="res://Evolution/Effects/CreateExplosion.tscn" type="PackedScene" id=3]
 
 [node name="EvolutionCard" instance=ExtResource( 1 )]
-description = "Explode on death dealing 3 damage to each creature hit."
+description = "Explode on death dealing 2 damage to each creature hit."
 
 [node name="AddDeatEffect" parent="Effects" index="0" instance=ExtResource( 2 )]
 effect = ExtResource( 3 )
