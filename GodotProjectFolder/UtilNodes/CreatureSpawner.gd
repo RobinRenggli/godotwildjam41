@@ -66,6 +66,8 @@ func spawn_alpha(type):
 		AudioController.get_node("SwordfishSpawnSound").play()
 	if type == "clownfish":
 		AudioController.get_node("ClownfishSpawnSound").play()
+	for eff in effects_per_creature[type]:
+		eff.execute(type)
 	Overviewer.check_crowded()
 
 func get_random_spawn_position():
