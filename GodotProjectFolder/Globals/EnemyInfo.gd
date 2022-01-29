@@ -6,6 +6,11 @@ var enemy_map = {
 	"bag": preload("res://Enemies/BagEnemy.tscn"),
 	"lunch": preload("res://Enemies/LunchEnemy.tscn"),
 	"tire": preload("res://Enemies/TireEnemy.tscn"),
+	"big_basic": preload("res://Enemies/BigBasicEnemy.tscn"),
+	"big_barrel": preload("res://Enemies/BigBarrelEnemy.tscn"),
+	"big_bag": preload("res://Enemies/BigBagEnemy.tscn"),
+	"big_lunch": preload("res://Enemies/BigLunchEnemy.tscn"),
+	"big_tire": preload("res://Enemies/BigTireEnemy.tscn"),
 }
 var stats_map = {
 	"basic": {

@@ -15,7 +15,7 @@ signal game_started()
 
 func _ready():
 	debris_timer = Timer.new()
-	debris_timer.set_wait_time(2)
+	debris_timer.set_wait_time(4)
 	debris_timer.set_one_shot(false)
 	self.add_child(debris_timer)
 	debris_timer.start()
@@ -58,19 +58,12 @@ func _on_debris_timer_timeout():
 		if wave >= 25:
 			spawn_debris()
 		if wave >= 30:
-			debris_timer.set_wait_time(1)
+			debris_timer.set_wait_time(2)
 		if wave >= 35:
-			debris_timer.set_wait_time(0.5)
-		if wave >= 40:
-			spawn_debris()
-			spawn_debris()
+			debris_timer.set_wait_time(1)
 		if wave >= 50:
-			spawn_debris()
-			spawn_debris()
-			spawn_debris()
-			spawn_debris()
-			spawn_debris()
-		if wave >= 70:
+			debris_timer.set_wait_time(0.5)
+		if wave >= 120:
 			spawn_debris()
 			spawn_debris()
 			spawn_debris()
