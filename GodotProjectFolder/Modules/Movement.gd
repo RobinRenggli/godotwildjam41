@@ -130,19 +130,6 @@ func hai_ground_collision(collision):
 func stay_together_movement(speed):
 	directionIndicator = directionIndicator + directionIndicatorVelocity * speed * 2
 	
-	if  directionIndicator.x > Constants.window_width * 2/3:
-		if directionIndicatorVelocity.x > 0:
-			directionIndicatorVelocity.x *= -1
-	if directionIndicator.x < 0 + Constants.window_width/3:
-		if directionIndicatorVelocity.x < 0:
-			directionIndicatorVelocity.x *= -1
-	if directionIndicator.y > Constants.window_height * 2/3:
-		if directionIndicatorVelocity.y > 0:
-			directionIndicatorVelocity.y *= -1
-	if directionIndicator.y < 0 + Constants.window_height/3:
-		if directionIndicatorVelocity.y < 0:
-			directionIndicatorVelocity.y *= -1
-	 
 	velocity = (directionIndicator - creature.global_position).normalized()
 	
 func harvest_movement(speed):
@@ -211,4 +198,12 @@ func _on_CollisionTimer_timeout():
 
 func _on_Timer_timeout():
 	if not creature.get_node("Stats").movepattern == "pinball":
-		directionIndicatorVelocity = Vector2(rand_range(-1,1), rand_range(-1,1)).normalized()
+		if not creature.get_node("Stats").movepattern == "stay_together":
+			directionIndicatorVelocity = Vector2(rand_range(-1,1), rand_range(-1,1)).normalized()
+
+func _on_StayTogetherTimer_timeout():
+	if creature.get_node("Stats").movepattern == "stay_together":
+		var x = rand_range(Constants.window_width/3, Constants.window_width * 2/3)
+		var y = rand_range(Constants.window_height/3, Constants.window_height * 2/3)
+		var rand_point = Vector2(x, y)
+		directionIndicatorVelocity = (rand_point - directionIndicator).normalized()
