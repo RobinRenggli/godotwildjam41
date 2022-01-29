@@ -51,6 +51,23 @@ func spawn_wave():
 				spawn_enemy("big_lunch")
 				spawn_enemy("big_bag")
 				spawn_enemy("big_tire")
+			200:
+				spawn_enemy("big_basic")
+				spawn_enemy("big_barrel")
+				spawn_enemy("big_lunch")
+				spawn_enemy("big_bag")
+				spawn_enemy("big_tire")
+				spawn_enemy("big_basic")
+				spawn_enemy("big_barrel")
+				spawn_enemy("big_lunch")
+				spawn_enemy("big_bag")
+				spawn_enemy("big_tire")
+				spawn_enemy("big_basic")
+				spawn_enemy("big_barrel")
+				spawn_enemy("big_lunch")
+				spawn_enemy("big_bag")
+				spawn_enemy("big_tire")
+
 	else:
 		t.set_wait_time(0.02)
 		self.add_child(t)

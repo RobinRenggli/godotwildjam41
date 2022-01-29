@@ -57,23 +57,27 @@ func _on_debris_timer_timeout():
 	if game_playing:
 		if wave >= 25:
 			spawn_debris()
-		if wave >= 30:
+		if wave == 30:
 			debris_timer.set_wait_time(2)
-		if wave >= 35:
+		if wave == 35:
 			debris_timer.set_wait_time(1)
-		if wave >= 50:
+		if wave == 50:
 			debris_timer.set_wait_time(0.5)
-		if wave >= 120:
+		if wave >= 55:
 			spawn_debris()
 			spawn_debris()
+		if wave == 65:
+			debris_timer.set_wait_time(0.25)
+		if wave >= 75:
 			spawn_debris()
+		if wave >= 85:
 			spawn_debris()
+		if wave >= 95:
 			spawn_debris()
+		if wave >= 105:
 			spawn_debris()
-			spawn_debris()
-			spawn_debris()
-			spawn_debris()
-			spawn_debris()
+		if wave == 160:
+			debris_timer.set_wait_time(0.1)
 
 func spawn_debris():
 	var debris = Debris.instance()
