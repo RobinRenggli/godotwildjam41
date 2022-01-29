@@ -11,5 +11,10 @@ autostart = true
 
 [node name="CollisionTimer" type="Timer" parent="."]
 
+[node name="StayTogetherTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="CollisionTimer" to="." method="_on_CollisionTimer_timeout"]
+[connection signal="timeout" from="StayTogetherTimer" to="." method="_on_StayTogetherTimer_timeout"]
