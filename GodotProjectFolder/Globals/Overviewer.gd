@@ -22,7 +22,7 @@ func _ready():
 	debris_timer.connect("timeout", self, "_on_debris_timer_timeout")
 
 func reset():
-	debris_timer.set_wait_time(2)
+	debris_timer.set_wait_time(4)
 	game_started = false
 
 func start_game():
