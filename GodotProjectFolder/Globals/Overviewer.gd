@@ -15,14 +15,14 @@ signal game_started()
 
 func _ready():
 	debris_timer = Timer.new()
-	debris_timer.set_wait_time(4)
+	debris_timer.set_wait_time(3)
 	debris_timer.set_one_shot(false)
 	self.add_child(debris_timer)
 	debris_timer.start()
 	debris_timer.connect("timeout", self, "_on_debris_timer_timeout")
 
 func reset():
-	debris_timer.set_wait_time(4)
+	debris_timer.set_wait_time(3)
 	game_started = false
 
 func start_game():

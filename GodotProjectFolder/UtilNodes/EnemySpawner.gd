@@ -31,55 +31,67 @@ func _on_game_started():
 
 func spawn_wave():
 	var t = Timer.new()
-	var bossWave = Overviewer.wave > 50 and Overviewer.wave % 10 == 9
+	var bossWave = Overviewer.wave >= 49 and Overviewer.wave % 5 == 4
 	if bossWave:
 		match Overviewer.wave:
-			59:
+			49:
 				spawn_enemy("big_basic")
-			69:
+			54:
 				spawn_enemy("big_barrel")
+			59:
+				spawn_enemy("big_lunch")
+			64:
+				spawn_enemy("big_bag")
+				spawn_enemy("big_bag")
+			69:
+				spawn_enemy("big_tire")
+			74:
+				spawn_enemy("big_basic")
+				spawn_enemy("big_basic")
+				spawn_enemy("big_basic")
+				spawn_enemy("big_basic")
+				spawn_enemy("big_basic")
 			79:
+				spawn_enemy("big_barrel")
+				spawn_enemy("big_barrel")
+				spawn_enemy("big_barrel")
+				spawn_enemy("big_barrel")
+				spawn_enemy("big_barrel")
+			84:
+				spawn_enemy("big_lunch")
+				spawn_enemy("big_lunch")
+				spawn_enemy("big_lunch")
+				spawn_enemy("big_lunch")
 				spawn_enemy("big_lunch")
 			89:
 				spawn_enemy("big_bag")
 				spawn_enemy("big_bag")
+				spawn_enemy("big_bag")
+				spawn_enemy("big_bag")
+				spawn_enemy("big_bag")
+				spawn_enemy("big_bag")
+				spawn_enemy("big_bag")
+				spawn_enemy("big_bag")
+				spawn_enemy("big_bag")
+				spawn_enemy("big_bag")
+			94:
+				spawn_enemy("big_tire")
+				spawn_enemy("big_tire")
+				spawn_enemy("big_tire")
+				spawn_enemy("big_tire")
+				spawn_enemy("big_tire")
 			99:
 				spawn_enemy("big_tire")
-			109:
-				spawn_enemy("big_basic")
-				spawn_enemy("big_basic")
-				spawn_enemy("big_basic")
-				spawn_enemy("big_basic")
-				spawn_enemy("big_basic")
-			119:
+				spawn_enemy("big_tire")
 				spawn_enemy("big_barrel")
 				spawn_enemy("big_barrel")
-				spawn_enemy("big_barrel")
-				spawn_enemy("big_barrel")
-				spawn_enemy("big_barrel")
-			129:
+				spawn_enemy("big_basic")
+				spawn_enemy("big_basic")
 				spawn_enemy("big_lunch")
 				spawn_enemy("big_lunch")
-				spawn_enemy("big_lunch")
-				spawn_enemy("big_lunch")
-				spawn_enemy("big_lunch")
-			139:
 				spawn_enemy("big_bag")
 				spawn_enemy("big_bag")
-				spawn_enemy("big_bag")
-				spawn_enemy("big_bag")
-				spawn_enemy("big_bag")
-				spawn_enemy("big_bag")
-				spawn_enemy("big_bag")
-				spawn_enemy("big_bag")
-				spawn_enemy("big_bag")
-				spawn_enemy("big_bag")
-			149:
-				spawn_enemy("big_tire")
-				spawn_enemy("big_tire")
-				spawn_enemy("big_tire")
-				spawn_enemy("big_tire")
-				spawn_enemy("big_tire")
+				
 
 	else:
 		t.set_wait_time(0.02)
