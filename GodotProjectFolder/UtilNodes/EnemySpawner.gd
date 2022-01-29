@@ -36,36 +36,49 @@ func spawn_wave():
 		match Overviewer.wave:
 			59:
 				spawn_enemy("big_basic")
-				print("spawned")
 			69:
 				spawn_enemy("big_barrel")
 			79:
 				spawn_enemy("big_lunch")
 			89:
 				spawn_enemy("big_bag")
+				spawn_enemy("big_bag")
 			99:
 				spawn_enemy("big_tire")
+			109:
+				spawn_enemy("big_basic")
+				spawn_enemy("big_basic")
+				spawn_enemy("big_basic")
+				spawn_enemy("big_basic")
+				spawn_enemy("big_basic")
+			119:
+				spawn_enemy("big_barrel")
+				spawn_enemy("big_barrel")
+				spawn_enemy("big_barrel")
+				spawn_enemy("big_barrel")
+				spawn_enemy("big_barrel")
+			129:
+				spawn_enemy("big_lunch")
+				spawn_enemy("big_lunch")
+				spawn_enemy("big_lunch")
+				spawn_enemy("big_lunch")
+				spawn_enemy("big_lunch")
+			139:
+				spawn_enemy("big_bag")
+				spawn_enemy("big_bag")
+				spawn_enemy("big_bag")
+				spawn_enemy("big_bag")
+				spawn_enemy("big_bag")
+				spawn_enemy("big_bag")
+				spawn_enemy("big_bag")
+				spawn_enemy("big_bag")
+				spawn_enemy("big_bag")
+				spawn_enemy("big_bag")
 			149:
-				spawn_enemy("big_basic")
-				spawn_enemy("big_barrel")
-				spawn_enemy("big_lunch")
-				spawn_enemy("big_bag")
 				spawn_enemy("big_tire")
-			200:
-				spawn_enemy("big_basic")
-				spawn_enemy("big_barrel")
-				spawn_enemy("big_lunch")
-				spawn_enemy("big_bag")
 				spawn_enemy("big_tire")
-				spawn_enemy("big_basic")
-				spawn_enemy("big_barrel")
-				spawn_enemy("big_lunch")
-				spawn_enemy("big_bag")
 				spawn_enemy("big_tire")
-				spawn_enemy("big_basic")
-				spawn_enemy("big_barrel")
-				spawn_enemy("big_lunch")
-				spawn_enemy("big_bag")
+				spawn_enemy("big_tire")
 				spawn_enemy("big_tire")
 
 	else:

@@ -70,14 +70,7 @@ func _on_debris_timer_timeout():
 			debris_timer.set_wait_time(0.25)
 		if wave >= 75:
 			spawn_debris()
-		if wave >= 85:
 			spawn_debris()
-		if wave >= 95:
-			spawn_debris()
-		if wave >= 105:
-			spawn_debris()
-		if wave == 160:
-			debris_timer.set_wait_time(0.1)
 
 func spawn_debris():
 	var debris = Debris.instance()

@@ -112,7 +112,7 @@ scale = Vector2( 1.05, 1.05 )
 polygon = PoolVector2Array( -20.9524, -32.381, -3.80952, -24.7619, 14.2857, 1.90476, 34.2857, 6.66667, 36.1905, 15.2381, 32.381, 22.8571, 5.71429, 22.8571, 2.85714, 28.5714, -12.381, 32.381, -22.8571, 25.7143, -36.1905, -10.4762, -32.381, -23.8095, -28.5714, -8.57143, -15.2381, -14.2857, -25.7143, -29.5238 )
 
 [node name="ProjectileTimer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.2
 autostart = true
 script = ExtResource( 6 )
 Projectile = ExtResource( 7 )
