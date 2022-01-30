@@ -36,7 +36,7 @@ func _on_EvolutionCard_gui_input(event):
 		for effect in $Effects.get_children():
 			effect.execute(type)
 		var t = Timer.new()
-		t.set_wait_time(0.01)
+		t.set_wait_time(0.1)
 		t.set_one_shot(true)
 		self.add_child(t)
 		t.start()

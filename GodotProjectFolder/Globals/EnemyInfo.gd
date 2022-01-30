@@ -49,14 +49,14 @@ var stats_map = {
 		"cooldown": 5
 	},
 	"big_basic": {
-		"health": 4000,
+		"health": 2000,
 		"strength": 30,
 		"speed": 3,
 		"movepattern": "basic",
 		"cooldown": 5
 	},
 	"big_barrel": {
-		"health": 12000,
+		"health": 6000,
 		"strength": 30,
 		"speed": 2,
 		"movepattern": "basic",
@@ -70,7 +70,7 @@ var stats_map = {
 		"cooldown": 5
 	},
 	"big_lunch": {
-		"health": 6000,
+		"health": 5000,
 		"strength": 25,
 		"speed": 2,
 		"movepattern": "harvest",
