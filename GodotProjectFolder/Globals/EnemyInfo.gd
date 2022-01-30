@@ -63,7 +63,7 @@ var stats_map = {
 		"cooldown": 5
 	},
 	"big_bag": {
-		"health": 1000,
+		"health": 500,
 		"strength": 1000,
 		"speed": 5,
 		"movepattern": "hunt",
