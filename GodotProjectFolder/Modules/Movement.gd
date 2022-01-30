@@ -101,13 +101,13 @@ func hai_ground_movement(speed):
 	if  creature.global_position.x > Constants.window_width:
 		if velocity.x > 0:
 			velocity *= -1
-	if creature.global_position.x < 0:
+	elif creature.global_position.x < 0:
 		if velocity.x < 0:
 			velocity.x *= -1
 	if creature.global_position.y > Constants.window_height:
 		if velocity.y > 0:
 			velocity.y *= -1
-	if creature.global_position.y < 0:
+	elif creature.global_position.y < 0:
 		if velocity.y < 0:
 			velocity.y *= -1
 	if not recent_collision:
