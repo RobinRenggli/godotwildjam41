@@ -31,8 +31,8 @@ func _on_game_started():
 
 func spawn_wave():
 	var t = Timer.new()
-	var bossWave = Overviewer.wave >= 49 and Overviewer.wave % 5 == 4
-	if bossWave:
+	var bossWave = (Overviewer.wave >= 49 and Overviewer.wave % 5 == 4) or Overviewer.wave >= 104
+	if bossWave and Overviewer.wave < 100:
 		match Overviewer.wave:
 			49:
 				spawn_enemy("big_basic")
@@ -91,7 +91,12 @@ func spawn_wave():
 				spawn_enemy("big_lunch")
 				spawn_enemy("big_bag")
 				spawn_enemy("big_bag")
-				
+			_: 
+				spawn_enemy("big_tire")
+				spawn_enemy("big_barrel")
+				spawn_enemy("big_basic")
+				spawn_enemy("big_lunch")
+				spawn_enemy("big_bag")
 
 	else:
 		t.set_wait_time(0.02)
