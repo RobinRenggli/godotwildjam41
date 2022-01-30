@@ -57,20 +57,20 @@ var stats_map = {
 	},
 	"big_barrel": {
 		"health": 6000,
-		"strength": 30,
+		"strength": 20,
 		"speed": 2,
 		"movepattern": "basic",
 		"cooldown": 5
 	},
 	"big_bag": {
-		"health": 2500,
+		"health": 1000,
 		"strength": 1000,
 		"speed": 5,
 		"movepattern": "hunt",
 		"cooldown": 5
 	},
 	"big_lunch": {
-		"health": 5000,
+		"health": 3000,
 		"strength": 25,
 		"speed": 2,
 		"movepattern": "harvest",
